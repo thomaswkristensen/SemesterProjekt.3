@@ -8,5 +8,6 @@ namespace Interfaces
 {
     public class Class1
     {
+        private string test;
     }
 }
