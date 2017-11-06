@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Class1
+    class Patient_DTO
     {
-
+        public string SSN { get; set; }
+        public int Age { get; set; }
+        public string Name { get; set; }
     }
 }
