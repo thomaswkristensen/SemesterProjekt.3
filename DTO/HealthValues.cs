@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class HealthValues
+    public class HealthValues
     {
         public int SysBP { get; set; }
         public int DiaBP { get; set; }
