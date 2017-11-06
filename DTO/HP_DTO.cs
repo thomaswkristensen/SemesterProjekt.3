@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class HP_DTO
+    public class HP_DTO
     {
         public string EmployeeID { get; set; }
         public string Password { get; set; }
