@@ -40,11 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alarm.cs" />
+    <Compile Include="Alarm_DTO.cs" />
+    <Compile Include="BufferBlock.cs" />
     <Compile Include="Calibration_DTO.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="HealthValues.cs" />
+    <Compile Include="HealthValues_DTO.cs" />
     <Compile Include="HP_DTO.cs" />
+    <Compile Include="Measurement_DTO.cs" />
     <Compile Include="Patient_DTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

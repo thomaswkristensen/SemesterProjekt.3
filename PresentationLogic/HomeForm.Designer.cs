@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.HP_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Diastolic_textBox_HomeForm = new System.Windows.Forms.TextBox();
             this.Systolic_textBox_HomeForm = new System.Windows.Forms.TextBox();
@@ -45,23 +45,24 @@
             this.Save_button_HomeForm = new System.Windows.Forms.Button();
             this.Digital_Button_HomeForm = new System.Windows.Forms.Button();
             this.Calibration_button_HomeForm = new System.Windows.Forms.Button();
+            this.stop_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.HP_Chart)).BeginInit();
             this.SuspendLayout();
             // 
             // HP_Chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.HP_Chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.HP_Chart.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.HP_Chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.HP_Chart.Legends.Add(legend2);
             this.HP_Chart.Location = new System.Drawing.Point(12, 83);
             this.HP_Chart.Name = "HP_Chart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Blood Preasure";
-            this.HP_Chart.Series.Add(series1);
-            this.HP_Chart.Size = new System.Drawing.Size(943, 418);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Blood Preasure";
+            this.HP_Chart.Series.Add(series2);
+            this.HP_Chart.Size = new System.Drawing.Size(947, 460);
             this.HP_Chart.TabIndex = 0;
             this.HP_Chart.Text = "HP Chart";
             // 
@@ -137,12 +138,12 @@
             this.ZeroPointAdjusment_button_HomeForm.Name = "ZeroPointAdjusment_button_HomeForm";
             this.ZeroPointAdjusment_button_HomeForm.Size = new System.Drawing.Size(120, 55);
             this.ZeroPointAdjusment_button_HomeForm.TabIndex = 18;
-            this.ZeroPointAdjusment_button_HomeForm.Text = "Zero-Point Adjustment";
+            this.ZeroPointAdjusment_button_HomeForm.Text = "Nulpunkts justering";
             this.ZeroPointAdjusment_button_HomeForm.UseVisualStyleBackColor = true;
             // 
             // Start_button_HomeForm
             // 
-            this.Start_button_HomeForm.Location = new System.Drawing.Point(729, 406);
+            this.Start_button_HomeForm.Location = new System.Drawing.Point(729, 381);
             this.Start_button_HomeForm.Name = "Start_button_HomeForm";
             this.Start_button_HomeForm.Size = new System.Drawing.Size(202, 46);
             this.Start_button_HomeForm.TabIndex = 17;
@@ -155,8 +156,9 @@
             this.Save_button_HomeForm.Name = "Save_button_HomeForm";
             this.Save_button_HomeForm.Size = new System.Drawing.Size(112, 56);
             this.Save_button_HomeForm.TabIndex = 16;
-            this.Save_button_HomeForm.Text = "Save";
+            this.Save_button_HomeForm.Text = "Gem";
             this.Save_button_HomeForm.UseVisualStyleBackColor = true;
+            this.Save_button_HomeForm.Click += new System.EventHandler(this.Save_button_HomeForm_Click);
             // 
             // Digital_Button_HomeForm
             // 
@@ -173,15 +175,25 @@
             this.Calibration_button_HomeForm.Name = "Calibration_button_HomeForm";
             this.Calibration_button_HomeForm.Size = new System.Drawing.Size(119, 55);
             this.Calibration_button_HomeForm.TabIndex = 14;
-            this.Calibration_button_HomeForm.Text = "Calibration";
+            this.Calibration_button_HomeForm.Text = "Kalibrer";
             this.Calibration_button_HomeForm.UseVisualStyleBackColor = true;
+            // 
+            // stop_button
+            // 
+            this.stop_button.Location = new System.Drawing.Point(729, 456);
+            this.stop_button.Name = "stop_button";
+            this.stop_button.Size = new System.Drawing.Size(202, 46);
+            this.stop_button.TabIndex = 27;
+            this.stop_button.Text = "Stop";
+            this.stop_button.UseVisualStyleBackColor = true;
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(967, 502);
+            this.ClientSize = new System.Drawing.Size(981, 555);
+            this.Controls.Add(this.stop_button);
             this.Controls.Add(this.Diastolic_textBox_HomeForm);
             this.Controls.Add(this.Systolic_textBox_HomeForm);
             this.Controls.Add(this.Average_textBox_HomeForm);
@@ -221,5 +233,6 @@
         private System.Windows.Forms.Button Save_button_HomeForm;
         private System.Windows.Forms.Button Digital_Button_HomeForm;
         private System.Windows.Forms.Button Calibration_button_HomeForm;
+        private System.Windows.Forms.Button stop_button;
     }
 }

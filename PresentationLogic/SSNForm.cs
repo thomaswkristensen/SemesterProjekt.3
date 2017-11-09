@@ -10,18 +10,13 @@ using System.Windows.Forms;
 
 namespace PresentationLogic
 {
-    public partial class HomeForm : Form
+    public partial class SSNForm : Form
     {
-        private LogInForm Login;
-        public HomeForm()
+        public SSNForm()
         {
             InitializeComponent();
         }
 
-        private void Save_button_HomeForm_Click(object sender, EventArgs e)
-        {
-            Login.Show();
-            
-        }
+
     }
 }
