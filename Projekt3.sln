@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{8274C992-3195-4D83-A64A-067731545CCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectUnitTest", "ProjectUnitTest\ProjectUnitTest.csproj", "{A8228DCC-6DD9-40FE-959D-078167CE3D4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{8274C992-3195-4D83-A64A-067731545CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8274C992-3195-4D83-A64A-067731545CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8274C992-3195-4D83-A64A-067731545CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8228DCC-6DD9-40FE-959D-078167CE3D4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8228DCC-6DD9-40FE-959D-078167CE3D4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8228DCC-6DD9-40FE-959D-078167CE3D4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8228DCC-6DD9-40FE-959D-078167CE3D4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

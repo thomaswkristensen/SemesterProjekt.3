@@ -7,14 +7,14 @@ using ST2Prj2LibNI_DAQ;
 
 namespace DataAccessLogic
 {
-    public class Class1
+    public class Data :IData
     {
-        List<double> data;
+        List<double> _data;
         private NI_DAQVoltage _datacollector;
 
-        public List<double> hentdata()
+        public Data()
         {
-            data = new List<double>();
+            _data = new List<double>();
             _datacollector = new NI_DAQVoltage();
             _datacollector.deviceName = "Dev1/ai0";
 
@@ -22,10 +22,15 @@ namespace DataAccessLogic
             _datacollector.samplesPerChannel = 5000;
             _datacollector.sampleRateInHz = 1000;
 
-            _datacollector.getVoltageSeqBlocking();
-            data = _datacollector.currentVoltageSeq;
+        }
 
-            return data;
+        public List<double> getData()
+        {
+
+            _datacollector.getVoltageSeqBlocking();
+            _data = _datacollector.currentVoltageSeq;
+
+            return _data;
 
         }
         
