@@ -18,6 +18,12 @@ namespace Buisnesslogic
 
         }
 
+        public void openSSNW()
+        {
+            
+        }
+
+
         
 
         

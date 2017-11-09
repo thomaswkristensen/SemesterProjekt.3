@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Alarm
+    public class Alarm_DTO
     {
         public int SysUpper { get; set; }
         public int SysLower { get; set; }
