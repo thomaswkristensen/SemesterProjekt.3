@@ -9,6 +9,15 @@ namespace DataAccessLogic
 {
     public class DataAccesController : IDataAccesLogic
     {
+        private LimitValues _limits;
 
+        public DataAccesController()
+        {
+            _limits = new LimitValues();
+        }
+        public void SetZPA(double ZPA)
+        {
+            _limits.ZPA = ZPA;
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace Interfaces
 {
     public interface IDataAccesLogic
     {
+        void SetZPA(double ZPA);
     }
 }

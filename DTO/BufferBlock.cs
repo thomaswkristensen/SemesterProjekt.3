@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class BufferBlock
+    public class BufferBlock
     {
         public List<double> Data { get; set; }
     }
