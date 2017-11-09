@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class Measurement_DTO
+    public class Measurement_DTO
     {
         public List<double> RawData { get; set; }
         public List<double> ConvertedData { get; set; }

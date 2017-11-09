@@ -8,6 +8,6 @@ namespace Interfaces
 {
     public interface IBusinessLogic
     {
-
+        void ZeroAdjust(List<double> dataList);
     }
 }
