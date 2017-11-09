@@ -48,5 +48,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Buisnesslogic\Buisnesslogic.csproj">
+      <Project>{674cab44-02a8-44cc-9c19-5fb6728e1ae2}</Project>
+      <Name>Buisnesslogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLogic\DataAccessLogic.csproj">
+      <Project>{da800695-bd0f-4a7f-b4df-acc9d57f408d}</Project>
+      <Name>DataAccessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{8274c992-3195-4d83-a64a-067731545ccc}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PresentationLogic\PresentationLogic.csproj">
+      <Project>{0147653d-2196-4946-97c5-188d24c009ee}</Project>
+      <Name>PresentationLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

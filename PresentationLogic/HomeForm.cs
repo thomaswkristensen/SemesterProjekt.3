@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Interfaces;
 
 namespace PresentationLogic
 {
     public partial class HomeForm : Form
     {
         private LogInForm Login;
-        public HomeForm()
+        private IBusinessLogic _BL;
+        public HomeForm(IBusinessLogic BL)
         {
+            _BL = BL;
             InitializeComponent();
         }
 

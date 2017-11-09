@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PresentationLogic
+
+namespace Interfaces
 {
-    public class Class1
+    public interface IPresentationLogic
     {
+        
     }
 }
