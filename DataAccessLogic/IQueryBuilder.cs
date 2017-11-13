@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO;
+using System.Data.SqlClient;
+
 namespace DataAccessLogic
 {
-    public interface ISave
+    public interface IQueryBuilder
     {
-        Patient_DTO verifySSN(string SSN);
+        string GetPatientInfo(string ssn);
+
     }
 }
