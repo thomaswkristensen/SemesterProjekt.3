@@ -15,8 +15,10 @@ namespace PresentationLogic
     public partial class HomeForm : Form
     {
         private LogInForm Login;
+        private CalibrationForm Calibration;
         private IBusinessLogic _BL;
         private Measurement_DTO _data;
+
         public HomeForm(IBusinessLogic BL)
         {
             _BL = BL;
@@ -33,6 +35,11 @@ namespace PresentationLogic
         {
             _data = new Measurement_DTO();
             _BL.ZeroAdjust(_data.RawData);
+        }
+
+        private void Calibration_button_HomeForm_Click(object sender, EventArgs e)
+        {
+            Calibration.Show();
         }
     }
 }
