@@ -16,5 +16,10 @@ namespace PresentationLogic
         {
             InitializeComponent();
         }
+
+        private void calibration_button_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
