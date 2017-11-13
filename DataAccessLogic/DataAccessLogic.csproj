@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccesController.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="LimitValues.cs" />
     <Compile Include="Producer.cs" />
     <Compile Include="Data.cs" />
