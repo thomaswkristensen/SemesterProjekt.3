@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ST2Prj2LibNI-DAQ">
-      <HintPath>..\..\ST2Prj2LibNI-DAQ.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - Aarhus universitet\Sundhedsteknologi\2. semester\Semesterprojekt\ST2PRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\ST2Prj2LibNI-DAQ.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,12 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccesController.cs" />
+    <Compile Include="ISave.cs" />
     <Compile Include="LimitValues.cs" />
     <Compile Include="Producer.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="IData.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Save.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
