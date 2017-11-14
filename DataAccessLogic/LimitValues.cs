@@ -8,6 +8,8 @@ namespace DataAccessLogic
 {
     class LimitValues
     {
+        public double Slope { get; set; }
+
         public double P1 { get; set; }
         public double P2 { get; set; }
         public double P3 { get; set; }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Accord.Statistics.Models.Regression.Linear;
 using DTO;
 
 namespace Buisnesslogic
@@ -10,11 +11,12 @@ namespace Buisnesslogic
     class Calibration
     {
         private double _sum;
-        private Calibration_DTO _calibratio_DTO;
+        private double _P1;
+        private double _P2;
+        private double _P3;
 
         public Calibration()
         {
-           _calibratio_DTO = new Calibration_DTO(); 
         }
 
 
@@ -25,7 +27,7 @@ namespace Buisnesslogic
                 _sum =+ sample;
             }
 
-            _calibratio_DTO.P1 = _sum / dataList.Count;
+            _P1 = _sum / dataList.Count;
         }
 
         public void CalculateP2(List<double> dataList)
@@ -35,7 +37,7 @@ namespace Buisnesslogic
                 _sum =+ sample;
             }
 
-            _calibratio_DTO.P2 = _sum / dataList.Count;
+            _P2 = _sum / dataList.Count;
         }
 
         public void CalculateP3(List<double> dataList)
@@ -45,13 +47,23 @@ namespace Buisnesslogic
                 _sum =+ sample;
             }
 
-            _calibratio_DTO.P3 = _sum / dataList.Count;
+            _P3 = _sum / dataList.Count;
         }
 
-        public void Calculate()
+        public double CalculateSlope(double ZPA)
         {
-            
+            double[] _expectet = {0, 10, 50, 100};
+
+            double[] _measured = {ZPA, _P1, _P2, _P3};
+
+            OrdinaryLeastSquares ols = new OrdinaryLeastSquares();
+
+            SimpleLinearRegression regression = ols.Learn(_expectet, _measured);
+
+            return regression.Slope;
         }
+
+
 
 
     }

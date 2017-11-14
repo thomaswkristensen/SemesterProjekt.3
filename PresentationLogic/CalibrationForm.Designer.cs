@@ -28,19 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.P1_radioButton = new System.Windows.Forms.RadioButton();
             this.P2_radioButton = new System.Windows.Forms.RadioButton();
             this.P3_radioButton = new System.Windows.Forms.RadioButton();
             this.calibration_button = new System.Windows.Forms.Button();
             this.done_button = new System.Windows.Forms.Button();
             this.calibration_label = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.SlopeTextbox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // P1_radioButton
             // 
             this.P1_radioButton.AutoSize = true;
             this.P1_radioButton.Location = new System.Drawing.Point(47, 79);
-            this.P1_radioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.P1_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.P1_radioButton.Name = "P1_radioButton";
             this.P1_radioButton.Size = new System.Drawing.Size(70, 17);
             this.P1_radioButton.TabIndex = 0;
@@ -52,7 +59,7 @@
             // 
             this.P2_radioButton.AutoSize = true;
             this.P2_radioButton.Location = new System.Drawing.Point(47, 114);
-            this.P2_radioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.P2_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.P2_radioButton.Name = "P2_radioButton";
             this.P2_radioButton.Size = new System.Drawing.Size(70, 17);
             this.P2_radioButton.TabIndex = 1;
@@ -64,7 +71,7 @@
             // 
             this.P3_radioButton.AutoSize = true;
             this.P3_radioButton.Location = new System.Drawing.Point(47, 151);
-            this.P3_radioButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.P3_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.P3_radioButton.Name = "P3_radioButton";
             this.P3_radioButton.Size = new System.Drawing.Size(76, 17);
             this.P3_radioButton.TabIndex = 2;
@@ -75,7 +82,7 @@
             // calibration_button
             // 
             this.calibration_button.Location = new System.Drawing.Point(47, 192);
-            this.calibration_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calibration_button.Margin = new System.Windows.Forms.Padding(2);
             this.calibration_button.Name = "calibration_button";
             this.calibration_button.Size = new System.Drawing.Size(72, 23);
             this.calibration_button.TabIndex = 3;
@@ -86,7 +93,7 @@
             // done_button
             // 
             this.done_button.Location = new System.Drawing.Point(141, 192);
-            this.done_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.done_button.Margin = new System.Windows.Forms.Padding(2);
             this.done_button.Name = "done_button";
             this.done_button.Size = new System.Drawing.Size(73, 23);
             this.done_button.TabIndex = 4;
@@ -104,20 +111,57 @@
             this.calibration_label.TabIndex = 5;
             this.calibration_label.Text = "Kalibrering";
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(281, 25);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(321, 220);
+            this.chart1.TabIndex = 6;
+            this.chart1.Text = "chart1";
+            // 
+            // SlopeTextbox
+            // 
+            this.SlopeTextbox.Location = new System.Drawing.Point(502, 111);
+            this.SlopeTextbox.Name = "SlopeTextbox";
+            this.SlopeTextbox.Size = new System.Drawing.Size(100, 20);
+            this.SlopeTextbox.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(527, 95);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Hældning";
+            // 
             // CalibrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(249, 257);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(615, 257);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.SlopeTextbox);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.calibration_label);
             this.Controls.Add(this.done_button);
             this.Controls.Add(this.calibration_button);
             this.Controls.Add(this.P3_radioButton);
             this.Controls.Add(this.P2_radioButton);
             this.Controls.Add(this.P1_radioButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CalibrationForm";
             this.Text = "CalibrationForm";
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,5 +175,8 @@
         private System.Windows.Forms.Button calibration_button;
         private System.Windows.Forms.Button done_button;
         private System.Windows.Forms.Label calibration_label;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.TextBox SlopeTextbox;
+        private System.Windows.Forms.Label label1;
     }
 }
