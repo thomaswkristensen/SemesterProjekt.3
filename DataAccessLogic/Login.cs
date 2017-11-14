@@ -16,10 +16,10 @@ namespace DataAccessLogic
         {
             
         }
-        public bool verifyLoginInformation(HP_DTO HealthProfessional)
+        public HP_DTO verifyLoginInformation(HP_DTO HealthProfessional)
         {
             _DB = new Database();
-            return _DB.verfyLoginInformation(HealthProfessional);
+            return _DB.VerifyLoginInformation(HealthProfessional);
         }
 
         public bool verifySSN(string)

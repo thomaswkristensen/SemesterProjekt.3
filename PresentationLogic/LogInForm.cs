@@ -12,6 +12,8 @@ namespace PresentationLogic
 {
     public partial class LogInForm : Form
     {
+        private HomeForm _homeForm;
+        private SSNForm _SSNForm;
         public LogInForm()
         {
             InitializeComponent();
@@ -19,7 +21,12 @@ namespace PresentationLogic
 
         private void Login_button_LogInForm_Click(object sender, EventArgs e)
         {
+            _SSNForm.Show();
+        }
 
+        private void Cancel_button_LogInForm_Click(object sender, EventArgs e)
+        {
+            _homeForm.Show();
         }
     }
 }

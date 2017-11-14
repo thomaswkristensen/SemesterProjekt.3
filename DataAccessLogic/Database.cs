@@ -22,7 +22,7 @@ namespace DataAccessLogic
             return conn;
         }
 
-        public HP_DTO verifyLoginInformation(HP_DTO HealthProfessional)
+        public HP_DTO VerifyLoginInformation(HP_DTO HealthProfessional)
         {
 
             using (SqlCommand cmd = new SqlCommand("select * from Health_professional where EmployeeID = @EmployeeID" + "AND Password = @Password", Openconn()))
@@ -33,6 +33,7 @@ namespace DataAccessLogic
                 {
                     
                 }
+                return HealthProfessional; 
             }
 
         }
