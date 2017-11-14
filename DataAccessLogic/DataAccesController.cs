@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 using Interfaces;
 
 namespace DataAccessLogic
@@ -15,9 +17,19 @@ namespace DataAccessLogic
         {
             _limits = new LimitValues();
         }
-        public void SetZPA(double ZPA)
+
+        public double ZPAVolt
         {
-            _limits.ZPA = ZPA;
+            get => _limits.ZPAVolt;
+            set => _limits.ZPAVolt = value; 
         }
+
+       
+
+
+
+
+
+
     }
 }
