@@ -8,8 +8,8 @@ namespace DataAccessLogic
 {
     public interface IDataBaseHandler
     {
-        void OpenConnection();
-        void CloseConnection();
+        void Connect();
+        void Disconnect();
         Patient_DTO ExecutePatientInfoQuery(string query);
         HP_DTO ExecuteHPInfoQuery(string query);
     }
