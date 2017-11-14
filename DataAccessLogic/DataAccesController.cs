@@ -17,31 +17,14 @@ namespace DataAccessLogic
         {
             _limits = new LimitValues();
         }
-        public double ZPA
+
+        public double ZPAVolt
         {
-            get { return _limits.ZPA; }
-            set { _limits.ZPA = value; }
+            get => _limits.ZPAVolt;
+            set => _limits.ZPAVolt = value; 
         }
 
-        public void SetCalibration(Calibration_DTO calibration)
-        {
-            _limits.P1 = calibration.P1;
-            _limits.P2 = calibration.P2;
-            _limits.P3 = calibration.P3;
-            _limits.Slope = calibration.Slope;
-        }
-
-        public Calibration_DTO GetCalibration()
-        {
-            Calibration_DTO calibration = new Calibration_DTO();
-
-            calibration.P1 = _limits.P1;
-            calibration.P2 = _limits.P2;
-            calibration.P3 = _limits.P3;
-            calibration.Slope = _limits.Slope;
-
-            return calibration;
-        }
+       
 
 
 

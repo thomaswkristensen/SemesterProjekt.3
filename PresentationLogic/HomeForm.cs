@@ -22,6 +22,7 @@ namespace PresentationLogic
         public HomeForm(IBusinessLogic BL)
         {
             _BL = BL;
+            
             InitializeComponent();
         }
 
@@ -39,6 +40,7 @@ namespace PresentationLogic
 
         private void Calibration_button_HomeForm_Click(object sender, EventArgs e)
         {
+            Calibration = new CalibrationForm(_BL);
             Calibration.Show();
         }
     }

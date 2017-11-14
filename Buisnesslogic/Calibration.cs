@@ -20,34 +20,34 @@ namespace Buisnesslogic
         }
 
 
-        public void CalculateP1(List<double> dataList)
+        public double CalculateP1(List<double> dataList)
         {
             foreach (var sample in dataList)
             {
                 _sum =+ sample;
             }
 
-            _P1 = _sum / dataList.Count;
+            return _P1 = _sum / dataList.Count;
         }
 
-        public void CalculateP2(List<double> dataList)
+        public double CalculateP2(List<double> dataList)
         {
             foreach (var sample in dataList)
             {
                 _sum =+ sample;
             }
 
-            _P2 = _sum / dataList.Count;
+            return _P2 = _sum / dataList.Count;
         }
 
-        public void CalculateP3(List<double> dataList)
+        public double CalculateP3(List<double> dataList)
         {
             foreach (var sample in dataList)
             {
                 _sum =+ sample;
             }
 
-            _P3 = _sum / dataList.Count;
+            return _P3 = _sum / dataList.Count;
         }
 
         public double CalculateSlope(double ZPA)

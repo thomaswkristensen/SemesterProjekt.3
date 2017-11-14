@@ -10,9 +10,8 @@ namespace Interfaces
 {
     public interface IDataAccesLogic
     {
-        double ZPA { get; set; }
-        void SetCalibration(Calibration_DTO calibration);
-        Calibration_DTO GetCalibration();
+        double ZPAVolt { get; set; }
+       
 
 
     }

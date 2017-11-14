@@ -25,33 +25,51 @@ namespace Buisnesslogic
             _calibration = new Calibration();
             _ZPA = new Zero_pointAdjusment();
             _calibrationDTO = new Calibration_DTO();
+
         }
 
         public void StartZPA(List<double> dataList)
         {
-            _zpa = _ZPA.CalculateZPA(dataList);
-            _DAL.ZPA = _DAL.GetCalibration().Slope * _zpa;
+            _DAL.ZPAVolt = _ZPA.CalculateZPA(dataList);
         }
 
         public void StartCalibration(List<double> data, int value)
         {
             if (value == 10)
             {
-               _calibration.CalculateP1(data); 
+               _P1 = _calibration.CalculateP1(data); 
             }
             else if (value == 50)
             {
-                _calibration.CalculateP2(data);
+                _P2 = _calibration.CalculateP2(data);
             }
             else if (value == 100)
             {
-                _calibration.CalculateP3(data);
+                _P3 =_calibration.CalculateP3(data);
             }
+        }
 
-             _calibration.CalculateSlope(_zpa);
-            _DAL.P1= _P1 * _DAL.GetCalibration().Slope;
-            _DAL.P2 = _P2 * _DAL.GetCalibration().Slope;
-            _DAL.P3 = _P2 * _DAL.GetCalibration().Slope;
+        public Calibration_DTO ViewCalibration()
+        {
+            _calibrationDTO.Slope = _calibration.CalculateSlope(_DAL.ZPAVolt);
+
+            _calibrationDTO.ZPA = _DAL.ZPAVolt * _calibrationDTO.Slope;
+            _calibrationDTO.P1 = _P1 * _calibrationDTO.Slope;
+            _calibrationDTO.P2 = _P2 * _calibrationDTO.Slope;
+            _calibrationDTO.P3 = _P3 * _calibrationDTO.Slope;
+
+            return _calibrationDTO;
+        }
+
+        public Calibration_DTO ChangeSlope(double slope)
+        {
+            _calibrationDTO.ZPA = _calibrationDTO.ZPA / _calibrationDTO.Slope * slope;
+            _calibrationDTO.P1 = _calibrationDTO.P1 / _calibrationDTO.Slope * slope;
+            _calibrationDTO.P2 = _calibrationDTO.P2 / _calibrationDTO.Slope * slope;
+            _calibrationDTO.P3 = _calibrationDTO.P3 / _calibrationDTO.Slope * slope;
+            _calibrationDTO.Slope = slope;
+
+            return _calibrationDTO;
         }
 
 
