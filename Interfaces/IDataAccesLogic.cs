@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
+
 
 namespace Interfaces
 {
     public interface IDataAccesLogic
     {
-        void SetZPA(double ZPA);
+        double ZPAVolt { get; set; }
+       
+
+
     }
 }

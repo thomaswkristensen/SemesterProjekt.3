@@ -87,6 +87,7 @@
             this.Cancel_button_LogInForm.TabIndex = 5;
             this.Cancel_button_LogInForm.Text = "Annuller";
             this.Cancel_button_LogInForm.UseVisualStyleBackColor = true;
+            this.Cancel_button_LogInForm.Click += new System.EventHandler(this.Cancel_button_LogInForm_Click);
             // 
             // Login_button_LogInForm
             // 

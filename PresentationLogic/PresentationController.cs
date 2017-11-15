@@ -22,6 +22,7 @@ namespace PresentationLogic
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.DoEvents();
+            MessageBox.Show("Husk nulpunktsjustering");
             Application.Run(new HomeForm(_BL));
         }
     }

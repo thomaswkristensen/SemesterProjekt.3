@@ -10,10 +10,16 @@ namespace DataAccessLogic
 {
     class Login
     {
-        
-        public bool verifyLoginInformation(HP_DTO HealthProfessional)
+        private Database _DB;
+
+        public Login()
         {
-            return true;
+            
+        }
+        public HP_DTO verifyLoginInformation(HP_DTO HealthProfessional)
+        {
+            _DB = new Database();
+            return _DB.VerifyLoginInformation(HealthProfessional);
         }
 
         public bool verifySSN(string)

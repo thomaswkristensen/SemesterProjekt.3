@@ -22,6 +22,7 @@ namespace PresentationLogic
         public HomeForm(IBusinessLogic BL)
         {
             _BL = BL;
+            
             InitializeComponent();
         }
 
@@ -34,11 +35,12 @@ namespace PresentationLogic
         private void ZeroPointAdjusment_button_HomeForm_Click(object sender, EventArgs e)
         {
             _data = new Measurement_DTO();
-            _BL.ZeroAdjust(_data.RawData);
+            _BL.StartZPA(_data.RawData);
         }
 
         private void Calibration_button_HomeForm_Click(object sender, EventArgs e)
         {
+            Calibration = new CalibrationForm(_BL);
             Calibration.Show();
         }
     }
