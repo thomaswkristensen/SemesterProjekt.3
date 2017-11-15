@@ -17,9 +17,12 @@ namespace DataAccessLogic
             return query;
         }
 
-        public SqlCommand HPIinfoCommand(HP_DTO hpDTO)
+        public string HPInfoQuery(string username)
         {
-            throw new NotImplementedException();
+            string query = "SELECT * FROM Health_professional WHERE EmployeeID = '" + username + "'";
+
+            return query;
         }
+
     }
 }

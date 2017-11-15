@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
@@ -57,9 +58,25 @@ namespace DataAccessLogic
             return patientDTO;
         }
 
-        public HP_DTO ExecuteHPInfoQuery(string query)
+        public HP_DTO ExecuteHPInfoQuery(string username)
         {
-            throw new NotImplementedException();
+            cmd = new SqlCommand(_querybuilder.HPInfoQuery(username),_conn);
+            Connect();
+            rdr = cmd.ExecuteReader();
+            HP_DTO hpDTO = new HP_DTO();
+
+            if (rdr.Reader())
+            {
+                if (username == Convert.ToString(rdr["EmployeeID"]))
+                {
+                    hpDTO.EmployeeID = username;
+                    hpDTO.Password = Convert.ToString(rdr["Password"]);
+                }
+                else hpDTO = null;
+            }
+            Disconnect();
+
+            return hpDTO;
         }
     }
 }

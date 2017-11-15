@@ -11,7 +11,6 @@ namespace DataAccessLogic
     public interface IQueryBuilder
     {
         string PatientInfoQuery(string ssn);
-        SqlCommand HPIinfoCommand(HP_DTO hpDTO);
-
+        string HPInfoQuery(string username); 
     }
 }

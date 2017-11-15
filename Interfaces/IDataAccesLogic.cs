@@ -11,8 +11,6 @@ namespace Interfaces
     public interface IDataAccesLogic
     {
         double ZPAVolt { get; set; }
-       
-
-
+        HP_DTO getLoginDatabase(string medarbejderID);
     }
 }
