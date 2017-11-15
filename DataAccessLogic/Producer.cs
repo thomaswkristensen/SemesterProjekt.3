@@ -23,14 +23,14 @@ namespace DataAccessLogic
 
         public void Run()
         {
-            while(true)
+            while (true)
             {
                 BufferBlock _buffer = new BufferBlock();
                 _buffer.Data = _data.getData();
                 _dataQueue.Enqueue(_buffer);
-                
+
             }
         }
 
-        
+    }
 }

@@ -9,7 +9,6 @@ namespace Interfaces
 {
     public interface IBusinessLogic
     {
-        void ZeroAdjust(List<double> dataList);
         Patient_DTO getSSN(string SSN);
         void StartZPA(List<double> dataList);
         void StartCalibration(List<double> data, int value);
