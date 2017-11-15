@@ -19,6 +19,7 @@ namespace Buisnesslogic
         private double _P1;
         private double _P2;
         private double _P3;
+        private HP_DTO _hpDTO;
         private Login _login;
 
         public BusinessController(IDataAccesLogic DAL)
@@ -27,6 +28,8 @@ namespace Buisnesslogic
             _calibration = new Calibration();
             _ZPA = new Zero_pointAdjusment();
             _calibrationDTO = new Calibration_DTO();
+            _hpDTO = new HP_DTO();
+            _login = new Login();
 
         }
 
@@ -74,9 +77,11 @@ namespace Buisnesslogic
             return _calibrationDTO;
         }
 
-        public HP_DTO GetLogin(string MedarbejderID, string Password)
+        public bool GetLogin(string MedarbejderID, string Password)
         {
-            return  _login.get_Login(MedarbejderID, Password);
+            _hpDTO = _DAL.getLoginDatabase(MedarbejderID);
+
+            return _login.get_Login(MedarbejderID, Password, _hpDTO);
         }
 
         public Patient_DTO getSSN(string SSN)

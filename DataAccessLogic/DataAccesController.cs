@@ -9,13 +9,16 @@ using Interfaces;
 
 namespace DataAccessLogic
 {
+
     public class DataAccesController : IDataAccesLogic
     {
         private LimitValues _limits;
+        private DataBaseHandler _dataBaseHandler;
 
         public DataAccesController()
         {
             _limits = new LimitValues();
+            _dataBaseHandler = new DataBaseHandler();
         }
 
         public double ZPAVolt
@@ -24,6 +27,11 @@ namespace DataAccessLogic
             set => _limits.ZPAVolt = value; 
         }
 
+        public HP_DTO getLoginDatabase(string medarbejderID)
+        {
+
+            return _dataBaseHandler.ExecuteHPInfoQuery(medarbejderID);
+        }
        
 
 

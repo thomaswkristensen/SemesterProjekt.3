@@ -11,25 +11,17 @@ namespace Buisnesslogic
     {
         private HP_DTO _HP_DTO;
         
-        public HP_DTO get_Login(string medarbejderID, string password)
+        public bool get_Login(string medarbejderID, string password, HP_DTO hpDto)
         {
-            _HP_DTO = new HP_DTO();
+            _HP_DTO = hpDto;
 
-            _HP_DTO.EmployeeID = medarbejderID;
-            _HP_DTO.Password = password;
+            if (_HP_DTO.EmployeeID == medarbejderID && _HP_DTO.Password == password)
+            {
+                return true;
+            }
 
-            return _HP_DTO;
+            return false;
 
         }
-
-        public void openSSNW()
-        {
-            
-        }
-
-
-        
-
-        
     }
 }
