@@ -28,8 +28,9 @@ namespace PresentationLogic
 
         private void Save_button_HomeForm_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Login = new LogInForm(_BL);
             Login.Show();
-            
         }
 
         private void ZeroPointAdjusment_button_HomeForm_Click(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace PresentationLogic
 
         private void Calibration_button_HomeForm_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Calibration = new CalibrationForm(_BL);
             Calibration.Show();
         }

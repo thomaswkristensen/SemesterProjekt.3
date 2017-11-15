@@ -9,12 +9,16 @@ namespace Buisnesslogic
 {
     public class Login
     {
-        public HP_DTO _HP_DTO;
+        private HP_DTO _HP_DTO;
         
-        public void get_Login(string medarbejderID, string password)
+        public HP_DTO get_Login(string medarbejderID, string password)
         {
+            _HP_DTO = new HP_DTO();
+
             _HP_DTO.EmployeeID = medarbejderID;
             _HP_DTO.Password = password;
+
+            return _HP_DTO;
 
         }
 

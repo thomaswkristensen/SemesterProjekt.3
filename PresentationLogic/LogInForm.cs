@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Interfaces;
 
 namespace PresentationLogic
 {
@@ -14,18 +15,25 @@ namespace PresentationLogic
     {
         private HomeForm _homeForm;
         private SSNForm _SSNForm;
-        public LogInForm()
+        private LogInForm _loginForm;
+        private IBusinessLogic _BL;
+
+        public LogInForm(IBusinessLogic BL)
         {
+            _BL = BL;
             InitializeComponent();
         }
 
         private void Login_button_LogInForm_Click(object sender, EventArgs e)
         {
+
+            this.Hide();
             _SSNForm.Show();
         }
 
         private void Cancel_button_LogInForm_Click(object sender, EventArgs e)
         {
+            this.Hide();
             _homeForm.Show();
         }
     }
