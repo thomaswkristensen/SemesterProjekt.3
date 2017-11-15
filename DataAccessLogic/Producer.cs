@@ -28,7 +28,7 @@ namespace DataAccessLogic
                 BufferBlock _buffer = new BufferBlock();
                 _buffer.Data = _data.getData();
                 _dataQueue.Enqueue(_buffer);
-                Thread.Sleep(1000);
+                
             }
         }
 

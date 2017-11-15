@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using Interfaces;
+using DTO;
 
 namespace Buisnesslogic
 {
@@ -72,10 +73,12 @@ namespace Buisnesslogic
             return _calibrationDTO;
         }
 
-
-
-
-
+        public Patient_DTO getSSN(string SSN)
+        {
+            Patient_DTO patient;
+            patient = _DAL.verifySSN(SSN);
+            return patient;
+        }
 
     }
 }
