@@ -82,7 +82,7 @@ namespace Buisnesslogic
         public Patient_DTO getSSN(string SSN)
         {
             Patient_DTO patient;
-            patient = _DAL.verifySSN(SSN);
+           // patient = _DAL.verifySSN(SSN);
             return patient;
         }
 

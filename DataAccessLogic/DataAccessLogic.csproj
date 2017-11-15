@@ -45,7 +45,7 @@
       <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net46\Accord.Statistics.dll</HintPath>
     </Reference>
     <Reference Include="ST2Prj2LibNI-DAQ">
-      <HintPath>..\..\..\..\OneDrive - Aarhus universitet\Sundhedsteknologi\2. semester\Semesterprojekt\ST2PRJ2Support\ST2Prj2LibNI-DAQ\bin\Debug\ST2Prj2LibNI-DAQ.dll</HintPath>
+      <HintPath>..\..\ST2Prj2LibNI-DAQ.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
