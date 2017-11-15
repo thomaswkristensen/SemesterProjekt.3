@@ -8,20 +8,13 @@ using DTO;
 
 namespace DataAccessLogic
 {
-    class CommandBuilder : ICommandBuilder
+    class QueryBuilder : IQueryBuilder
     {
-        public SqlCommand PatientInfoCommand(string ssn, Patient_DTO patientDTO, SqlConnection connection)
+        public string PatientInfoQuery(string ssn)
         {
-            string query = "SELECT * FROM Patientinfo WHERE SSN = @SSN" + "AND First name = @Firstname" +
-                           "AND Last name = @Lastname" + "AND Age = @Age";
-            var cmd = new SqlCommand(query, connection);
+            string query = "SELECT * FROM Patientinfo WHERE SSN = '" + ssn + "'";
 
-            cmd.Parameters.AddWithValue(@"SSN", ssn);
-            cmd.Parameters.AddWithValue(@"Firstname", patientDTO.FirstName);
-            cmd.Parameters.AddWithValue(@"Lastname", patientDTO.LastName);
-            cmd.Parameters.AddWithValue(@"Age", patientDTO.Age);
-
-            return cmd;
+            return query;
         }
 
         public SqlCommand HPIinfoCommand(HP_DTO hpDTO)

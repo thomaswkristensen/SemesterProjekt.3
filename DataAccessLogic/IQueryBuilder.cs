@@ -8,9 +8,9 @@ using DTO;
 
 namespace DataAccessLogic
 {
-    public interface ICommandBuilder
+    public interface IQueryBuilder
     {
-        SqlCommand PatientInfoCommand(string ssn, Patient_DTO patientDTO, SqlConnection conn);
+        string PatientInfoQuery(string ssn);
         SqlCommand HPIinfoCommand(HP_DTO hpDTO);
 
     }
