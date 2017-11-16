@@ -38,6 +38,7 @@
             this.age_textBox = new System.Windows.Forms.TextBox();
             this.employeeID_textBox = new System.Windows.Forms.TextBox();
             this.save_button = new System.Windows.Forms.Button();
+            this.information_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Patientdata_Label
@@ -94,7 +95,7 @@
             // SSN_textBox
             // 
             this.SSN_textBox.Location = new System.Drawing.Point(86, 84);
-            this.SSN_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SSN_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.SSN_textBox.Name = "SSN_textBox";
             this.SSN_textBox.Size = new System.Drawing.Size(176, 20);
             this.SSN_textBox.TabIndex = 5;
@@ -103,7 +104,7 @@
             // 
             this.name_textBox.Enabled = false;
             this.name_textBox.Location = new System.Drawing.Point(86, 115);
-            this.name_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.name_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.name_textBox.Name = "name_textBox";
             this.name_textBox.Size = new System.Drawing.Size(176, 20);
             this.name_textBox.TabIndex = 6;
@@ -112,7 +113,7 @@
             // 
             this.age_textBox.Enabled = false;
             this.age_textBox.Location = new System.Drawing.Point(86, 148);
-            this.age_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.age_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.age_textBox.Name = "age_textBox";
             this.age_textBox.Size = new System.Drawing.Size(176, 20);
             this.age_textBox.TabIndex = 7;
@@ -121,27 +122,39 @@
             // 
             this.employeeID_textBox.Enabled = false;
             this.employeeID_textBox.Location = new System.Drawing.Point(86, 176);
-            this.employeeID_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employeeID_textBox.Margin = new System.Windows.Forms.Padding(2);
             this.employeeID_textBox.Name = "employeeID_textBox";
             this.employeeID_textBox.Size = new System.Drawing.Size(176, 20);
             this.employeeID_textBox.TabIndex = 8;
             // 
             // save_button
             // 
-            this.save_button.Location = new System.Drawing.Point(241, 216);
-            this.save_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.save_button.Enabled = false;
+            this.save_button.Location = new System.Drawing.Point(223, 246);
+            this.save_button.Margin = new System.Windows.Forms.Padding(2);
             this.save_button.Name = "save_button";
-            this.save_button.Size = new System.Drawing.Size(74, 20);
+            this.save_button.Size = new System.Drawing.Size(93, 20);
             this.save_button.TabIndex = 9;
             this.save_button.Text = "Gem";
             this.save_button.UseVisualStyleBackColor = true;
             this.save_button.Click += new System.EventHandler(this.save_button_Click);
             // 
+            // information_button
+            // 
+            this.information_button.Location = new System.Drawing.Point(223, 218);
+            this.information_button.Name = "information_button";
+            this.information_button.Size = new System.Drawing.Size(94, 23);
+            this.information_button.TabIndex = 10;
+            this.information_button.Text = "Hent information";
+            this.information_button.UseVisualStyleBackColor = true;
+            this.information_button.Click += new System.EventHandler(this.information_button_Click);
+            // 
             // SSNForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 255);
+            this.ClientSize = new System.Drawing.Size(341, 277);
+            this.Controls.Add(this.information_button);
             this.Controls.Add(this.save_button);
             this.Controls.Add(this.employeeID_textBox);
             this.Controls.Add(this.age_textBox);
@@ -152,7 +165,7 @@
             this.Controls.Add(this.name_Label);
             this.Controls.Add(this.SSN_Label);
             this.Controls.Add(this.Patientdata_Label);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SSNForm";
             this.Text = "SSNForm";
             this.ResumeLayout(false);
@@ -172,5 +185,6 @@
         private System.Windows.Forms.TextBox age_textBox;
         private System.Windows.Forms.TextBox employeeID_textBox;
         private System.Windows.Forms.Button save_button;
+        private System.Windows.Forms.Button information_button;
     }
 }

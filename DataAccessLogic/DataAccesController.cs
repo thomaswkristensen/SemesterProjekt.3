@@ -32,6 +32,15 @@ namespace DataAccessLogic
             return _dataBaseHandler.ExecutePatientInfoQuery(ssn);
         }
 
+        public bool SaveMeasurementDataAcces()
+        {
+            if (_dataBaseHandler.ExecuteMeasurementSaving())
+            {
+                return true;
+            }
+            return false;
+        }
+
         public HP_DTO getLoginDatabase(string medarbejderID)
         {
 
@@ -44,7 +53,7 @@ namespace DataAccessLogic
             return true
         }
        
-
+        
 
 
 
