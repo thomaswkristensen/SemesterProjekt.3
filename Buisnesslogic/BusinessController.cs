@@ -93,5 +93,15 @@ namespace Buisnesslogic
             return patient;
         }
 
+        public bool SaveCalibrationLogic(Calibration_DTO calibration)
+        {
+            if (_DAL.SaveCalibrationDataAcces(calibration))
+            {
+                return true;
+            }
+            return false;
+
+        }
+
     }
 }

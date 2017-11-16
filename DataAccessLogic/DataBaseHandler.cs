@@ -65,7 +65,7 @@ namespace DataAccessLogic
             rdr = cmd.ExecuteReader();
             HP_DTO hpDTO = new HP_DTO();
 
-            if (rdr.Reader())
+            if (rdr.Read())
             {
                 if (username == Convert.ToString(rdr["EmployeeID"]))
                 {
