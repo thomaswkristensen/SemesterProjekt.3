@@ -12,5 +12,7 @@ namespace Interfaces
     {
         double ZPAVolt { get; set; }
         HP_DTO getLoginDatabase(string medarbejderID);
+
+        Patient_DTO verifySSN(string ssn);
     }
 }

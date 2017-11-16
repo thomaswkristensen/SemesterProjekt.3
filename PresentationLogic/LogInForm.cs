@@ -26,13 +26,14 @@ namespace PresentationLogic
 
         private void Login_button_LogInForm_Click(object sender, EventArgs e)
         {
-            if (_BL.GetLogin(Convert.ToString(EmployeeID_textBox_LogInForm),
-                Convert.ToString(Password_textBox_LogInForm)))
+            _SSNForm = new SSNForm(_BL);
+            if (_BL.GetLogin(EmployeeID_textBox_LogInForm.Text,
+                Password_textBox_LogInForm.Text))
             {
                 this.Hide();
                 _SSNForm.Show();
             }
-            else MessageBox.Show("Login mislykkes, prøv igen");
+            else MessageBox.Show("Login mislykkedes, prøv igen");
 
         }
 

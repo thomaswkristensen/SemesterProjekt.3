@@ -84,10 +84,12 @@ namespace Buisnesslogic
             return _login.get_Login(MedarbejderID, Password, _hpDTO);
         }
 
-        public Patient_DTO getSSN(string SSN)
+        public Patient_DTO GetPatientInformation(string ssn)
         {
             Patient_DTO patient;
-           // patient = _DAL.verifySSN(SSN);
+
+            patient = _DAL.verifySSN(ssn);
+
             return patient;
         }
 
