@@ -27,6 +27,11 @@ namespace DataAccessLogic
             set => _limits.ZPAVolt = value; 
         }
 
+        public Patient_DTO verifySSN(string ssn)
+        {
+            return _dataBaseHandler.ExecutePatientInfoQuery(ssn);
+        }
+
         public HP_DTO getLoginDatabase(string medarbejderID)
         {
 
