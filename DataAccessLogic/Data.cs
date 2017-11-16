@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ST2Prj2LibNI_DAQ;
 
 namespace DataAccessLogic
 {
     public class Data :IData
     {
         List<double> _data;
-        private NI_DAQVoltage _datacollector;
+        private NI_DAQ _datacollector;
 
         public Data()
         {
             _data = new List<double>();
-            _datacollector = new NI_DAQVoltage();
+            _datacollector = new NI_DAQ();
             _datacollector.deviceName = "Dev1/ai0";
 
             _datacollector.rangeMaximumVolt = 5;

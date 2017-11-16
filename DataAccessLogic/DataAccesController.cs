@@ -32,6 +32,12 @@ namespace DataAccessLogic
 
             return _dataBaseHandler.ExecuteHPInfoQuery(medarbejderID);
         }
+
+        public bool SaveCalibrationDataAcces(Calibration_DTO calibration)
+        {
+            if(_dataBaseHandler.
+            return true
+        }
        
 
 

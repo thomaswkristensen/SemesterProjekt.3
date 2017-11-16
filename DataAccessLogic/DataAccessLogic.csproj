@@ -44,6 +44,9 @@
     <Reference Include="Accord.Statistics, Version=3.8.0.0, Culture=neutral, PublicKeyToken=fa1a88e29555ccf7, processorArchitecture=MSIL">
       <HintPath>..\packages\Accord.Statistics.3.8.0\lib\net46\Accord.Statistics.dll</HintPath>
     </Reference>
+    <Reference Include="NationalInstruments.Common, Version=15.1.40.49152, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL" />
+    <Reference Include="NationalInstruments.DAQmx, Version=17.1.45.99, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=x86" />
+    <Reference Include="NationalInstruments.DAQmx.ComponentModel, Version=17.1.45.99, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=MSIL" />
     <Reference Include="ST2Prj2LibNI-DAQ">
       <HintPath>..\..\ST2Prj2LibNI-DAQ.dll</HintPath>
     </Reference>
@@ -63,6 +66,7 @@
     <Compile Include="IQueryBuilder.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="LimitValues.cs" />
+    <Compile Include="NI-DAQ.cs" />
     <Compile Include="Producer.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="IData.cs" />
