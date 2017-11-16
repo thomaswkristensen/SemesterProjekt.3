@@ -14,6 +14,7 @@ namespace Interfaces
         void StartCalibration(List<double> data, int value);
         Calibration_DTO ViewCalibration();
         Calibration_DTO ChangeSlope(double slope);
-        bool GetLogin(string MedarbejderID, string Password); 
+        bool GetLogin(string MedarbejderID, string Password);
+        bool SaveMeasurementBusiness();
     }
 }

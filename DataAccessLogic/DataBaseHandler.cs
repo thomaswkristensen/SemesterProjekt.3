@@ -78,5 +78,10 @@ namespace DataAccessLogic
 
             return hpDTO;
         }
+
+        public bool ExecuteMeasurementSaving()
+        {
+            return true;
+        }
     }
 }

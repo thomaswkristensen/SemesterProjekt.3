@@ -84,6 +84,15 @@ namespace Buisnesslogic
             return _login.get_Login(MedarbejderID, Password, _hpDTO);
         }
 
+        public bool SaveMeasurementBusiness()
+        {
+            if (_DAL.SaveMeasurementDataAcces())
+            {
+                return true;
+            }
+            return false;
+        }
+
         public Patient_DTO GetPatientInformation(string ssn)
         {
             Patient_DTO patient;

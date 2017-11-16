@@ -14,5 +14,7 @@ namespace Interfaces
         HP_DTO getLoginDatabase(string medarbejderID);
 
         Patient_DTO verifySSN(string ssn);
+
+        bool SaveMeasurementDataAcces();
     }
 }

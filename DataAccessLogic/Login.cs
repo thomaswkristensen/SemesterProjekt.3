@@ -21,15 +21,6 @@ namespace DataAccessLogic
             _DB = new Database();
             return _DB.VerifyLoginInformation(HealthProfessional);
         }
-
-        public bool verifySSN(string)
-        {
-            return true;
-        }
-
-        public bool saveMeasurement()
-        {
-            return true;
-        }
+        
     }
 }
