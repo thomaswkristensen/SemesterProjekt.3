@@ -15,6 +15,6 @@ namespace Interfaces
         bool SaveCalibrationDataAcces(Calibration_DTO calibration);
         Patient_DTO verifySSN(string ssn);
 
-        bool SaveMeasurementDataAcces();
+        bool SaveMeasurementDataAcces(string ssn, string employeeID);
     }
 }

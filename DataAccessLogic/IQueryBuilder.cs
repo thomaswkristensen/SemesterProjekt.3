@@ -11,6 +11,7 @@ namespace DataAccessLogic
     public interface IQueryBuilder
     {
         string PatientInfoQuery(string ssn);
-        string HPInfoQuery(string username); 
+        string HPInfoQuery(string username);
+        string SaveDataQuery();
     }
 }

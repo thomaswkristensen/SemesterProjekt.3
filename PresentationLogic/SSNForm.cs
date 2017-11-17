@@ -25,7 +25,7 @@ namespace PresentationLogic
 
         private void save_button_Click(object sender, EventArgs e)
         {
-            _BL.saveMeasurement();
+            _BL.SaveMeasurementBusiness(SSN_textBox.Text, employeeID_textBox.Text);
         }
 
         private void information_button_Click(object sender, EventArgs e)

@@ -79,9 +79,26 @@ namespace DataAccessLogic
             return hpDTO;
         }
 
-        public bool ExecuteMeasurementSaving()
+        public bool ExecuteMeasurementSaving(string ssn, string employeeID)
         {
+            Measurement_DTO measurementDTO = new Measurement_DTO();
+            cmd = new SqlCommand(_querybuilder.SaveDataQuery(), _conn);
+            Connect();
+
+            cmd.Parameters.AddWithValue(@"EmployeeID", employeeID);
+            cmd.Parameters.AddWithValue(@"SSN", ssn);
+            cmd.Parameters.AddWithValue(@"Date");
+
+
+
+            "INSERT INTO measurement(Raw_Value, Converted_Value, Maale_ID, EmployeeID, Date, SSN, Samplerate_Hz)"
+                + "OUTPUT INSERTED.MaaleID"
+                + "VALUES(@RawValue, @ConvertedValue, @MeasurementID, @EmployeeIID, @Date, @SSN, @Samplerate)";
+
+
             return true;
         }
+
+        
     }
 }

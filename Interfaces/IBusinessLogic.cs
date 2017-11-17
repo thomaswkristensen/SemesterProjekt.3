@@ -15,6 +15,6 @@ namespace Interfaces
         Calibration_DTO ViewCalibration();
         Calibration_DTO ChangeSlope(double slope);
         bool GetLogin(string MedarbejderID, string Password);
-        bool SaveMeasurementBusiness();
+        bool SaveMeasurementBusiness(string ssn, string employeeID);
     }
 }

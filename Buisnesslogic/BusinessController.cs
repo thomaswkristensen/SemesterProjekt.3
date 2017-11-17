@@ -84,14 +84,20 @@ namespace Buisnesslogic
             return _login.get_Login(MedarbejderID, Password, _hpDTO);
         }
 
-        public bool SaveMeasurementBusiness()
+        public bool SaveMeasurementBusiness(string ssn, string employeeID)
         {
-            if (_DAL.SaveMeasurementDataAcces())
+            if (_DAL.SaveMeasurementDataAcces(ssn, employeeID))
             {
                 return true;
             }
             return false;
         }
+
+        public void saveMeasurement(string ssn, string employeeID)
+        {
+            throw new NotImplementedException();
+        }
+
 
         public Patient_DTO GetPatientInformation(string ssn)
         {

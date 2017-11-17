@@ -12,6 +12,6 @@ namespace DataAccessLogic
         void Disconnect();
         Patient_DTO ExecutePatientInfoQuery(string query);
         HP_DTO ExecuteHPInfoQuery(string query);
-        bool ExecuteMeasurementSaving();
+        bool ExecuteMeasurementSaving(string ssn, string employeeID);
     }
 }
