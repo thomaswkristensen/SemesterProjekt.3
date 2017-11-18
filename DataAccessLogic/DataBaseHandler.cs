@@ -87,16 +87,19 @@ namespace DataAccessLogic
 
             cmd.Parameters.AddWithValue(@"EmployeeID", employeeID);
             cmd.Parameters.AddWithValue(@"SSN", ssn);
-            cmd.Parameters.AddWithValue(@"Date");
+            cmd.Parameters.AddWithValue("@Rawvalue",
+                measurementDTO.RawData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
+            cmd.Parameters.AddWithValue(@"ConvertedValue",
+                measurementDTO.ConvertedData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
+            //cmd.Parameters.AddWithValue(@"Date", Convert.ToDateTime(measurementDTO.TimeOfMeasurement));
+            cmd.Parameters.AddWithValue(@"Samplerate", measurementDTO.Fsample);
 
+            cmd.ExecuteNonQuery();
 
-
-            "INSERT INTO measurement(Raw_Value, Converted_Value, Maale_ID, EmployeeID, Date, SSN, Samplerate_Hz)"
-                + "OUTPUT INSERTED.MaaleID"
-                + "VALUES(@RawValue, @ConvertedValue, @MeasurementID, @EmployeeIID, @Date, @SSN, @Samplerate)";
-
+            Disconnect();
 
             return true;
+            
         }
 
         
