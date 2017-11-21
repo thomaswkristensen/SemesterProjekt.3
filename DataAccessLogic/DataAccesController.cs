@@ -13,12 +13,15 @@ namespace DataAccessLogic
     public class DataAccesController : IDataAccesLogic
     {
         private LimitValues _limits;
-        private DataBaseHandler _dataBaseHandler;
+        private PullData _pullData;
+        private SaveData _saveData;
 
         public DataAccesController()
         {
             _limits = new LimitValues();
-            _dataBaseHandler = new DataBaseHandler();
+            _pullData = new PullData();
+            _saveData = new SaveData();
+
         }
 
         public double ZPAVolt
@@ -29,22 +32,22 @@ namespace DataAccessLogic
 
         public Patient_DTO verifySSN(string ssn)
         {
-            return _dataBaseHandler.ExecutePatientInfoQuery(ssn);
+            return _pullData.PullPatientInformation(ssn);
         }
 
-        public bool SaveMeasurementDataAcces(string ssn, string employeeID)
+        public bool SaveMeasurementDataAcces(Measurement_DTO measurementDTO, string ssn, string employeeID)
         {
-            if (_dataBaseHandler.ExecuteMeasurementSaving(ssn, employeeID))
+            if (_saveData.SaveMeasurement(measurementDTO, ssn, employeeID))
             {
                 return true;
             }
             return false;
         }
 
-        public HP_DTO getLoginDatabase(string medarbejderID)
+        public HP_DTO getLoginDatabase(string username)
         {
 
-            return _dataBaseHandler.ExecuteHPInfoQuery(medarbejderID);
+            return _pullData.PullHPInformation(userename);
         }
 
         public bool SaveCalibrationDataAcces(Calibration_DTO calibration)

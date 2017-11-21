@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 using Interfaces;
 
 namespace PresentationLogic
@@ -17,16 +18,18 @@ namespace PresentationLogic
         private SSNForm _SSNForm;
         private LogInForm _loginForm;
         private IBusinessLogic _BL;
+        private Measurement_DTO _measurementDTO;
 
-        public LogInForm(IBusinessLogic BL)
+        public LogInForm(IBusinessLogic BL, Measurement_DTO measurementDTO)
         {
             _BL = BL;
             InitializeComponent();
+            _measurementDTO = measurementDTO;
         }
 
         private void Login_button_LogInForm_Click(object sender, EventArgs e)
         {
-            _SSNForm = new SSNForm(_BL, EmployeeID_textBox_LogInForm.Text);
+            _SSNForm = new SSNForm(_BL, EmployeeID_textBox_LogInForm.Text, _measurementDTO);
             if (_BL.GetLogin(EmployeeID_textBox_LogInForm.Text,
                 Password_textBox_LogInForm.Text))
             {

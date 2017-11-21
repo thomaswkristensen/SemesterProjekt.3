@@ -79,27 +79,36 @@ namespace DataAccessLogic
             return hpDTO;
         }
 
-        public bool ExecuteMeasurementSaving(string ssn, string employeeID)
+        public bool ExecuteMeasurementSaving(Measurement_DTO measurementDTO, string ssn, string employeeID)
         {
-            Measurement_DTO measurementDTO = new Measurement_DTO();
-            cmd = new SqlCommand(_querybuilder.SaveDataQuery(), _conn);
-            Connect();
+            try
+            {
+                Measurement_DTO _measurementDTO = measurementDTO;
+                cmd = new SqlCommand(_querybuilder.SaveDataQuery(), _conn);
+                Connect();
 
-            cmd.Parameters.AddWithValue(@"EmployeeID", employeeID);
-            cmd.Parameters.AddWithValue(@"SSN", ssn);
-            cmd.Parameters.AddWithValue("@Rawvalue",
-                measurementDTO.RawData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
-            cmd.Parameters.AddWithValue(@"ConvertedValue",
-                measurementDTO.ConvertedData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
-            //cmd.Parameters.AddWithValue(@"Date", Convert.ToDateTime(measurementDTO.TimeOfMeasurement));
-            cmd.Parameters.AddWithValue(@"Samplerate", measurementDTO.Fsample);
+                cmd.Parameters.AddWithValue(@"EmployeeID", employeeID);
+                cmd.Parameters.AddWithValue(@"SSN", ssn);
+                cmd.Parameters.AddWithValue("@Rawvalue",
+                    _measurementDTO.RawData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
+                cmd.Parameters.AddWithValue(@"ConvertedValue",
+                    _measurementDTO.ConvertedData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
+                cmd.Parameters.AddWithValue(@"Date", _measurementDTO.TimeOfMeasurement);
+                cmd.Parameters.AddWithValue(@"Samplerate", _measurementDTO.Fsample);
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-            Disconnect();
+                Disconnect();
 
-            return true;
-            
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Disconnect();
+                
+                return false;
+            }
+
         }
 
         

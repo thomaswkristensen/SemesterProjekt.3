@@ -29,7 +29,7 @@ namespace PresentationLogic
         private void Save_button_HomeForm_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Login = new LogInForm(_BL);
+            Login = new LogInForm(_BL, _data);
             Login.Show();
         }
 
