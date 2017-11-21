@@ -16,16 +16,19 @@ namespace PresentationLogic
     {
         private IBusinessLogic _BL;
         private string _employeeID;
-        public SSNForm(IBusinessLogic BL, string employeeID)
+        private Measurement_DTO _measurementDTO;
+        public SSNForm(IBusinessLogic BL, string employeeID, Measurement_DTO measurementDTO)
         {
             InitializeComponent();
             _BL = BL;
             _employeeID = employeeID;
+            _measurementDTO = measurementDTO;
+
         }
 
         private void save_button_Click(object sender, EventArgs e)
         {
-            _BL.saveMeasurement();
+            _BL.SaveMeasurementBusiness(_measurementDTO, SSN_textBox.Text, employeeID_textBox.Text);
         }
 
         private void information_button_Click(object sender, EventArgs e)

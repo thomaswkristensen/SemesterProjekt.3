@@ -64,7 +64,6 @@
     <Compile Include="DataBaseHandler.cs" />
     <Compile Include="IDataBaseHandler.cs" />
     <Compile Include="IQueryBuilder.cs" />
-    <Compile Include="Database.cs" />
     <Compile Include="LimitValues.cs" />
     <Compile Include="NI-DAQ.cs" />
     <Compile Include="Producer.cs" />
@@ -72,7 +71,9 @@
     <Compile Include="IData.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PullData.cs" />
     <Compile Include="QueryBuilder.cs" />
+    <Compile Include="SaveData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">
