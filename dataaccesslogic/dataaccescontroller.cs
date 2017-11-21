@@ -47,7 +47,7 @@ namespace DataAccessLogic
         public HP_DTO getLoginDatabase(string username)
         {
 
-            return _pullData.PullHPInformation(userename);
+            return _pullData.PullHPInformation(username);
         }
 
         public bool SaveCalibrationDataAcces(Calibration_DTO calibration)
