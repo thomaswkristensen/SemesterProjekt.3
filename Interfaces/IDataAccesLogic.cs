@@ -14,7 +14,8 @@ namespace Interfaces
         HP_DTO getLoginDatabase(string username);
         bool SaveCalibrationDataAcces(Calibration_DTO calibration);
         Patient_DTO verifySSN(string ssn);
-
+        double PullSlope();
         bool SaveMeasurementDataAcces(Measurement_DTO measurementDTO, string ssn, string employeeID);
+       
     }
 }
