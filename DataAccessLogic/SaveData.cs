@@ -20,5 +20,11 @@ namespace DataAccessLogic
         {
             return _dataBaseHandler.ExecuteMeasurementSaving(measurementDTO, ssn, employeeID);
         }
+
+        public bool SaveCalibration(Calibration_DTO calibrationData)
+        {
+            return _dataBaseHandler.ExecuteSaveCalibration(calibrationData);
+        }
+
     }
 }

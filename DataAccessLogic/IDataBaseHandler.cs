@@ -13,5 +13,7 @@ namespace DataAccessLogic
         Patient_DTO ExecutePatientInfoQuery(string query);
         HP_DTO ExecuteHPInfoQuery(string query);
         bool ExecuteMeasurementSaving(Measurement_DTO measurementDto, string ssn, string employeeID);
+        bool ExecuteSaveCalibration(Calibration_DTO calibrationData);
+        double ExecuteSlopeInfo();
     }
 }

@@ -87,14 +87,14 @@ namespace DataAccessLogic
                 cmd = new SqlCommand(_querybuilder.SaveDataQuery(), _conn);
                 Connect();
 
-                cmd.Parameters.AddWithValue(@"EmployeeID", employeeID);
-                cmd.Parameters.AddWithValue(@"SSN", ssn);
+                cmd.Parameters.AddWithValue("@EmployeeID", employeeID);
+                cmd.Parameters.AddWithValue("@SSN", ssn);
                 cmd.Parameters.AddWithValue("@Rawvalue",
                     _measurementDTO.RawData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
-                cmd.Parameters.AddWithValue(@"ConvertedValue",
+                cmd.Parameters.AddWithValue("@ConvertedValue",
                     _measurementDTO.ConvertedData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
-                cmd.Parameters.AddWithValue(@"Date", _measurementDTO.TimeOfMeasurement);
-                cmd.Parameters.AddWithValue(@"Samplerate", _measurementDTO.Fsample);
+                cmd.Parameters.AddWithValue("@Date", _measurementDTO.TimeOfMeasurement);
+                cmd.Parameters.AddWithValue("@Samplerate", _measurementDTO.Fsample);
 
                 cmd.ExecuteNonQuery();
 
@@ -109,6 +109,34 @@ namespace DataAccessLogic
                 return false;
             }
 
+        }
+
+        public bool ExecuteSaveCalibration(Calibration_DTO calibrationData)
+        {
+            cmd = new SqlCommand(_querybuilder.SaveCalibrationQuery(), _conn);
+            Connect();
+            cmd.Parameters.AddWithValue("@Slope", calibrationData.Slope);
+            cmd.Parameters.AddWithValue("@CalibrationTime", DateTime.Now);
+
+            cmd.ExecuteNonQuery();
+
+            Disconnect();
+
+            return true;
+
+        }
+
+        public double ExecuteSlopeInfo()
+        {
+            cmd = new SqlCommand(_querybuilder.CalibrationInfoQuery(),_conn);
+            Connect();
+            rdr = cmd.ExecuteReader();
+
+            if (rdr.Read())
+            {
+                
+            }
+            return 0.00;
         }
 
         
