@@ -9,23 +9,32 @@ namespace Buisnesslogic
     class Filter
     {
         private IFilter _filter;
-        private bool FilterType { get; set; }
-        private bool _filterType { get; set; }
+        private bool DigitalFilterUsed { get; set; }
 
         public Filter()
         {
-
+            _filter = new RawFilter();
+            DigitalFilterUsed = false;
         }
 
-        public List<double> filterMethod()
+        public List<double> FilterMethod(List<double> list)
         {
-            
+            if (DigitalFilterUsed)
+            {
+                _filter = new DigitalFilter();
+            }
+            else _filter = new RawFilter();
+            return _filter.Filtering(list);
         }
 
-
-        public void UseDigitalFilter()
+        public void UseDigitalFilter(bool digitalFilter)
         {
-            if ()
+            if (digitalFilter)
+            {
+                DigitalFilterUsed = true;
+            }
+
+            else DigitalFilterUsed = false;
         }
     }
 }

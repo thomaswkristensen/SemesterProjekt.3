@@ -49,7 +49,7 @@ namespace PresentationLogic
         private void Digital_Button_HomeForm_Click(object sender, EventArgs e)
         {
             label_FilterType.Text = "Digitalt filter: Til";
-            _BL.DigitalFilter();
+            _BL.UseDigitalFilter(true);
         }
     }
 }
