@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Buisnesslogic
 {
-    class DigitalFilter
+    class DigitalFilter : IFilter
     {
+        public List<double> Filtering(List<double> list)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

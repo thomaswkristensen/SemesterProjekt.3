@@ -8,7 +8,7 @@ namespace Buisnesslogic
 {
     class RawFilter : IFilter
     {
-        public List<double> RawFiltering(List<double> list)
+        public List<double> Filtering(List<double> list)
         {
             return list;
         }

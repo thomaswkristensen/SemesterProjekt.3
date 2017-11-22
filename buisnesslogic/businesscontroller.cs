@@ -21,6 +21,7 @@ namespace Buisnesslogic
         private double _P3;
         private HP_DTO _hpDTO;
         private Login _login;
+        private Filter _filter;
 
         public BusinessController(IDataAccesLogic DAL)
         {
@@ -93,7 +94,10 @@ namespace Buisnesslogic
             return false;
         }
 
-       
+        public void DigitalFilter()
+        {
+            _filter.UseDigitalFilter();
+        }
 
 
         public Patient_DTO GetPatientInformation(string ssn)

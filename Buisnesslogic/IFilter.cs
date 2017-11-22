@@ -8,6 +8,6 @@ namespace Buisnesslogic
 {
     interface IFilter
     {
-        List<double> RawFiltering(List<double> list); 
+        List<double> Filtering(List<double> list);
     }
 }

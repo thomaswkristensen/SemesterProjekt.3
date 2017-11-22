@@ -9,20 +9,23 @@ namespace Buisnesslogic
     class Filter
     {
         private IFilter _filter;
-        private Converter _converter;
+        private bool FilterType { get; set; }
+        private bool _filterType { get; set; }
 
-        public Filter(Converter converter, IFilter filter)
+        public Filter()
         {
-            _converter = converter;
-            _converter.Attach(this);
-            _filter = filter;
+
         }
 
-        public void Update()
+        public List<double> filterMethod()
         {
             
         }
 
 
+        public void UseDigitalFilter()
+        {
+            if ()
+        }
     }
 }
