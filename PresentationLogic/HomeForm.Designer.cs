@@ -46,6 +46,7 @@
             this.Digital_Button_HomeForm = new System.Windows.Forms.Button();
             this.Calibration_button_HomeForm = new System.Windows.Forms.Button();
             this.stop_button = new System.Windows.Forms.Button();
+            this.label_FilterType = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.HP_Chart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             this.HP_Chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.HP_Chart.Legends.Add(legend1);
-            this.HP_Chart.Location = new System.Drawing.Point(8, 54);
+            this.HP_Chart.Location = new System.Drawing.Point(12, 88);
             this.HP_Chart.Margin = new System.Windows.Forms.Padding(2);
             this.HP_Chart.Name = "HP_Chart";
             series1.ChartArea = "ChartArea1";
@@ -182,6 +183,7 @@
             this.Digital_Button_HomeForm.TabIndex = 15;
             this.Digital_Button_HomeForm.Text = "Digital";
             this.Digital_Button_HomeForm.UseVisualStyleBackColor = true;
+            this.Digital_Button_HomeForm.Click += new System.EventHandler(this.Digital_Button_HomeForm_Click);
             // 
             // Calibration_button_HomeForm
             // 
@@ -204,12 +206,22 @@
             this.stop_button.Text = "Stop";
             this.stop_button.UseVisualStyleBackColor = true;
             // 
+            // label_FilterType
+            // 
+            this.label_FilterType.AutoSize = true;
+            this.label_FilterType.Location = new System.Drawing.Point(70, 70);
+            this.label_FilterType.Name = "label_FilterType";
+            this.label_FilterType.Size = new System.Drawing.Size(82, 13);
+            this.label_FilterType.TabIndex = 28;
+            this.label_FilterType.Text = "Digitalt filter: Fra";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(654, 361);
+            this.ClientSize = new System.Drawing.Size(654, 398);
+            this.Controls.Add(this.label_FilterType);
             this.Controls.Add(this.stop_button);
             this.Controls.Add(this.Diastolic_textBox_HomeForm);
             this.Controls.Add(this.Systolic_textBox_HomeForm);
@@ -252,5 +264,6 @@
         private System.Windows.Forms.Button Digital_Button_HomeForm;
         private System.Windows.Forms.Button Calibration_button_HomeForm;
         private System.Windows.Forms.Button stop_button;
+        private System.Windows.Forms.Label label_FilterType;
     }
 }
