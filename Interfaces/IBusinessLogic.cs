@@ -17,5 +17,6 @@ namespace Interfaces
         bool GetLogin(string MedarbejderID, string Password);
         bool SaveMeasurementBusiness(Measurement_DTO measurementDTO, string ssn, string employeeID);
         void UseDigitalFilter();
+        bool SaveCalibrationLogic(Calibration_DTO calibrationData);
     }
 }

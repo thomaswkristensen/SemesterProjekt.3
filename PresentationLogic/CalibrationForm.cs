@@ -77,7 +77,11 @@ namespace PresentationLogic
 
         private void done_button_Click(object sender, EventArgs e)
         {
-
+            if (_BL.SaveCalibrationLogic(_calibration))
+            {
+                MessageBox.Show("Kalibrering gemt");
+            }
+            else MessageBox.Show("Kalibrering ikke gemt, prøv igen");
         }
     }
 }

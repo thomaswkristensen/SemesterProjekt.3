@@ -32,5 +32,19 @@ namespace DataAccessLogic
 
             return query;
         }
+
+        public string SaveCalibrationQuery()
+        {
+            string query =
+                "INSERT INTO Calibration(Slope,CalibrationTime)" + "VALUES(@Slope,@CalibrationTime)";
+            return query;
+        }
+
+        public string CalibrationInfoQuery()
+        {
+            string query = "SELECT top(1) Slope from Calibration WHERE CalibrationTime <= '" + DateTime.Now + "'";
+            return query;
+        }
+
     }
 }

@@ -13,5 +13,8 @@ namespace DataAccessLogic
         string PatientInfoQuery(string ssn);
         string HPInfoQuery(string username);
         string SaveDataQuery();
+        string SaveCalibrationQuery();
+        string CalibrationInfoQuery();
+
     }
 }

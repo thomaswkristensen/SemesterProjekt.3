@@ -26,5 +26,10 @@ namespace DataAccessLogic
 
             return _dataBaseHandler.ExecuteHPInfoQuery(username);
         }
+
+        public double PullCalibration()
+        {
+            return _dataBaseHandler.ExecuteSlopeInfo();
+        }
     }
 }

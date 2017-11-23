@@ -50,13 +50,19 @@ namespace DataAccessLogic
             return _pullData.PullHPInformation(username);
         }
 
-        public bool SaveCalibrationDataAcces(Calibration_DTO calibration)
+        public bool SaveCalibrationDataAcces(Calibration_DTO calibrationData)
         {
-            if(_dataBaseHandler.
-            return true
+            if (_saveData.SaveCalibration(calibrationData))
+            {
+                return true;
+            }
+            return false;
         }
-       
-        
+
+        public double PullSlope()
+        {
+            return _pullData.PullCalibration();
+        }
 
 
 
