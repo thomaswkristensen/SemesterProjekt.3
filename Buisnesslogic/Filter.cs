@@ -27,9 +27,9 @@ namespace Buisnesslogic
             return _filter.Filtering(list);
         }
 
-        public void UseDigitalFilter(bool digitalFilter)
+        public void UseDigitalFilter()
         {
-            if (digitalFilter)
+            if (!DigitalFilterUsed)
             {
                 DigitalFilterUsed = true;
             }

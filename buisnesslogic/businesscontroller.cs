@@ -94,9 +94,9 @@ namespace Buisnesslogic
             return false;
         }
 
-        public void UseDigitalFilter(bool digitalFilter)
+        public void UseDigitalFilter()
         {
-            _filter.UseDigitalFilter(digitalFilter);
+            _filter.UseDigitalFilter();
         }
 
 
