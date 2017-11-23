@@ -57,6 +57,9 @@
     <Compile Include="Alarm.cs" />
     <Compile Include="BusinessController.cs" />
     <Compile Include="Calibration.cs" />
+    <Compile Include="DiaAnalysis.cs" />
+    <Compile Include="MAPanalysis.cs" />
+    <Compile Include="PulsAnalysis.cs" />
     <Compile Include="Slope.cs" />
     <Compile Include="Consumer.cs" />
     <Compile Include="DigitalFilter.cs" />
@@ -66,6 +69,7 @@
     <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RawFilter.cs" />
+    <Compile Include="SysAnalysis.cs" />
     <Compile Include="Zero-pointAdjusment.cs" />
   </ItemGroup>
   <ItemGroup>
