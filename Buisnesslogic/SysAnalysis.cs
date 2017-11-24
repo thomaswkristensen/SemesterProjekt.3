@@ -10,10 +10,15 @@ namespace Buisnesslogic
     {
         
         private List<double> _systoliclist;
-        private double _limit;
+        private List<double> _diastoliclist;
+        private double _limitSys;
+        private double _limitDia;
         private double _sysValue;
-        private double _allsysValue;
+        private double _diaValue;
+        private double _allsysValues;
+        private double _alldiaValues;
         private double _heartRate;
+        private double _avg;
 
         public SysAnalysis()
         {
@@ -22,24 +27,42 @@ namespace Buisnesslogic
 
         public double SystolicPreasure(List<double> data)
         {
-              _limit = data.Max() * 0.8;
+              _limitSys = data.Max() * 0.8;
             
 
             if (data.Count > 5000)
             {
                 for (int i = 0; i < data.Count; i++)
                 {
-                    if (data[i] > _limit && data[i] > data[i + 1] && data[i] > data[i - 1])
+                    if (data[i] > _limitSys && data[i] > data[i + 1] && data[i] > data[i - 1])
                     {
                         _systoliclist.Add(i*0.001);
-                        _allsysValue += data[i];
+                        _allsysValues += data[i];
                     }
                 }
-                _sysValue = _allsysValue / _systoliclist.Count;
+                _sysValue = _allsysValues / _systoliclist.Count;
                 return _sysValue;
             }
 
             return _sysValue;
+        }
+
+        public double diastolicPressure(List<double> data)
+        {
+            _limitDia = data.Min() * 1.2;
+            if (data.Count > 5000)
+            {
+                for (int i = 0; i < data.Count; i++)
+                {
+                    if (data[i] < _limitDia && data[i] < data[i - 1] && data[i] < data[i + 1])
+                    {
+                        _diastoliclist.Add(i * 0.001);
+                        _alldiaValues += data[i];
+                    }
+                }
+                _diaValue = _alldiaValues / _diastoliclist.Count;
+            }
+            return _diaValue;
         }
 
         public double HeartRate(List<double> data)
@@ -53,5 +76,17 @@ namespace Buisnesslogic
 
             return _heartRate;
         }
+
+        public double MAP(List<double> data)
+        {
+            if (data.Count > 5000)
+            {
+                _avg = data.Average();
+            }
+
+            return _avg; //Hvis 0? Også for ovenstående
+        }
+
+        
     }
 }

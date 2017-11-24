@@ -18,11 +18,12 @@ namespace PresentationLogic
         private CalibrationForm Calibration;
         private IBusinessLogic _BL;
         private Measurement_DTO _data;
+        private bool _digitalFilter;
 
         public HomeForm(IBusinessLogic BL)
         {
             _BL = BL;
-            
+            _digitalFilter = false;
             InitializeComponent();
         }
 
@@ -48,8 +49,29 @@ namespace PresentationLogic
 
         private void Digital_Button_HomeForm_Click(object sender, EventArgs e)
         {
-            label_FilterType.Text = "Digitalt filter: Til";
-            _BL.UseDigitalFilter();
+            if (!_digitalFilter)
+            {
+                label_FilterType.Text = "Digitalt filter: Til";
+                _BL.UseDigitalFilter();
+                _digitalFilter = true;
+            }
+            else
+            {
+                label_FilterType.Text = "Digitalt filter: Fra";
+                //RawFilterMethod
+                _digitalFilter = false;
+            }
+            
+        }
+
+        private void button_alarmtone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_alarm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

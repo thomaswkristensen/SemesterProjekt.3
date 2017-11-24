@@ -57,9 +57,6 @@
     <Compile Include="Alarm.cs" />
     <Compile Include="BusinessController.cs" />
     <Compile Include="Calibration.cs" />
-    <Compile Include="DiaAnalysis.cs" />
-    <Compile Include="MAPanalysis.cs" />
-    <Compile Include="PulsAnalysis.cs" />
     <Compile Include="Slope.cs" />
     <Compile Include="Consumer.cs" />
     <Compile Include="DigitalFilter.cs" />
