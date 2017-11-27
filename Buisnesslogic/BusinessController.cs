@@ -90,5 +90,9 @@ namespace Buisnesslogic
 
         }
 
+        public bool SetAlarmLimitsBusiness(Alarm_DTO alarmDTO)
+        {
+            
+        }
     }
 }

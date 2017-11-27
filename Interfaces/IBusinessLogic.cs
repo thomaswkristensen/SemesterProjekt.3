@@ -18,5 +18,6 @@ namespace Interfaces
         bool SaveMeasurementBusiness(Measurement_DTO measurementDTO, string ssn, string employeeID);
         void UseDigitalFilter();
         bool SaveCalibrationLogic(Calibration_DTO calibrationData);
+        bool SetAlarmLimitsBusiness(Alarm_DTO alarmDTO);
     }
 }
