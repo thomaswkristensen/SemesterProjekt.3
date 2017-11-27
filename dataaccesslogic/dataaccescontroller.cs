@@ -44,6 +44,16 @@ namespace DataAccessLogic
             return false;
         }
 
+        public void SetAlarmLimitsDataAccess(Alarm_DTO alarmDTO)
+        {
+            _limits.SysUpper = alarmDTO.SysUpper;
+            _limits.SysLower = alarmDTO.SysLower;
+            _limits.DiaUpper = alarmDTO.DiaUpper;
+            _limits.DiaLower = alarmDTO.DiaLower;
+            _limits.PulsUpper = alarmDTO.PulsUpper;
+            _limits.PulsLower = alarmDTO.PulsLower;
+        }
+
         public HP_DTO getLoginDatabase(string username)
         {
 

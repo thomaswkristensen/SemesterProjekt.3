@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using Interfaces;
-using DTO;
 
 namespace Buisnesslogic
 {
@@ -92,7 +91,8 @@ namespace Buisnesslogic
 
         public bool SetAlarmLimitsBusiness(Alarm_DTO alarmDTO)
         {
-            
+            _DAL.SetAlarmLimitsDataAccess(alarmDTO);
+            return true; //Try catch?
         }
     }
 }
