@@ -9,7 +9,6 @@ namespace DataAccessLogic
     class LimitValues
     {
         public double ZPAVolt { get; set; }
-
         public int PulsUpper { get; set; }
         public int PulsLower { get; set; }
         public double DiaUpper { get; set; }

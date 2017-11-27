@@ -16,6 +16,7 @@ namespace PresentationLogic
     {
         private LogInForm Login;
         private CalibrationForm Calibration;
+        private LimitValuesForm Limitvalues;
         private IBusinessLogic _BL;
         private Measurement_DTO _data;
         private bool _digitalFilter;
@@ -72,6 +73,13 @@ namespace PresentationLogic
         private void button_alarm_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_setLimitValues_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Limitvalues = new LimitValuesForm(_BL);
+            Limitvalues.Show();
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.HP_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Diastolic_textBox_HomeForm = new System.Windows.Forms.TextBox();
             this.Systolic_textBox_HomeForm = new System.Windows.Forms.TextBox();
@@ -55,18 +55,18 @@
             // 
             // HP_Chart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.HP_Chart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.HP_Chart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.HP_Chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.HP_Chart.Legends.Add(legend1);
             this.HP_Chart.Location = new System.Drawing.Point(11, 129);
             this.HP_Chart.Margin = new System.Windows.Forms.Padding(2);
             this.HP_Chart.Name = "HP_Chart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "Blodtryk";
-            this.HP_Chart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Blodtryk";
+            this.HP_Chart.Series.Add(series1);
             this.HP_Chart.Size = new System.Drawing.Size(585, 299);
             this.HP_Chart.TabIndex = 0;
             this.HP_Chart.Text = "HP Chart";
@@ -246,6 +246,7 @@
             this.button_setLimitValues.TabIndex = 31;
             this.button_setLimitValues.Text = "Sæt grænseværdier";
             this.button_setLimitValues.UseVisualStyleBackColor = true;
+            this.button_setLimitValues.Click += new System.EventHandler(this.button_setLimitValues_Click);
             // 
             // HomeForm
             // 
