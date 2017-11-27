@@ -55,81 +55,87 @@
             // 
             // HP_Chart
             // 
+            this.HP_Chart.BackColor = System.Drawing.Color.Black;
+            this.HP_Chart.BorderlineColor = System.Drawing.Color.Black;
+            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.BorderColor = System.Drawing.Color.Blue;
             chartArea1.Name = "ChartArea1";
             this.HP_Chart.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Black;
+            legend1.BorderColor = System.Drawing.Color.Black;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.ForeColor = System.Drawing.Color.Lime;
             legend1.Name = "Legend1";
             this.HP_Chart.Legends.Add(legend1);
-            this.HP_Chart.Location = new System.Drawing.Point(11, 129);
-            this.HP_Chart.Margin = new System.Windows.Forms.Padding(2);
+            this.HP_Chart.Location = new System.Drawing.Point(16, 198);
             this.HP_Chart.Name = "HP_Chart";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series1.LabelBackColor = System.Drawing.Color.Black;
+            series1.LabelForeColor = System.Drawing.Color.Lime;
             series1.Legend = "Legend1";
+            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             series1.Name = "Blodtryk";
             this.HP_Chart.Series.Add(series1);
-            this.HP_Chart.Size = new System.Drawing.Size(585, 299);
+            this.HP_Chart.Size = new System.Drawing.Size(878, 460);
             this.HP_Chart.TabIndex = 0;
             this.HP_Chart.Text = "HP Chart";
             // 
             // Diastolic_textBox_HomeForm
             // 
-            this.Diastolic_textBox_HomeForm.Location = new System.Drawing.Point(553, 283);
-            this.Diastolic_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Diastolic_textBox_HomeForm.Location = new System.Drawing.Point(1030, 439);
             this.Diastolic_textBox_HomeForm.Name = "Diastolic_textBox_HomeForm";
-            this.Diastolic_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
+            this.Diastolic_textBox_HomeForm.Size = new System.Drawing.Size(100, 26);
             this.Diastolic_textBox_HomeForm.TabIndex = 26;
             // 
             // Systolic_textBox_HomeForm
             // 
-            this.Systolic_textBox_HomeForm.Location = new System.Drawing.Point(553, 245);
-            this.Systolic_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Systolic_textBox_HomeForm.Location = new System.Drawing.Point(1030, 381);
             this.Systolic_textBox_HomeForm.Name = "Systolic_textBox_HomeForm";
-            this.Systolic_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
+            this.Systolic_textBox_HomeForm.Size = new System.Drawing.Size(100, 26);
             this.Systolic_textBox_HomeForm.TabIndex = 25;
             // 
             // Average_textBox_HomeForm
             // 
-            this.Average_textBox_HomeForm.Location = new System.Drawing.Point(553, 208);
-            this.Average_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Average_textBox_HomeForm.Location = new System.Drawing.Point(1030, 324);
             this.Average_textBox_HomeForm.Name = "Average_textBox_HomeForm";
-            this.Average_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
+            this.Average_textBox_HomeForm.Size = new System.Drawing.Size(100, 26);
             this.Average_textBox_HomeForm.TabIndex = 24;
             // 
             // Puls_textBox_HomeForm
             // 
-            this.Puls_textBox_HomeForm.Location = new System.Drawing.Point(553, 169);
-            this.Puls_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Puls_textBox_HomeForm.Location = new System.Drawing.Point(1030, 264);
             this.Puls_textBox_HomeForm.Name = "Puls_textBox_HomeForm";
-            this.Puls_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
+            this.Puls_textBox_HomeForm.Size = new System.Drawing.Size(100, 26);
             this.Puls_textBox_HomeForm.TabIndex = 23;
             // 
             // Diastolic_Label_HomeForm
             // 
             this.Diastolic_Label_HomeForm.AutoSize = true;
-            this.Diastolic_Label_HomeForm.Location = new System.Drawing.Point(482, 283);
-            this.Diastolic_Label_HomeForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Diastolic_Label_HomeForm.Location = new System.Drawing.Point(923, 439);
             this.Diastolic_Label_HomeForm.Name = "Diastolic_Label_HomeForm";
-            this.Diastolic_Label_HomeForm.Size = new System.Drawing.Size(47, 13);
+            this.Diastolic_Label_HomeForm.Size = new System.Drawing.Size(69, 20);
             this.Diastolic_Label_HomeForm.TabIndex = 22;
             this.Diastolic_Label_HomeForm.Text = "Diastolic";
             // 
             // Systolic_Label_HomeForm
             // 
             this.Systolic_Label_HomeForm.AutoSize = true;
-            this.Systolic_Label_HomeForm.Location = new System.Drawing.Point(482, 245);
-            this.Systolic_Label_HomeForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Systolic_Label_HomeForm.Location = new System.Drawing.Point(923, 381);
             this.Systolic_Label_HomeForm.Name = "Systolic_Label_HomeForm";
-            this.Systolic_Label_HomeForm.Size = new System.Drawing.Size(43, 13);
+            this.Systolic_Label_HomeForm.Size = new System.Drawing.Size(63, 20);
             this.Systolic_Label_HomeForm.TabIndex = 21;
             this.Systolic_Label_HomeForm.Text = "Systolic";
             // 
             // Average_Label_HomeForm
             // 
             this.Average_Label_HomeForm.AutoSize = true;
-            this.Average_Label_HomeForm.Location = new System.Drawing.Point(482, 208);
-            this.Average_Label_HomeForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Average_Label_HomeForm.Location = new System.Drawing.Point(923, 324);
             this.Average_Label_HomeForm.Name = "Average_Label_HomeForm";
-            this.Average_Label_HomeForm.Size = new System.Drawing.Size(47, 13);
+            this.Average_Label_HomeForm.Size = new System.Drawing.Size(68, 20);
             this.Average_Label_HomeForm.TabIndex = 20;
             this.Average_Label_HomeForm.Text = "Average";
             // 
@@ -138,19 +144,17 @@
             this.Puls_Label_HomeForm.AutoSize = true;
             this.Puls_Label_HomeForm.BackColor = System.Drawing.Color.White;
             this.Puls_Label_HomeForm.ForeColor = System.Drawing.Color.Black;
-            this.Puls_Label_HomeForm.Location = new System.Drawing.Point(482, 169);
-            this.Puls_Label_HomeForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Puls_Label_HomeForm.Location = new System.Drawing.Point(923, 264);
             this.Puls_Label_HomeForm.Name = "Puls_Label_HomeForm";
-            this.Puls_Label_HomeForm.Size = new System.Drawing.Size(27, 13);
+            this.Puls_Label_HomeForm.Size = new System.Drawing.Size(39, 20);
             this.Puls_Label_HomeForm.TabIndex = 19;
             this.Puls_Label_HomeForm.Text = "Puls";
             // 
             // ZeroPointAdjusment_button_HomeForm
             // 
-            this.ZeroPointAdjusment_button_HomeForm.Location = new System.Drawing.Point(177, 11);
-            this.ZeroPointAdjusment_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.ZeroPointAdjusment_button_HomeForm.Location = new System.Drawing.Point(266, 17);
             this.ZeroPointAdjusment_button_HomeForm.Name = "ZeroPointAdjusment_button_HomeForm";
-            this.ZeroPointAdjusment_button_HomeForm.Size = new System.Drawing.Size(87, 36);
+            this.ZeroPointAdjusment_button_HomeForm.Size = new System.Drawing.Size(130, 55);
             this.ZeroPointAdjusment_button_HomeForm.TabIndex = 18;
             this.ZeroPointAdjusment_button_HomeForm.Text = "Nulpunkts justering";
             this.ZeroPointAdjusment_button_HomeForm.UseVisualStyleBackColor = true;
@@ -158,20 +162,18 @@
             // 
             // Start_button_HomeForm
             // 
-            this.Start_button_HomeForm.Location = new System.Drawing.Point(485, 319);
-            this.Start_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Start_button_HomeForm.Location = new System.Drawing.Point(928, 495);
             this.Start_button_HomeForm.Name = "Start_button_HomeForm";
-            this.Start_button_HomeForm.Size = new System.Drawing.Size(136, 30);
+            this.Start_button_HomeForm.Size = new System.Drawing.Size(204, 46);
             this.Start_button_HomeForm.TabIndex = 17;
             this.Start_button_HomeForm.Text = "Start";
             this.Start_button_HomeForm.UseVisualStyleBackColor = true;
             // 
             // Save_button_HomeForm
             // 
-            this.Save_button_HomeForm.Location = new System.Drawing.Point(288, 67);
-            this.Save_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Save_button_HomeForm.Location = new System.Drawing.Point(432, 103);
             this.Save_button_HomeForm.Name = "Save_button_HomeForm";
-            this.Save_button_HomeForm.Size = new System.Drawing.Size(80, 36);
+            this.Save_button_HomeForm.Size = new System.Drawing.Size(120, 55);
             this.Save_button_HomeForm.TabIndex = 16;
             this.Save_button_HomeForm.Text = "Gem";
             this.Save_button_HomeForm.UseVisualStyleBackColor = true;
@@ -179,10 +181,9 @@
             // 
             // Digital_Button_HomeForm
             // 
-            this.Digital_Button_HomeForm.Location = new System.Drawing.Point(66, 67);
-            this.Digital_Button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Digital_Button_HomeForm.Location = new System.Drawing.Point(99, 103);
             this.Digital_Button_HomeForm.Name = "Digital_Button_HomeForm";
-            this.Digital_Button_HomeForm.Size = new System.Drawing.Size(87, 36);
+            this.Digital_Button_HomeForm.Size = new System.Drawing.Size(130, 55);
             this.Digital_Button_HomeForm.TabIndex = 15;
             this.Digital_Button_HomeForm.Text = "Digital";
             this.Digital_Button_HomeForm.UseVisualStyleBackColor = true;
@@ -190,10 +191,9 @@
             // 
             // Calibration_button_HomeForm
             // 
-            this.Calibration_button_HomeForm.Location = new System.Drawing.Point(66, 11);
-            this.Calibration_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
+            this.Calibration_button_HomeForm.Location = new System.Drawing.Point(99, 17);
             this.Calibration_button_HomeForm.Name = "Calibration_button_HomeForm";
-            this.Calibration_button_HomeForm.Size = new System.Drawing.Size(87, 36);
+            this.Calibration_button_HomeForm.Size = new System.Drawing.Size(130, 55);
             this.Calibration_button_HomeForm.TabIndex = 14;
             this.Calibration_button_HomeForm.Text = "Kalibrer";
             this.Calibration_button_HomeForm.UseVisualStyleBackColor = true;
@@ -201,10 +201,9 @@
             // 
             // stop_button
             // 
-            this.stop_button.Location = new System.Drawing.Point(485, 362);
-            this.stop_button.Margin = new System.Windows.Forms.Padding(2);
+            this.stop_button.Location = new System.Drawing.Point(928, 561);
             this.stop_button.Name = "stop_button";
-            this.stop_button.Size = new System.Drawing.Size(135, 30);
+            this.stop_button.Size = new System.Drawing.Size(202, 46);
             this.stop_button.TabIndex = 27;
             this.stop_button.Text = "Stop";
             this.stop_button.UseVisualStyleBackColor = true;
@@ -212,17 +211,19 @@
             // label_FilterType
             // 
             this.label_FilterType.AutoSize = true;
-            this.label_FilterType.Location = new System.Drawing.Point(66, 120);
+            this.label_FilterType.Location = new System.Drawing.Point(99, 185);
+            this.label_FilterType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_FilterType.Name = "label_FilterType";
-            this.label_FilterType.Size = new System.Drawing.Size(67, 13);
+            this.label_FilterType.Size = new System.Drawing.Size(100, 20);
             this.label_FilterType.TabIndex = 28;
             this.label_FilterType.Text = "Digitalt filter: ";
             // 
             // button_alarmtone
             // 
-            this.button_alarmtone.Location = new System.Drawing.Point(541, 12);
+            this.button_alarmtone.Location = new System.Drawing.Point(812, 18);
+            this.button_alarmtone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_alarmtone.Name = "button_alarmtone";
-            this.button_alarmtone.Size = new System.Drawing.Size(91, 36);
+            this.button_alarmtone.Size = new System.Drawing.Size(136, 55);
             this.button_alarmtone.TabIndex = 29;
             this.button_alarmtone.Text = "Stop \r\nalarmtone";
             this.button_alarmtone.UseVisualStyleBackColor = true;
@@ -230,9 +231,10 @@
             // 
             // button_alarm
             // 
-            this.button_alarm.Location = new System.Drawing.Point(541, 67);
+            this.button_alarm.Location = new System.Drawing.Point(812, 103);
+            this.button_alarm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_alarm.Name = "button_alarm";
-            this.button_alarm.Size = new System.Drawing.Size(91, 36);
+            this.button_alarm.Size = new System.Drawing.Size(136, 55);
             this.button_alarm.TabIndex = 30;
             this.button_alarm.Text = "Stop alarm";
             this.button_alarm.UseVisualStyleBackColor = true;
@@ -240,9 +242,10 @@
             // 
             // button_setLimitValues
             // 
-            this.button_setLimitValues.Location = new System.Drawing.Point(177, 67);
+            this.button_setLimitValues.Location = new System.Drawing.Point(266, 103);
+            this.button_setLimitValues.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_setLimitValues.Name = "button_setLimitValues";
-            this.button_setLimitValues.Size = new System.Drawing.Size(87, 36);
+            this.button_setLimitValues.Size = new System.Drawing.Size(130, 55);
             this.button_setLimitValues.TabIndex = 31;
             this.button_setLimitValues.Text = "Sæt grænseværdier";
             this.button_setLimitValues.UseVisualStyleBackColor = true;
@@ -250,10 +253,10 @@
             // 
             // HomeForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(654, 436);
+            this.ClientSize = new System.Drawing.Size(1188, 677);
             this.Controls.Add(this.button_setLimitValues);
             this.Controls.Add(this.button_alarm);
             this.Controls.Add(this.button_alarmtone);
@@ -273,7 +276,6 @@
             this.Controls.Add(this.Digital_Button_HomeForm);
             this.Controls.Add(this.Calibration_button_HomeForm);
             this.Controls.Add(this.HP_Chart);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeForm";
             this.RightToLeftLayout = true;
             this.Text = "HomeForm";
