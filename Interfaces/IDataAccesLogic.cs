@@ -16,6 +16,7 @@ namespace Interfaces
         Patient_DTO verifySSN(string ssn);
         double PullSlope();
         bool SaveMeasurementDataAcces(Measurement_DTO measurementDTO, string ssn, string employeeID);
-       
+        void SetAlarmLimitsDataAccess(Alarm_DTO alarmDTO);
+
     }
 }

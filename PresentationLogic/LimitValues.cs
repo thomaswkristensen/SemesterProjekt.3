@@ -21,6 +21,7 @@ namespace PresentationLogic
             InitializeComponent();
 
             _BL = BL;
+            _alarmDTO = new Alarm_DTO();
         }
 
         private void button_OK_LV_Click(object sender, EventArgs e)
@@ -32,7 +33,15 @@ namespace PresentationLogic
             _alarmDTO.PulsUpper = Convert.ToInt32(textBox_upperPuls.Text);
             _alarmDTO.PulsLower = Convert.ToInt32(textBox_lowerPuls.Text);
 
-            _BL.SetAlarmLimits(_alarmDTO);
+            
+            if (_BL.SetAlarmLimitsBusiness(_alarmDTO))
+            {
+                MessageBox.Show("Grænser er nu sat");
+            }
+            else MessageBox.Show("Fejl, prøv igen");
+
+
+
         }
     }
 }
