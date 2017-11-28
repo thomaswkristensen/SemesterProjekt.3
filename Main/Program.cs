@@ -12,11 +12,12 @@ namespace Main
 {
     class Program
     {
-        private static DataAccesController DAC;
-        private static PresentationController PC;
-        private static BusinessController BC;
+        private DataAccesController DAC;
+        private PresentationController PC;
+        private BusinessController BC;
         static void Main(string[] args)
         {
+            
         }
 
         public Program()

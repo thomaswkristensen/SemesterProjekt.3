@@ -81,5 +81,10 @@ namespace PresentationLogic
             Limitvalues = new LimitValuesForm(_BL);
             Limitvalues.Show();
         }
+
+        private void Start_button_HomeForm_Click(object sender, EventArgs e)
+        {
+            _BL.StartMeasuring();
+        }
     }
 }

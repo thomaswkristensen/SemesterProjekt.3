@@ -16,6 +16,7 @@ namespace Buisnesslogic
         private HP_DTO _hpDTO;
         private Login _login;
         private Filter _filter;
+        private ShowData _showData;
 
         public BusinessController(IDataAccesLogic DAL)
         {
@@ -94,5 +95,12 @@ namespace Buisnesslogic
             _DAL.SetAlarmLimitsDataAccess(alarmDTO);
             return true; //Try catch?
         }
+
+        public void StartMeasuring()
+        {
+            _showData.HandleData();
+        }
     }
+
+    
 }

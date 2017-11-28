@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
@@ -15,7 +16,7 @@ namespace DataAccessLogic
         private LimitValues _limits;
         private PullData _pullData;
         private SaveData _saveData;
-
+        private Producer _producer;
         public DataAccesController()
         {
             _limits = new LimitValues();
@@ -52,6 +53,17 @@ namespace DataAccessLogic
             _limits.DiaLower = alarmDTO.DiaLower;
             _limits.PulsUpper = alarmDTO.PulsUpper;
             _limits.PulsLower = alarmDTO.PulsLower;
+        }
+
+        public void RunProducer()
+        {
+            
+            _producer.Run();
+        }
+
+        public void CreateProducer(ConcurrentQueue<BufferBlock> queue)
+        {
+            _producer = new Producer(queue);
         }
 
         public HP_DTO getLoginDatabase(string username)
