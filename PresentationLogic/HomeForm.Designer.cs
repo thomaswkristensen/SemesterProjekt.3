@@ -31,7 +31,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.HP_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.Diastolic_textBox_HomeForm = new System.Windows.Forms.TextBox();
             this.Systolic_textBox_HomeForm = new System.Windows.Forms.TextBox();
             this.Average_textBox_HomeForm = new System.Windows.Forms.TextBox();
@@ -50,39 +49,9 @@
             this.button_alarmtone = new System.Windows.Forms.Button();
             this.button_alarm = new System.Windows.Forms.Button();
             this.button_setLimitValues = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.HP_Chart)).BeginInit();
+            this.Bloodpreasure_chart_Homeform = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.Bloodpreasure_chart_Homeform)).BeginInit();
             this.SuspendLayout();
-            // 
-            // HP_Chart
-            // 
-            this.HP_Chart.BackColor = System.Drawing.Color.Black;
-            this.HP_Chart.BorderlineColor = System.Drawing.Color.Black;
-            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            chartArea1.BorderColor = System.Drawing.Color.Blue;
-            chartArea1.Name = "ChartArea1";
-            this.HP_Chart.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.Black;
-            legend1.BorderColor = System.Drawing.Color.Black;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.ForeColor = System.Drawing.Color.Lime;
-            legend1.Name = "Legend1";
-            this.HP_Chart.Legends.Add(legend1);
-            this.HP_Chart.Location = new System.Drawing.Point(16, 198);
-            this.HP_Chart.Name = "HP_Chart";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series1.LabelBackColor = System.Drawing.Color.Black;
-            series1.LabelForeColor = System.Drawing.Color.Lime;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series1.Name = "Blodtryk";
-            this.HP_Chart.Series.Add(series1);
-            this.HP_Chart.Size = new System.Drawing.Size(878, 460);
-            this.HP_Chart.TabIndex = 0;
-            this.HP_Chart.Text = "HP Chart";
             // 
             // Diastolic_textBox_HomeForm
             // 
@@ -251,12 +220,63 @@
             this.button_setLimitValues.UseVisualStyleBackColor = true;
             this.button_setLimitValues.Click += new System.EventHandler(this.button_setLimitValues_Click);
             // 
+            // Bloodpreasure_chart_Homeform
+            // 
+            this.Bloodpreasure_chart_Homeform.BackColor = System.Drawing.Color.Black;
+            this.Bloodpreasure_chart_Homeform.BorderlineColor = System.Drawing.Color.Black;
+            this.Bloodpreasure_chart_Homeform.BorderSkin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(98)))), ((int)(((byte)(113)))));
+            chartArea1.AxisX2.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            chartArea1.BackColor = System.Drawing.Color.Black;
+            chartArea1.BorderColor = System.Drawing.Color.Blue;
+            chartArea1.Name = "ChartArea1";
+            chartArea1.Position.Auto = false;
+            chartArea1.Position.Height = 82.57609F;
+            chartArea1.Position.Width = 94F;
+            chartArea1.Position.Y = 3F;
+            this.Bloodpreasure_chart_Homeform.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.Black;
+            legend1.BorderColor = System.Drawing.Color.Black;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            legend1.ForeColor = System.Drawing.Color.Lime;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            legend1.Position.Auto = false;
+            legend1.Position.Height = 8.423913F;
+            legend1.Position.Width = 13.56185F;
+            legend1.Position.X = 3F;
+            legend1.Position.Y = 88.57609F;
+            this.Bloodpreasure_chart_Homeform.Legends.Add(legend1);
+            this.Bloodpreasure_chart_Homeform.Location = new System.Drawing.Point(12, 241);
+            this.Bloodpreasure_chart_Homeform.Name = "Bloodpreasure_chart_Homeform";
+            series1.BorderColor = System.Drawing.Color.Navy;
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series1.LabelBackColor = System.Drawing.Color.Black;
+            series1.LabelForeColor = System.Drawing.Color.Lime;
+            series1.Legend = "Legend1";
+            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            series1.Name = "Blodtryk";
+            this.Bloodpreasure_chart_Homeform.Series.Add(series1);
+            this.Bloodpreasure_chart_Homeform.Size = new System.Drawing.Size(881, 376);
+            this.Bloodpreasure_chart_Homeform.TabIndex = 32;
+            this.Bloodpreasure_chart_Homeform.Text = "chart1";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1188, 677);
+            this.Controls.Add(this.Bloodpreasure_chart_Homeform);
             this.Controls.Add(this.button_setLimitValues);
             this.Controls.Add(this.button_alarm);
             this.Controls.Add(this.button_alarmtone);
@@ -275,19 +295,16 @@
             this.Controls.Add(this.Save_button_HomeForm);
             this.Controls.Add(this.Digital_Button_HomeForm);
             this.Controls.Add(this.Calibration_button_HomeForm);
-            this.Controls.Add(this.HP_Chart);
             this.Name = "HomeForm";
             this.RightToLeftLayout = true;
             this.Text = "HomeForm";
-            ((System.ComponentModel.ISupportInitialize)(this.HP_Chart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bloodpreasure_chart_Homeform)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart HP_Chart;
         private System.Windows.Forms.TextBox Diastolic_textBox_HomeForm;
         private System.Windows.Forms.TextBox Systolic_textBox_HomeForm;
         private System.Windows.Forms.TextBox Average_textBox_HomeForm;
@@ -306,5 +323,6 @@
         private System.Windows.Forms.Button button_alarmtone;
         private System.Windows.Forms.Button button_alarm;
         private System.Windows.Forms.Button button_setLimitValues;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Bloodpreasure_chart_Homeform;
     }
 }
