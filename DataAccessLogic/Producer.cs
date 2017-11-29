@@ -10,20 +10,22 @@ using DTO;
 
 namespace DataAccessLogic
 {
-    class Producer
+    public class Producer
     {
         private IData _data;
         private ConcurrentQueue<BufferBlock> _dataQueue;
+        public bool State { get; set; }
 
         public Producer(ConcurrentQueue<BufferBlock> dataQueue)
         {
             _dataQueue = dataQueue;
             _data = new Data();
+            State = false;
         }
 
         public void Run()
         {
-            while (true)
+            while (State)
             {
                 BufferBlock _buffer = new BufferBlock();
                 _buffer.Data = _data.getData();

@@ -9,29 +9,36 @@ using DTO;
 
 namespace Buisnesslogic
 {
-    class Consumer
+    public class Consumer
     {
         private ConcurrentQueue<BufferBlock> _dataQueue;
         private Measurement_DTO _data;
+        private Converter _converter;
+        private BusinessController _BL;
+        public bool State { private get; set; }
+
 
         public Consumer(ConcurrentQueue<BufferBlock> dataQeue)
         {
             _dataQueue = dataQeue;
+            State = false;
+            _data = new Measurement_DTO();
+            _converter = new Converter();
         }
 
         public void Run()
         {
-            while (true)
+            while (State)
             {
                 BufferBlock _buffer;
-                _data = new Measurement_DTO();
-
+                
                 while (!_dataQueue.TryDequeue(out _buffer))
                 {
                     Thread.Sleep(0);
                 }
 
                 _data.RawData = _buffer.Data;
+                _converter.Convert(_data);
             }
         }
     }

@@ -20,6 +20,7 @@ namespace Interfaces
         void SetAlarmLimitsDataAccess(Alarm_DTO alarmDTO);
         void RunProducer();
         void CreateProducer(ConcurrentQueue<BufferBlock> queue);
+        void StartMeasuringDAL();
 
     }
 }

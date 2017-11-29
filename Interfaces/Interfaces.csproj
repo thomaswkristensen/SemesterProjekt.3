@@ -43,6 +43,7 @@
     <Compile Include="IBusinessLogic.cs" />
     <Compile Include="IDataAccesLogic.cs" />
     <Compile Include="IPresentationLogic.cs" />
+    <Compile Include="IThread.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -19,6 +19,6 @@ namespace Interfaces
         void UseDigitalFilter();
         bool SaveCalibrationLogic(Calibration_DTO calibrationData);
         bool SetAlarmLimitsBusiness(Alarm_DTO alarmDTO);
-        void StartMeasuring();
+        void StartMeasuringBL();
     }
 }

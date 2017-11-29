@@ -17,14 +17,18 @@ namespace Buisnesslogic
         private Login _login;
         private Filter _filter;
         private ShowData _showData;
+        private Consumer _consumer;
+        private ThreadControllerBL _threadController;
 
-        public BusinessController(IDataAccesLogic DAL)
+        public BusinessController(IDataAccesLogic DAL, Consumer consumer)
         {
             _DAL = DAL;
             _calibration = new Calibration();
             _ZPA = new Zero_pointAdjusment();
             _hpDTO = new HP_DTO();
             _login = new Login();
+            _consumer = consumer;
+            _threadController = new ThreadControllerBL(_consumer);
 
         }
 
@@ -96,8 +100,10 @@ namespace Buisnesslogic
             return true; //Try catch?
         }
 
-        public void StartMeasuring()
+        public void StartMeasuringBL()
         {
+            _threadController.CreateThread();
+            _DAL.StartMeasuringDAL();
             _showData.HandleData();
         }
     }

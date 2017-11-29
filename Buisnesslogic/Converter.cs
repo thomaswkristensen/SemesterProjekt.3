@@ -4,21 +4,36 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace Buisnesslogic
 {
     public class Converter
     {
-        private List<double> _data;
+        private  Measurement_DTO _data;
+        private double _slope;
+        private double _zpa;
 
-        public List<double> Convert(double slope, double zpa, List<double> data)
+
+        public Converter()
         {
-            foreach (var item in data)
+            
+        }
+        public Measurement_DTO Convert(Measurement_DTO data)
+        {
+            _data = data;
+            foreach (var item in data.RawData)
             {
-                _data.Add((item - zpa)*slope);
+                _data.ConvertedData.Add((item - _zpa)*_slope);
             }
 
             return _data;
+        }
+
+        public void SetSlopeAndZPA(double slope, double zpa)
+        {
+            _slope = slope;
+            _zpa = zpa;
         }
     }
 }

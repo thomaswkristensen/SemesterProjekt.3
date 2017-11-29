@@ -17,11 +17,14 @@ namespace DataAccessLogic
         private PullData _pullData;
         private SaveData _saveData;
         private Producer _producer;
-        public DataAccesController()
+        private ThreadControllerDAL _threadController;
+        public DataAccesController(Producer producer)
         {
             _limits = new LimitValues();
             _pullData = new PullData();
             _saveData = new SaveData();
+            _producer = producer;
+            _threadController = new ThreadControllerDAL(_producer);
 
         }
 
@@ -86,7 +89,11 @@ namespace DataAccessLogic
             return _pullData.PullCalibration();
         }
 
+        public void StartMeasuringDAL()
+        {
+            _threadController.CreateThread();
 
+        }
 
 
 

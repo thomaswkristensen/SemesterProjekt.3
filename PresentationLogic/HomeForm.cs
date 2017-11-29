@@ -84,7 +84,7 @@ namespace PresentationLogic
 
         private void Start_button_HomeForm_Click(object sender, EventArgs e)
         {
-            _BL.StartMeasuring();
+            _BL.StartMeasuringBL();
         }
     }
 }
