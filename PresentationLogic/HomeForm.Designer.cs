@@ -55,23 +55,19 @@
             // 
             // HP_Chart
             // 
-            this.HP_Chart.BackColor = System.Drawing.Color.Black;
-            this.HP_Chart.BorderlineColor = System.Drawing.Color.Black;
+            
             chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
             chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             chartArea1.BorderColor = System.Drawing.Color.Blue;
             chartArea1.Name = "ChartArea1";
-            this.HP_Chart.ChartAreas.Add(chartArea1);
+            
             legend1.BackColor = System.Drawing.Color.Black;
             legend1.BorderColor = System.Drawing.Color.Black;
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             legend1.ForeColor = System.Drawing.Color.Lime;
             legend1.Name = "Legend1";
-            this.HP_Chart.Legends.Add(legend1);
-            this.HP_Chart.Location = new System.Drawing.Point(11, 129);
-            this.HP_Chart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.HP_Chart.Name = "HP_Chart";
+            
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -80,10 +76,7 @@
             series1.Legend = "Legend1";
             series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             series1.Name = "Blodtryk";
-            this.HP_Chart.Series.Add(series1);
-            this.HP_Chart.Size = new System.Drawing.Size(585, 299);
-            this.HP_Chart.TabIndex = 0;
-            this.HP_Chart.Text = "HP Chart";
+            
             // 
             // Diastolic_textBox_HomeForm
             // 
@@ -340,7 +333,7 @@
             this.Controls.Add(this.Save_button_HomeForm);
             this.Controls.Add(this.Digital_Button_HomeForm);
             this.Controls.Add(this.Calibration_button_HomeForm);
-            this.Controls.Add(this.HP_Chart);
+            
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
 
             this.Name = "HomeForm";
