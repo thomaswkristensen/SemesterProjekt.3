@@ -19,17 +19,20 @@ namespace Buisnesslogic
 
         public Converter()
         {
+            _data = new Measurement_DTO();
+            _data.ConvertedData = new List<double>();
             _slope = 1;
             _zpa = 0;
         }
         public void Convert(Measurement_DTO data)
         {
-            _data = data;
+            
             foreach (var item in data.RawData)
             {
                 _data.ConvertedData.Add((item - _zpa)*_slope);
             }
             _filter.FilterMethod(_data);
+            _data.ConvertedData.Clear();
         }
 
         public void SetSlopeAndZPA(FilterContainer filterContainer/*, double slope, double zpa*/)

@@ -104,7 +104,7 @@ namespace PresentationLogic
                 Bloodpressure_chart_Homeform.Series["Blodtryk"].Points.Clear();
                 for (int i = 0; i < list.Count; i++)
                 {
-                    Bloodpressure_chart_Homeform.Series["Blodtryk"].Points.AddXY(x, list);
+                    Bloodpressure_chart_Homeform.Series["Blodtryk"].Points.AddXY(x, list[i]);
                     x++;
                 }
             }

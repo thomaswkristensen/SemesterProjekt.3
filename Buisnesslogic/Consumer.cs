@@ -23,7 +23,12 @@ namespace Buisnesslogic
             _dataQueue = dataQeue;
             State = false;
             _data = new Measurement_DTO();
-            _converter = new Converter();
+            
+        }
+
+        public void SetConverter(Converter converter)
+        {
+            _converter = converter;
         }
 
         public void Run()
@@ -39,6 +44,7 @@ namespace Buisnesslogic
 
                 _data.RawData = _buffer.Data;
                 _converter.Convert(_data);
+                
             }
         }
     }
