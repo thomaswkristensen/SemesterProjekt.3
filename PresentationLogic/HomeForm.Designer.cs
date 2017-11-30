@@ -55,7 +55,7 @@
             // 
             // Diastolic_textBox_HomeForm
             // 
-            this.Diastolic_textBox_HomeForm.Location = new System.Drawing.Point(687, 285);
+            this.Diastolic_textBox_HomeForm.Location = new System.Drawing.Point(1040, 473);
             this.Diastolic_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Diastolic_textBox_HomeForm.Name = "Diastolic_textBox_HomeForm";
             this.Diastolic_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
@@ -63,7 +63,7 @@
             // 
             // Systolic_textBox_HomeForm
             // 
-            this.Systolic_textBox_HomeForm.Location = new System.Drawing.Point(687, 248);
+            this.Systolic_textBox_HomeForm.Location = new System.Drawing.Point(1040, 436);
             this.Systolic_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Systolic_textBox_HomeForm.Name = "Systolic_textBox_HomeForm";
             this.Systolic_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
@@ -71,7 +71,7 @@
             // 
             // Average_textBox_HomeForm
             // 
-            this.Average_textBox_HomeForm.Location = new System.Drawing.Point(687, 211);
+            this.Average_textBox_HomeForm.Location = new System.Drawing.Point(1040, 399);
             this.Average_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Average_textBox_HomeForm.Name = "Average_textBox_HomeForm";
             this.Average_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
@@ -79,7 +79,7 @@
             // 
             // Puls_textBox_HomeForm
             // 
-            this.Puls_textBox_HomeForm.Location = new System.Drawing.Point(687, 172);
+            this.Puls_textBox_HomeForm.Location = new System.Drawing.Point(1040, 360);
             this.Puls_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Puls_textBox_HomeForm.Name = "Puls_textBox_HomeForm";
             this.Puls_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
@@ -88,7 +88,7 @@
             // Diastolic_Label_HomeForm
             // 
             this.Diastolic_Label_HomeForm.AutoSize = true;
-            this.Diastolic_Label_HomeForm.Location = new System.Drawing.Point(615, 285);
+            this.Diastolic_Label_HomeForm.Location = new System.Drawing.Point(968, 473);
             this.Diastolic_Label_HomeForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Diastolic_Label_HomeForm.Name = "Diastolic_Label_HomeForm";
             this.Diastolic_Label_HomeForm.Size = new System.Drawing.Size(47, 13);
@@ -98,7 +98,7 @@
             // Systolic_Label_HomeForm
             // 
             this.Systolic_Label_HomeForm.AutoSize = true;
-            this.Systolic_Label_HomeForm.Location = new System.Drawing.Point(615, 248);
+            this.Systolic_Label_HomeForm.Location = new System.Drawing.Point(968, 436);
             this.Systolic_Label_HomeForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Systolic_Label_HomeForm.Name = "Systolic_Label_HomeForm";
             this.Systolic_Label_HomeForm.Size = new System.Drawing.Size(43, 13);
@@ -108,7 +108,7 @@
             // Average_Label_HomeForm
             // 
             this.Average_Label_HomeForm.AutoSize = true;
-            this.Average_Label_HomeForm.Location = new System.Drawing.Point(615, 211);
+            this.Average_Label_HomeForm.Location = new System.Drawing.Point(968, 399);
             this.Average_Label_HomeForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Average_Label_HomeForm.Name = "Average_Label_HomeForm";
             this.Average_Label_HomeForm.Size = new System.Drawing.Size(47, 13);
@@ -120,7 +120,7 @@
             this.Puls_Label_HomeForm.AutoSize = true;
             this.Puls_Label_HomeForm.BackColor = System.Drawing.Color.White;
             this.Puls_Label_HomeForm.ForeColor = System.Drawing.Color.Black;
-            this.Puls_Label_HomeForm.Location = new System.Drawing.Point(615, 172);
+            this.Puls_Label_HomeForm.Location = new System.Drawing.Point(968, 360);
             this.Puls_Label_HomeForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Puls_Label_HomeForm.Name = "Puls_Label_HomeForm";
             this.Puls_Label_HomeForm.Size = new System.Drawing.Size(27, 13);
@@ -140,7 +140,7 @@
             // 
             // Start_button_HomeForm
             // 
-            this.Start_button_HomeForm.Location = new System.Drawing.Point(619, 322);
+            this.Start_button_HomeForm.Location = new System.Drawing.Point(972, 510);
             this.Start_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Start_button_HomeForm.Name = "Start_button_HomeForm";
             this.Start_button_HomeForm.Size = new System.Drawing.Size(136, 30);
@@ -184,7 +184,7 @@
             // 
             // stop_button
             // 
-            this.stop_button.Location = new System.Drawing.Point(619, 365);
+            this.stop_button.Location = new System.Drawing.Point(972, 553);
             this.stop_button.Margin = new System.Windows.Forms.Padding(2);
             this.stop_button.Name = "stop_button";
             this.stop_button.Size = new System.Drawing.Size(135, 30);
@@ -277,7 +277,7 @@
             series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             series1.Name = "Blodtryk";
             this.Bloodpressure_chart_Homeform.Series.Add(series1);
-            this.Bloodpressure_chart_Homeform.Size = new System.Drawing.Size(881, 376);
+            this.Bloodpressure_chart_Homeform.Size = new System.Drawing.Size(901, 376);
             this.Bloodpressure_chart_Homeform.TabIndex = 32;
             this.Bloodpressure_chart_Homeform.Text = "chart1";
             // 
