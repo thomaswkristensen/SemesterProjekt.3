@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8274C992-3195-4D83-A64A-067731545CCC}</ProjectGuid>
+    <ProjectGuid>{FFF1DC28-48AA-413A-92CD-B59E06F47BF0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Interfaces</RootNamespace>
-    <AssemblyName>Interfaces</AssemblyName>
+    <RootNamespace>ObserverPattern</RootNamespace>
+    <AssemblyName>ObserverPattern</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,10 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBusinessLogic.cs" />
-    <Compile Include="IDataAccesLogic.cs" />
-    <Compile Include="IPresentationLogic.cs" />
-    <Compile Include="IThread.cs" />
+    <Compile Include="FilterContainer.cs" />
+    <Compile Include="FilterSubject.cs" />
+    <Compile Include="IFilterObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using Interfaces;
+using ObserverPattern;
 
 namespace Buisnesslogic
 {
@@ -16,14 +17,22 @@ namespace Buisnesslogic
         private HP_DTO _hpDTO;
         private Login _login;
         private Filter _filter;
-
-        public BusinessController(IDataAccesLogic DAL)
+        private ShowData _showData;
+        private Consumer _consumer;
+        private ThreadControllerBL _threadController;
+        private Converter _converter;
+        private FilterContainer _filterContainer;
+        public BusinessController(IDataAccesLogic DAL, Consumer consumer, FilterContainer filterContainer)
         {
             _DAL = DAL;
             _calibration = new Calibration();
             _ZPA = new Zero_pointAdjusment();
             _hpDTO = new HP_DTO();
             _login = new Login();
+            _consumer = consumer;
+            _threadController = new ThreadControllerBL(_consumer);
+            _converter = new Converter();
+            _filterContainer = filterContainer;
 
         }
 
@@ -94,5 +103,15 @@ namespace Buisnesslogic
             _DAL.SetAlarmLimitsDataAccess(alarmDTO);
             return true; //Try catch?
         }
+
+        public void StartMeasuringBL()
+        {
+            _converter.SetSlopeAndZPA(_filterContainer, _DAL.PullSlope(), _DAL.ZPAVolt);
+            _threadController.CreateThread();
+            _DAL.StartMeasuringDAL();
+            _showData.HandleData();
+        }
     }
+
+    
 }

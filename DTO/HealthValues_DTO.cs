@@ -8,9 +8,9 @@ namespace DTO
 {
     public class HealthValues_DTO
     {
-        public int SysBP { get; set; }
-        public int DiaBP { get; set; }
+        public double SysBP { get; set; }
+        public double DiaBP { get; set; }
         public double AverageBP { get; set; }
-        public int HeartRate { get; set; }
+        public double HeartRate { get; set; }
     }
 }

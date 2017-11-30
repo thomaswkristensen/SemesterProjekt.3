@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
@@ -15,12 +16,15 @@ namespace DataAccessLogic
         private LimitValues _limits;
         private PullData _pullData;
         private SaveData _saveData;
-
-        public DataAccesController()
+        private Producer _producer;
+        private ThreadControllerDAL _threadController;
+        public DataAccesController(Producer producer)
         {
             _limits = new LimitValues();
             _pullData = new PullData();
             _saveData = new SaveData();
+            _producer = producer;
+            _threadController = new ThreadControllerDAL(_producer);
 
         }
 
@@ -54,6 +58,17 @@ namespace DataAccessLogic
             _limits.PulsLower = alarmDTO.PulsLower;
         }
 
+        public void RunProducer()
+        {
+            
+            _producer.Run();
+        }
+
+        public void CreateProducer(ConcurrentQueue<BufferBlock> queue)
+        {
+            _producer = new Producer(queue);
+        }
+
         public HP_DTO getLoginDatabase(string username)
         {
 
@@ -74,7 +89,11 @@ namespace DataAccessLogic
             return _pullData.PullCalibration();
         }
 
+        public void StartMeasuringDAL()
+        {
+            _threadController.CreateThread();
 
+        }
 
 
 

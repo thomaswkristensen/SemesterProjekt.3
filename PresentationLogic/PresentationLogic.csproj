@@ -102,6 +102,10 @@
       <Project>{8274c992-3195-4d83-a64a-067731545ccc}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ObserverPattern\ObserverPattern.csproj">
+      <Project>{fff1dc28-48aa-413a-92cd-b59e06f47bf0}</Project>
+      <Name>ObserverPattern</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

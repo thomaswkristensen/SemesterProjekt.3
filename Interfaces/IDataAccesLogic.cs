@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,9 @@ namespace Interfaces
         double PullSlope();
         bool SaveMeasurementDataAcces(Measurement_DTO measurementDTO, string ssn, string employeeID);
         void SetAlarmLimitsDataAccess(Alarm_DTO alarmDTO);
+        void RunProducer();
+        void CreateProducer(ConcurrentQueue<BufferBlock> queue);
+        void StartMeasuringDAL();
 
     }
 }

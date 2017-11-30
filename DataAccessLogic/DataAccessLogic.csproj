@@ -73,6 +73,7 @@
     <Compile Include="PullData.cs" />
     <Compile Include="QueryBuilder.cs" />
     <Compile Include="SaveData.cs" />
+    <Compile Include="ThreadControllerDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

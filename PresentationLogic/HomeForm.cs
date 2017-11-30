@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Interfaces;
 using DTO;
+using ObserverPattern;
 
 namespace PresentationLogic
 {
-    public partial class HomeForm : Form
+    public partial class HomeForm : Form, IFilterObserver
     {
         private LogInForm Login;
         private CalibrationForm Calibration;
@@ -20,11 +21,14 @@ namespace PresentationLogic
         private IBusinessLogic _BL;
         private Measurement_DTO _data;
         private bool _digitalFilter;
+        private FilterContainer _filterContainer;
 
-        public HomeForm(IBusinessLogic BL)
+        public HomeForm(IBusinessLogic BL, FilterContainer filterContainer)
         {
             _BL = BL;
             _digitalFilter = false;
+            _filterContainer = filterContainer;
+            _filterContainer.Attach(this);
             InitializeComponent();
         }
 
@@ -80,6 +84,25 @@ namespace PresentationLogic
             this.Hide();
             Limitvalues = new LimitValuesForm(_BL);
             Limitvalues.Show();
+        }
+
+        private void Start_button_HomeForm_Click(object sender, EventArgs e)
+        {
+            _BL.StartMeasuringBL();
+        }
+
+        public void Update()
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => Update()));
+            }
+            else
+            {
+                int måling = 0;
+                
+            }
+
         }
     }
 }
