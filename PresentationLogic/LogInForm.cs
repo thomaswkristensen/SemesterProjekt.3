@@ -22,6 +22,7 @@ namespace PresentationLogic
 
         public LogInForm(IBusinessLogic BL, Measurement_DTO measurementDTO)
         {
+          
             _BL = BL;
             InitializeComponent();
             _measurementDTO = measurementDTO;
