@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using ObserverPattern;
 
 namespace Buisnesslogic
 {
@@ -11,12 +12,14 @@ namespace Buisnesslogic
     {
         private IFilter _filter;
         private Measurement_DTO _measurementDTO;
+        private FilterContainer _filterContainer;
         private bool DigitalFilterUsed { get; set; }
 
-        public Filter()
+        public Filter(FilterContainer filterContainer)
         {
             _filter = new RawFilter();
             DigitalFilterUsed = false;
+            _filterContainer = filterContainer;
         }
 
         public void FilterMethod(Measurement_DTO data)

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using Interfaces;
+using ObserverPattern;
 
 namespace Buisnesslogic
 {
@@ -20,7 +21,8 @@ namespace Buisnesslogic
         private Consumer _consumer;
         private ThreadControllerBL _threadController;
         private Converter _converter;
-        public BusinessController(IDataAccesLogic DAL, Consumer consumer)
+        private FilterContainer _filterContainer;
+        public BusinessController(IDataAccesLogic DAL, Consumer consumer, FilterContainer filterContainer)
         {
             _DAL = DAL;
             _calibration = new Calibration();
@@ -30,6 +32,7 @@ namespace Buisnesslogic
             _consumer = consumer;
             _threadController = new ThreadControllerBL(_consumer);
             _converter = new Converter();
+            _filterContainer = filterContainer;
 
         }
 
@@ -103,7 +106,7 @@ namespace Buisnesslogic
 
         public void StartMeasuringBL()
         {
-            _converter.SetSlopeAndZPA(_DAL.PullSlope(), _DAL.ZPAVolt);
+            _converter.SetSlopeAndZPA(_filterContainer, _DAL.PullSlope(), _DAL.ZPAVolt);
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
             _showData.HandleData();

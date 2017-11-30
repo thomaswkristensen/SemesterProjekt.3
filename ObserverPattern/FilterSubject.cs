@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Buisnesslogic;
-using PresentationLogic;
 
 namespace ObserverPattern
 {
-    class FilterSubject
+    public class FilterSubject
     {
         private List<IFilterObserver> _observerList;
 

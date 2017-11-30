@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using ObserverPattern;
 
 namespace Buisnesslogic
 {
@@ -13,6 +14,7 @@ namespace Buisnesslogic
         private  Measurement_DTO _data;
         private double _slope;
         private double _zpa;
+        private Filter _filter;
 
 
         public Converter()
@@ -20,21 +22,22 @@ namespace Buisnesslogic
             _slope = 1;
             _zpa = 0;
         }
-        public Measurement_DTO Convert(Measurement_DTO data)
+        public void Convert(Measurement_DTO data)
         {
             _data = data;
             foreach (var item in data.RawData)
             {
                 _data.ConvertedData.Add((item - _zpa)*_slope);
             }
-
-            return _data;
+            _filter.FilterMethod(_data);
         }
 
-        public void SetSlopeAndZPA(double slope, double zpa)
+        public void SetSlopeAndZPA(FilterContainer filterContainer, double slope, double zpa)
         {
+            _filter = new Filter(filterContainer);
             _slope = slope;
             _zpa = zpa;
+
         }
     }
 }

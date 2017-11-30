@@ -9,6 +9,7 @@ using Buisnesslogic;
 using PresentationLogic;
 using Interfaces;
 using DTO;
+using ObserverPattern;
 
 namespace Main
 {
@@ -20,6 +21,7 @@ namespace Main
         private ConcurrentQueue<BufferBlock> _queue;
         private Consumer _consumer;
         private Producer _producer;
+        private FilterContainer _filterContainer;
         static void Main(string[] args)
         {
             Program program = new Program();
@@ -32,8 +34,8 @@ namespace Main
             _producer = new Producer(_queue);
             
             DAC = new DataAccesController(_producer);
-            BC = new BusinessController(DAC, _consumer);
-            PC = new PresentationController(BC);
+            BC = new BusinessController(DAC, _consumer, _filterContainer);
+            PC = new PresentationController(BC, _filterContainer);
             
             PC.Start();
         }

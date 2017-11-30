@@ -46,13 +46,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Buisnesslogic\Buisnesslogic.csproj">
-      <Project>{674cab44-02a8-44cc-9c19-5fb6728e1ae2}</Project>
-      <Name>Buisnesslogic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PresentationLogic\PresentationLogic.csproj">
-      <Project>{0147653d-2196-4946-97c5-188d24c009ee}</Project>
-      <Name>PresentationLogic</Name>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{58f8428f-78fe-43a1-bf58-15c7bd64bef4}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
