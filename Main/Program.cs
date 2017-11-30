@@ -32,6 +32,7 @@ namespace Main
             _queue = new ConcurrentQueue<BufferBlock>();
             _consumer = new Consumer(_queue);
             _producer = new Producer(_queue);
+            _filterContainer = new FilterContainer();
             
             DAC = new DataAccesController(_producer);
             BC = new BusinessController(DAC, _consumer, _filterContainer);
