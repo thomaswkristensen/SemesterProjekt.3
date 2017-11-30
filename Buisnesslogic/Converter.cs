@@ -32,11 +32,11 @@ namespace Buisnesslogic
             _filter.FilterMethod(_data);
         }
 
-        public void SetSlopeAndZPA(FilterContainer filterContainer, double slope, double zpa)
+        public void SetSlopeAndZPA(FilterContainer filterContainer/*, double slope, double zpa*/)
         {
             _filter = new Filter(filterContainer);
-            _slope = slope;
-            _zpa = zpa;
+            //_slope = slope;
+            //_zpa = zpa;
 
         }
     }
