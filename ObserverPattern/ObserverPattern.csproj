@@ -44,6 +44,7 @@
     <Compile Include="FilterSubject.cs" />
     <Compile Include="IFilterObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

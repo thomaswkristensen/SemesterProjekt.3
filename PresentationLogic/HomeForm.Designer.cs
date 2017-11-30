@@ -49,39 +49,14 @@
             this.button_alarmtone = new System.Windows.Forms.Button();
             this.button_alarm = new System.Windows.Forms.Button();
             this.button_setLimitValues = new System.Windows.Forms.Button();
-            this.Bloodpreasure_chart_Homeform = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.Bloodpreasure_chart_Homeform)).BeginInit();
+            this.Bloodpressure_chart_Homeform = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.Bloodpressure_chart_Homeform)).BeginInit();
             this.SuspendLayout();
-            // 
-            // HP_Chart
-            // 
-            
-            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            chartArea1.AxisY.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            chartArea1.BorderColor = System.Drawing.Color.Blue;
-            chartArea1.Name = "ChartArea1";
-            
-            legend1.BackColor = System.Drawing.Color.Black;
-            legend1.BorderColor = System.Drawing.Color.Black;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.ForeColor = System.Drawing.Color.Lime;
-            legend1.Name = "Legend1";
-            
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series1.LabelBackColor = System.Drawing.Color.Black;
-            series1.LabelForeColor = System.Drawing.Color.Lime;
-            series1.Legend = "Legend1";
-            series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series1.Name = "Blodtryk";
-            
             // 
             // Diastolic_textBox_HomeForm
             // 
             this.Diastolic_textBox_HomeForm.Location = new System.Drawing.Point(687, 285);
-            this.Diastolic_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Diastolic_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Diastolic_textBox_HomeForm.Name = "Diastolic_textBox_HomeForm";
             this.Diastolic_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
             this.Diastolic_textBox_HomeForm.TabIndex = 26;
@@ -89,7 +64,7 @@
             // Systolic_textBox_HomeForm
             // 
             this.Systolic_textBox_HomeForm.Location = new System.Drawing.Point(687, 248);
-            this.Systolic_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Systolic_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Systolic_textBox_HomeForm.Name = "Systolic_textBox_HomeForm";
             this.Systolic_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
             this.Systolic_textBox_HomeForm.TabIndex = 25;
@@ -97,7 +72,7 @@
             // Average_textBox_HomeForm
             // 
             this.Average_textBox_HomeForm.Location = new System.Drawing.Point(687, 211);
-            this.Average_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Average_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Average_textBox_HomeForm.Name = "Average_textBox_HomeForm";
             this.Average_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
             this.Average_textBox_HomeForm.TabIndex = 24;
@@ -105,7 +80,7 @@
             // Puls_textBox_HomeForm
             // 
             this.Puls_textBox_HomeForm.Location = new System.Drawing.Point(687, 172);
-            this.Puls_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Puls_textBox_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Puls_textBox_HomeForm.Name = "Puls_textBox_HomeForm";
             this.Puls_textBox_HomeForm.Size = new System.Drawing.Size(68, 20);
             this.Puls_textBox_HomeForm.TabIndex = 23;
@@ -155,7 +130,7 @@
             // ZeroPointAdjusment_button_HomeForm
             // 
             this.ZeroPointAdjusment_button_HomeForm.Location = new System.Drawing.Point(177, 11);
-            this.ZeroPointAdjusment_button_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ZeroPointAdjusment_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.ZeroPointAdjusment_button_HomeForm.Name = "ZeroPointAdjusment_button_HomeForm";
             this.ZeroPointAdjusment_button_HomeForm.Size = new System.Drawing.Size(87, 36);
             this.ZeroPointAdjusment_button_HomeForm.TabIndex = 18;
@@ -166,7 +141,7 @@
             // Start_button_HomeForm
             // 
             this.Start_button_HomeForm.Location = new System.Drawing.Point(619, 322);
-            this.Start_button_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Start_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Start_button_HomeForm.Name = "Start_button_HomeForm";
             this.Start_button_HomeForm.Size = new System.Drawing.Size(136, 30);
             this.Start_button_HomeForm.TabIndex = 17;
@@ -177,7 +152,7 @@
             // Save_button_HomeForm
             // 
             this.Save_button_HomeForm.Location = new System.Drawing.Point(288, 67);
-            this.Save_button_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Save_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Save_button_HomeForm.Name = "Save_button_HomeForm";
             this.Save_button_HomeForm.Size = new System.Drawing.Size(80, 36);
             this.Save_button_HomeForm.TabIndex = 16;
@@ -188,7 +163,7 @@
             // Digital_Button_HomeForm
             // 
             this.Digital_Button_HomeForm.Location = new System.Drawing.Point(66, 67);
-            this.Digital_Button_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Digital_Button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Digital_Button_HomeForm.Name = "Digital_Button_HomeForm";
             this.Digital_Button_HomeForm.Size = new System.Drawing.Size(87, 36);
             this.Digital_Button_HomeForm.TabIndex = 15;
@@ -199,7 +174,7 @@
             // Calibration_button_HomeForm
             // 
             this.Calibration_button_HomeForm.Location = new System.Drawing.Point(66, 11);
-            this.Calibration_button_HomeForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Calibration_button_HomeForm.Margin = new System.Windows.Forms.Padding(2);
             this.Calibration_button_HomeForm.Name = "Calibration_button_HomeForm";
             this.Calibration_button_HomeForm.Size = new System.Drawing.Size(87, 36);
             this.Calibration_button_HomeForm.TabIndex = 14;
@@ -210,7 +185,7 @@
             // stop_button
             // 
             this.stop_button.Location = new System.Drawing.Point(619, 365);
-            this.stop_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.stop_button.Margin = new System.Windows.Forms.Padding(2);
             this.stop_button.Name = "stop_button";
             this.stop_button.Size = new System.Drawing.Size(135, 30);
             this.stop_button.TabIndex = 27;
@@ -256,11 +231,11 @@
             this.button_setLimitValues.UseVisualStyleBackColor = true;
             this.button_setLimitValues.Click += new System.EventHandler(this.button_setLimitValues_Click);
             // 
-            // Bloodpreasure_chart_Homeform
+            // Bloodpressure_chart_Homeform
             // 
-            this.Bloodpreasure_chart_Homeform.BackColor = System.Drawing.Color.Black;
-            this.Bloodpreasure_chart_Homeform.BorderlineColor = System.Drawing.Color.Black;
-            this.Bloodpreasure_chart_Homeform.BorderSkin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Bloodpressure_chart_Homeform.BackColor = System.Drawing.Color.Black;
+            this.Bloodpressure_chart_Homeform.BorderlineColor = System.Drawing.Color.Black;
+            this.Bloodpressure_chart_Homeform.BorderSkin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
             chartArea1.AxisX.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -275,7 +250,7 @@
             chartArea1.Position.Height = 82.57609F;
             chartArea1.Position.Width = 94F;
             chartArea1.Position.Y = 3F;
-            this.Bloodpreasure_chart_Homeform.ChartAreas.Add(chartArea1);
+            this.Bloodpressure_chart_Homeform.ChartAreas.Add(chartArea1);
             legend1.BackColor = System.Drawing.Color.Black;
             legend1.BorderColor = System.Drawing.Color.Black;
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
@@ -288,9 +263,9 @@
             legend1.Position.Width = 13.56185F;
             legend1.Position.X = 3F;
             legend1.Position.Y = 88.57609F;
-            this.Bloodpreasure_chart_Homeform.Legends.Add(legend1);
-            this.Bloodpreasure_chart_Homeform.Location = new System.Drawing.Point(12, 241);
-            this.Bloodpreasure_chart_Homeform.Name = "Bloodpreasure_chart_Homeform";
+            this.Bloodpressure_chart_Homeform.Legends.Add(legend1);
+            this.Bloodpressure_chart_Homeform.Location = new System.Drawing.Point(12, 241);
+            this.Bloodpressure_chart_Homeform.Name = "Bloodpressure_chart_Homeform";
             series1.BorderColor = System.Drawing.Color.Navy;
             series1.BorderWidth = 2;
             series1.ChartArea = "ChartArea1";
@@ -301,20 +276,18 @@
             series1.Legend = "Legend1";
             series1.MarkerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             series1.Name = "Blodtryk";
-            this.Bloodpreasure_chart_Homeform.Series.Add(series1);
-            this.Bloodpreasure_chart_Homeform.Size = new System.Drawing.Size(881, 376);
-            this.Bloodpreasure_chart_Homeform.TabIndex = 32;
-            this.Bloodpreasure_chart_Homeform.Text = "chart1";
+            this.Bloodpressure_chart_Homeform.Series.Add(series1);
+            this.Bloodpressure_chart_Homeform.Size = new System.Drawing.Size(881, 376);
+            this.Bloodpressure_chart_Homeform.TabIndex = 32;
+            this.Bloodpressure_chart_Homeform.Text = "chart1";
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-
-            this.ClientSize = new System.Drawing.Size(792, 440);
             this.ClientSize = new System.Drawing.Size(1188, 677);
-            this.Controls.Add(this.Bloodpreasure_chart_Homeform);
+            this.Controls.Add(this.Bloodpressure_chart_Homeform);
             this.Controls.Add(this.button_setLimitValues);
             this.Controls.Add(this.button_alarm);
             this.Controls.Add(this.button_alarmtone);
@@ -333,13 +306,11 @@
             this.Controls.Add(this.Save_button_HomeForm);
             this.Controls.Add(this.Digital_Button_HomeForm);
             this.Controls.Add(this.Calibration_button_HomeForm);
-            
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HomeForm";
             this.RightToLeftLayout = true;
             this.Text = "HomeForm";
-            ((System.ComponentModel.ISupportInitialize)(this.Bloodpreasure_chart_Homeform)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bloodpressure_chart_Homeform)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,6 +335,6 @@
         private System.Windows.Forms.Button button_alarmtone;
         private System.Windows.Forms.Button button_alarm;
         private System.Windows.Forms.Button button_setLimitValues;
-        private System.Windows.Forms.DataVisualization.Charting.Chart Bloodpreasure_chart_Homeform;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Bloodpressure_chart_Homeform;
     }
 }

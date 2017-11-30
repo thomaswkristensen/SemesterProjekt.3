@@ -19,7 +19,7 @@ namespace DataAccessLogic
         public Producer(ConcurrentQueue<BufferBlock> dataQueue)
         {
             _dataQueue = dataQueue;
-            _data = new Data();
+            _data = new TestData();
             State = false;
         }
 
