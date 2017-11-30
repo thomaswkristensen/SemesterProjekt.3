@@ -19,7 +19,7 @@ namespace Buisnesslogic
         private ShowData _showData;
         private Consumer _consumer;
         private ThreadControllerBL _threadController;
-
+        private Converter _converter;
         public BusinessController(IDataAccesLogic DAL, Consumer consumer)
         {
             _DAL = DAL;
@@ -29,6 +29,7 @@ namespace Buisnesslogic
             _login = new Login();
             _consumer = consumer;
             _threadController = new ThreadControllerBL(_consumer);
+            _converter = new Converter();
 
         }
 
@@ -102,6 +103,7 @@ namespace Buisnesslogic
 
         public void StartMeasuringBL()
         {
+            _converter.SetSlopeAndZPA(_DAL.PullSlope(), _DAL.ZPAVolt);
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
             _showData.HandleData();

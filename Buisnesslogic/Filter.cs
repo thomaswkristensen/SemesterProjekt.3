@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace Buisnesslogic
 {
     class Filter
     {
         private IFilter _filter;
+        private Measurement_DTO _measurementDTO;
         private bool DigitalFilterUsed { get; set; }
 
         public Filter()
@@ -17,14 +19,17 @@ namespace Buisnesslogic
             DigitalFilterUsed = false;
         }
 
-        public List<double> FilterMethod(List<double> list)
+        public void FilterMethod(Measurement_DTO data)
         {
+            _measurementDTO = data;
             if (DigitalFilterUsed)
             {
                 _filter = new DigitalFilter();
             }
             else _filter = new RawFilter();
-            return _filter.Filtering(list);
+            
+            _measurementDTO.ConvertedData = _filter.Filtering(data.ConvertedData);
+
         }
 
         public void UseDigitalFilter()

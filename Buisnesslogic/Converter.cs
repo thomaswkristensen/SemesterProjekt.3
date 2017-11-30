@@ -17,7 +17,8 @@ namespace Buisnesslogic
 
         public Converter()
         {
-            
+            _slope = 1;
+            _zpa = 0;
         }
         public Measurement_DTO Convert(Measurement_DTO data)
         {
