@@ -22,6 +22,7 @@ namespace Main
         private Consumer _consumer;
         private Producer _producer;
         private FilterContainer _filterContainer;
+        private AnalysisContainer _analysisContainer;
         static void Main(string[] args)
         {
             Program program = new Program();
@@ -33,9 +34,10 @@ namespace Main
             _consumer = new Consumer(_queue);
             _producer = new Producer(_queue);
             _filterContainer = new FilterContainer();
+            _analysisContainer = new AnalysisContainer();
             
             DAC = new DataAccesController(_producer);
-            BC = new BusinessController(DAC, _consumer, _filterContainer);
+            BC = new BusinessController(DAC, _consumer, _filterContainer, _analysisContainer);
             PC = new PresentationController(BC, _filterContainer);
             
             PC.Start();

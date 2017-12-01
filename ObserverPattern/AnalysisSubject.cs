@@ -6,30 +6,30 @@ using System.Threading.Tasks;
 
 namespace ObserverPattern
 {
-    public class FilterSubject
+    public class AnalysisSubject
     {
-        private List<IFilterObserver> _observerList;
+        public List<IAnalysisObserver> _observerList;
 
-        public FilterSubject()
+        public AnalysisSubject()
         {
-            _observerList = new List<IFilterObserver>();
+            _observerList = new List<IAnalysisObserver>();
         }
 
-        public void Attach(IFilterObserver item)
+        public void Attach(IAnalysisObserver item)
         {
             _observerList.Add(item);
         }
 
-        public void Dettach(IFilterObserver item)
+        public void Detach(IAnalysisObserver item)
         {
-            _observerList.Add(item);
+            _observerList.Remove(item);
         }
 
         public void Notify()
         {
             foreach (var item in _observerList)
             {
-                item.FilterUpdate();
+                item.AnalysisUpdate();
             }
         }
     }

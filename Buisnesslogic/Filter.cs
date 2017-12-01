@@ -31,7 +31,6 @@ namespace Buisnesslogic
             else _filter = new RawFilter();
             
             _filterContainer.SetSlidingWindow(_filter.Filtering(data.ConvertedData));
-            
 
         }
 

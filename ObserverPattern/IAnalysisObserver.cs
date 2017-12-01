@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ObserverPattern
 {
-    public interface IFilterObserver
+    public interface IAnalysisObserver
     {
-        void FilterUpdate();
+        void AnalysisUpdate();
     }
 }
