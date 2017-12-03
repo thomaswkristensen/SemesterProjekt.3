@@ -10,11 +10,7 @@ namespace ObserverPattern
     public class AnalysisContainer : AnalysisSubject
     {
         private HealthValues_DTO _hvDTO;
-
-        public AnalysisContainer()
-        {
-            
-        }
+        
         public void SetHealthValues(HealthValues_DTO hvDto)
         {;
             _hvDTO = hvDto;

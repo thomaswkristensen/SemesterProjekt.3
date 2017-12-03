@@ -191,6 +191,7 @@
             this.stop_button.TabIndex = 27;
             this.stop_button.Text = "Stop";
             this.stop_button.UseVisualStyleBackColor = true;
+            this.stop_button.Click += new System.EventHandler(this.stop_button_Click);
             // 
             // label_FilterType
             // 

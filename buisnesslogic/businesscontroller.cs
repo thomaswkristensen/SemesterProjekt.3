@@ -113,6 +113,17 @@ namespace Buisnesslogic
             _DAL.StartMeasuringDAL();
             _showData.HandleData();
         }
+
+        public void ContinueMeasuringBL()
+        {
+            _threadController.StartThread();
+            _DAL.ContinueMeasuringDL();
+        }
+        public void StopMeasuringBL()
+        {
+            _threadController.StopThread();
+            _DAL.StopMeasuringDAL();
+        }
     }
 
     

@@ -23,6 +23,7 @@ namespace PresentationLogic
         private bool _digitalFilter;
         private FilterContainer _filterContainer;
         private AnalysisContainer _analysisContainer;
+        private bool HasMeasureBeenStarted { get; set; }
 
         public HomeForm(IBusinessLogic BL, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
@@ -32,7 +33,9 @@ namespace PresentationLogic
             _filterContainer.Attach(this);
             _analysisContainer = analysisContainer;
             _analysisContainer.Attach(this);
+            HasMeasureBeenStarted = false;
             InitializeComponent();
+
         }
 
         private void Save_button_HomeForm_Click(object sender, EventArgs e)
@@ -91,7 +94,16 @@ namespace PresentationLogic
 
         private void Start_button_HomeForm_Click(object sender, EventArgs e)
         {
-            _BL.StartMeasuringBL();
+            if (!HasMeasureBeenStarted)
+            {
+                _BL.StartMeasuringBL();
+                HasMeasureBeenStarted = true;
+            }
+            else if (HasMeasureBeenStarted)
+            {
+                _BL.ContinueMeasuringBL();
+                HasMeasureBeenStarted = false;
+            }
         }
 
         public void FilterUpdate()
@@ -129,6 +141,11 @@ namespace PresentationLogic
                 Puls_textBox_HomeForm.Text = hvDTO.HeartRate.ToString();
             }
             
+        }
+
+        private void stop_button_Click(object sender, EventArgs e)
+        {
+            _BL.StopMeasuringBL();
         }
     }
 }

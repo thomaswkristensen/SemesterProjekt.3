@@ -95,7 +95,14 @@ namespace DataAccessLogic
 
         }
 
+        public void StopMeasuringDAL()
+        {
+            _threadController.StopThread();
+        }
 
-
+        public void ContinueMeasuringDL()
+        {
+            _threadController.StartThread();
+        }
     }
 }
