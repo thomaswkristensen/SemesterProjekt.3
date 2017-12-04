@@ -34,14 +34,21 @@ namespace PresentationLogic
         private void information_button_Click(object sender, EventArgs e)
         {
             Patient_DTO patientDTO = _BL.GetPatientInformation(SSN_textBox.Text);
-            if (patientDTO != null)
+            if (patientDTO != null && patientDTO.Age != 0)
             {
                 name_textBox.Text = patientDTO.FirstName + " " + patientDTO.LastName;
                 age_textBox.Text = Convert.ToString(patientDTO.Age);
                 employeeID_textBox.Text = _employeeID;
                 save_button.Enabled = true;
             }
-            else MessageBox.Show("Patient ikke fundet");
+            else
+            {
+                name_textBox.Clear();
+                age_textBox.Clear();
+                employeeID_textBox.Clear();
+                save_button.Enabled = false;
+                MessageBox.Show("Patient ikke fundet");
+            }
         }
     }
 }

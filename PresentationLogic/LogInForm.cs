@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using Interfaces;
+using ObserverPattern;
 
 namespace PresentationLogic
 {
@@ -16,14 +17,14 @@ namespace PresentationLogic
     {
         private HomeForm _homeForm;
         private SSNForm _SSNForm;
-        private LogInForm _loginForm;
         private IBusinessLogic _BL;
         private Measurement_DTO _measurementDTO;
 
-        public LogInForm(IBusinessLogic BL, Measurement_DTO measurementDTO)
+        public LogInForm(IBusinessLogic BL, Measurement_DTO measurementDTO, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
-          
+           
             _BL = BL;
+            _homeForm = new HomeForm(_BL,filterContainer,analysisContainer);
             InitializeComponent();
             _measurementDTO = measurementDTO;
         }

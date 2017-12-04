@@ -41,7 +41,7 @@ namespace PresentationLogic
         private void Save_button_HomeForm_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Login = new LogInForm(_BL, _data);
+            Login = new LogInForm(_BL, _data,_filterContainer,_analysisContainer);
             Login.Show();
         }
 
@@ -53,7 +53,7 @@ namespace PresentationLogic
         private void Calibration_button_HomeForm_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Calibration = new CalibrationForm(_BL);
+            Calibration = new CalibrationForm(_BL,_filterContainer,_analysisContainer);
             Calibration.Show();
         }
 
@@ -87,7 +87,7 @@ namespace PresentationLogic
         private void button_setLimitValues_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Limitvalues = new LimitValuesForm(_BL);
+            Limitvalues = new LimitValuesForm(_BL, _filterContainer, _analysisContainer);
             Limitvalues.Show();
         }
 
@@ -121,7 +121,7 @@ namespace PresentationLogic
         {
             if (InvokeRequired)
             {
-                BeginInvoke(new Action(() => Update()));
+                BeginInvoke(new Action(() => AnalysisUpdate()));
             }
             else
             {
