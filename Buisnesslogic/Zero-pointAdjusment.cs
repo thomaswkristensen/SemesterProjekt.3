@@ -21,7 +21,7 @@ namespace Buisnesslogic
             
             foreach (var sample in dataList)
             {
-                _sum = +sample;
+                _sum += sample;
             }
 
             return _sum / dataList.Count;

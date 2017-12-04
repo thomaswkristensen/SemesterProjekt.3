@@ -38,14 +38,14 @@ namespace Buisnesslogic
 
         }
 
-        public void StartZPA(List<double> dataList)
+        public void StartZPA()
         {
-            _DAL.ZPAVolt = _ZPA.CalculateZPA(dataList);
+            _DAL.ZPAVolt = _ZPA.CalculateZPA(_DAL.PullData());
         }
 
-        public void StartCalibration(List<double> data, int value)
+        public void StartCalibration(int value)
         {
-            _calibration.Calibrate(data, value);
+            _calibration.Calibrate(_DAL.PullData(), value);
         }
 
         public Calibration_DTO ViewCalibration()
@@ -108,17 +108,15 @@ namespace Buisnesslogic
 
         public void StartMeasuringBL()
         {
+            _consumer.SetConverter(_converter);
             _converter.SetSlopeAndZPA(_filterContainer/*, _DAL.PullSlope(), _DAL.ZPAVolt*/);
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
-            _showData.HandleData();
+            
+            
         }
 
-        public void ContinueMeasuringBL()
-        {
-            _threadController.StartThread();
-            _DAL.ContinueMeasuringDL();
-        }
+       
         public void StopMeasuringBL()
         {
             _threadController.StopThread();

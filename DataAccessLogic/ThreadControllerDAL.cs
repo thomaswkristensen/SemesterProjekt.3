@@ -24,11 +24,6 @@ namespace DataAccessLogic
             _producerThread.Start();
         }
 
-        public void StartThread()
-        {
-            _producer.State = true;
-            _producerThread.Start();
-        }
 
         public void StopThread()
         {

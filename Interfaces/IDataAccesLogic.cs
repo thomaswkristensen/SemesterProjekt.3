@@ -22,6 +22,7 @@ namespace Interfaces
         void CreateProducer(ConcurrentQueue<BufferBlock> queue);
         void StartMeasuringDAL();
         void StopMeasuringDAL();
-        void ContinueMeasuringDL();
+        List<double> PullData();
+
     }
 }

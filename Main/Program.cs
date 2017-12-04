@@ -38,7 +38,7 @@ namespace Main
             
             DAC = new DataAccesController(_producer);
             BC = new BusinessController(DAC, _consumer, _filterContainer, _analysisContainer);
-            PC = new PresentationController(BC, _filterContainer);
+            PC = new PresentationController(BC, _filterContainer,_analysisContainer);
             
             PC.Start();
         }
