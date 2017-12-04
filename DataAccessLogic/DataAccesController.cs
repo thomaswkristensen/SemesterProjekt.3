@@ -18,11 +18,13 @@ namespace DataAccessLogic
         private SaveData _saveData;
         private Producer _producer;
         private ThreadControllerDAL _threadController;
+        private IData _data;
         public DataAccesController(Producer producer)
         {
             _limits = new LimitValues();
             _pullData = new PullData();
             _saveData = new SaveData();
+            _data  = new TestData();
             _producer = producer;
             _threadController = new ThreadControllerDAL(_producer);
 
@@ -100,9 +102,11 @@ namespace DataAccessLogic
             _threadController.StopThread();
         }
 
-        public void ContinueMeasuringDL()
+        public List<double> PullData()
         {
-            _threadController.StartThread();
+            return _data.getData();
         }
+
+      
     }
 }

@@ -17,7 +17,7 @@ namespace PresentationLogic
         private IBusinessLogic _BL;
         private Measurement_DTO _data;
         private Calibration_DTO _calibration;
-        private List<double> x;
+        private List<double> x;        
         public CalibrationForm(IBusinessLogic BL)
         {
             x = new List<double>();
@@ -31,15 +31,15 @@ namespace PresentationLogic
 
             if (P1_radioButton.Checked)
             {
-                _BL.StartCalibration(_data.RawData, 10);
+                _BL.StartCalibration(10);
             }
             else if (P2_radioButton.Checked)
             {
-                _BL.StartCalibration(_data.RawData, 50);
+                _BL.StartCalibration(50);
             }
             else if (P3_radioButton.Checked)
             {
-                _BL.StartCalibration(_data.RawData, 100);
+                _BL.StartCalibration(100);
             }
         }
 

@@ -23,17 +23,17 @@ namespace PresentationLogic
         private bool _digitalFilter;
         private FilterContainer _filterContainer;
         private AnalysisContainer _analysisContainer;
-        private bool HasMeasureBeenStarted { get; set; }
+       
 
         public HomeForm(IBusinessLogic BL, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
             _BL = BL;
+            
             _digitalFilter = false;
             _filterContainer = filterContainer;
             _filterContainer.Attach(this);
             _analysisContainer = analysisContainer;
             _analysisContainer.Attach(this);
-            HasMeasureBeenStarted = false;
             InitializeComponent();
 
         }
@@ -47,8 +47,7 @@ namespace PresentationLogic
 
         private void ZeroPointAdjusment_button_HomeForm_Click(object sender, EventArgs e)
         {
-            _data = new Measurement_DTO();
-            _BL.StartZPA(_data.RawData);
+            _BL.StartZPA();
         }
 
         private void Calibration_button_HomeForm_Click(object sender, EventArgs e)
@@ -94,23 +93,15 @@ namespace PresentationLogic
 
         private void Start_button_HomeForm_Click(object sender, EventArgs e)
         {
-            if (!HasMeasureBeenStarted)
-            {
-                _BL.StartMeasuringBL();
-                HasMeasureBeenStarted = true;
-            }
-            else if (HasMeasureBeenStarted)
-            {
-                _BL.ContinueMeasuringBL();
-                HasMeasureBeenStarted = false;
-            }
+            
+           _BL.StartMeasuringBL();
         }
 
         public void FilterUpdate()
         {
             if (InvokeRequired)
             {
-                BeginInvoke(new Action(() => Update()));
+                BeginInvoke(new Action(() => FilterUpdate()));
             }
             else
             {
@@ -140,7 +131,7 @@ namespace PresentationLogic
                 Average_textBox_HomeForm.Text = hvDTO.AverageBP.ToString();
                 Puls_textBox_HomeForm.Text = hvDTO.HeartRate.ToString();
             }
-            
+
         }
 
         private void stop_button_Click(object sender, EventArgs e)

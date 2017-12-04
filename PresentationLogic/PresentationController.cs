@@ -13,11 +13,13 @@ namespace PresentationLogic
     {
         private IBusinessLogic _BL;
         private FilterContainer _filterContainer;
+        private AnalysisContainer _analysisContainer;
 
-        public PresentationController(IBusinessLogic BL, FilterContainer filterContainer)
+        public PresentationController(IBusinessLogic BL, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
             _BL = BL;
             _filterContainer = filterContainer;
+            _analysisContainer = analysisContainer;
         }
         
         public void Start()
@@ -26,7 +28,7 @@ namespace PresentationLogic
             Application.SetCompatibleTextRenderingDefault(false);
             Application.DoEvents();
             MessageBox.Show("Husk nulpunktsjustering");
-            Application.Run(new HomeForm(_BL, _filterContainer));
+            Application.Run(new HomeForm(_BL, _filterContainer,_analysisContainer));
         }
     }
 }

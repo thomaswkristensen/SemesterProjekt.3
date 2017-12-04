@@ -25,12 +25,6 @@ namespace Buisnesslogic
             _consumerThread.Start();
         }
 
-        public void StartThread()
-        {
-            _consumer.State = true;
-            _consumerThread.Start();
-        }
-
         public void StopThread()
         {
             _consumer.State = false;
