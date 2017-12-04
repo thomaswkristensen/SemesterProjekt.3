@@ -41,6 +41,7 @@
             this.textBox_upperPuls = new System.Windows.Forms.TextBox();
             this.textBox_lowerPuls = new System.Windows.Forms.TextBox();
             this.button_OK_LV = new System.Windows.Forms.Button();
+            this.Cancel_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_UpperSystolic
@@ -149,11 +150,22 @@
             this.button_OK_LV.UseVisualStyleBackColor = true;
             this.button_OK_LV.Click += new System.EventHandler(this.button_OK_LV_Click);
             // 
+            // Cancel_button
+            // 
+            this.Cancel_button.Location = new System.Drawing.Point(44, 304);
+            this.Cancel_button.Name = "Cancel_button";
+            this.Cancel_button.Size = new System.Drawing.Size(75, 23);
+            this.Cancel_button.TabIndex = 13;
+            this.Cancel_button.Text = "Cancel";
+            this.Cancel_button.UseVisualStyleBackColor = true;
+            this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
+            // 
             // LimitValuesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 345);
+            this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.button_OK_LV);
             this.Controls.Add(this.textBox_lowerPuls);
             this.Controls.Add(this.textBox_upperPuls);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.TextBox textBox_upperPuls;
         private System.Windows.Forms.TextBox textBox_lowerPuls;
         private System.Windows.Forms.Button button_OK_LV;
+        private System.Windows.Forms.Button Cancel_button;
     }
 }

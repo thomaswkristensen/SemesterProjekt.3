@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.P1_radioButton = new System.Windows.Forms.RadioButton();
             this.P2_radioButton = new System.Windows.Forms.RadioButton();
             this.P3_radioButton = new System.Windows.Forms.RadioButton();
@@ -41,6 +41,7 @@
             this.SlopeTextbox = new System.Windows.Forms.TextBox();
             this.ChangeSlope_Button = new System.Windows.Forms.Button();
             this.ViewCalibration_Button = new System.Windows.Forms.Button();
+            this.Cancel_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,16 +116,16 @@
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(281, 25);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(321, 220);
             this.chart1.TabIndex = 6;
             this.chart1.Text = "chart1";
@@ -157,12 +158,23 @@
             this.ViewCalibration_Button.UseVisualStyleBackColor = true;
             this.ViewCalibration_Button.Click += new System.EventHandler(this.ViewCalibration_Button_Click);
             // 
+            // Cancel_button
+            // 
+            this.Cancel_button.Location = new System.Drawing.Point(199, 221);
+            this.Cancel_button.Name = "Cancel_button";
+            this.Cancel_button.Size = new System.Drawing.Size(75, 23);
+            this.Cancel_button.TabIndex = 10;
+            this.Cancel_button.Text = "Cancel";
+            this.Cancel_button.UseVisualStyleBackColor = true;
+            this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
+            // 
             // CalibrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(615, 257);
+            this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.ViewCalibration_Button);
             this.Controls.Add(this.ChangeSlope_Button);
             this.Controls.Add(this.SlopeTextbox);
@@ -194,5 +206,6 @@
         private System.Windows.Forms.TextBox SlopeTextbox;
         private System.Windows.Forms.Button ChangeSlope_Button;
         private System.Windows.Forms.Button ViewCalibration_Button;
+        private System.Windows.Forms.Button Cancel_button;
     }
 }

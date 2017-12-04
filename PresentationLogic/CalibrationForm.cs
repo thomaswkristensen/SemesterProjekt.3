@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using Interfaces;
+using ObserverPattern;
 
 namespace PresentationLogic
 {
@@ -17,11 +18,13 @@ namespace PresentationLogic
         private IBusinessLogic _BL;
         private Measurement_DTO _data;
         private Calibration_DTO _calibration;
-        private List<double> x;        
-        public CalibrationForm(IBusinessLogic BL)
+        private List<double> x;
+        private HomeForm _homeForm;
+        public CalibrationForm(IBusinessLogic BL, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
             x = new List<double>();
             _BL = BL;
+            _homeForm = new HomeForm(_BL,filterContainer,analysisContainer);
             InitializeComponent();
         }
 
@@ -80,8 +83,17 @@ namespace PresentationLogic
             if (_BL.SaveCalibrationLogic(_calibration))
             {
                 MessageBox.Show("Kalibrering gemt");
+                this.Hide();
+                _homeForm.Show();
+
             }
             else MessageBox.Show("Kalibrering ikke gemt, prøv igen");
+        }
+
+        private void Cancel_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            _homeForm.Show();
         }
     }
 }

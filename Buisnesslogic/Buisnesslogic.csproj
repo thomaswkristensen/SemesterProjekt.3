@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AContainer.cs" />
     <Compile Include="Alarm.cs" />
     <Compile Include="BusinessController.cs" />
     <Compile Include="Calibration.cs" />

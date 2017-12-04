@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using Interfaces;
+using ObserverPattern;
 
 namespace PresentationLogic
 {
@@ -16,11 +17,15 @@ namespace PresentationLogic
     {
         private IBusinessLogic _BL;
         private Alarm_DTO _alarmDTO;
-        public LimitValuesForm(IBusinessLogic BL)
+        private HomeForm _homeForm;
+        
+        public LimitValuesForm(IBusinessLogic BL, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
             InitializeComponent();
 
             _BL = BL;
+            
+            _homeForm = new HomeForm(_BL,filterContainer,analysisContainer);
             _alarmDTO = new Alarm_DTO();
         }
 
@@ -42,6 +47,12 @@ namespace PresentationLogic
 
 
 
+        }
+
+        private void Cancel_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            _homeForm.Show();
         }
     }
 }
