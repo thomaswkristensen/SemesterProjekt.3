@@ -22,7 +22,8 @@ namespace Buisnesslogic
         private ThreadControllerBL _threadController;
         private Converter _converter;
         private FilterContainer _filterContainer;
-        public BusinessController(IDataAccesLogic DAL, Consumer consumer, FilterContainer filterContainer)
+        private AnalysisContainer _analysisContainer;
+        public BusinessController(IDataAccesLogic DAL, Consumer consumer, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
             _DAL = DAL;
             _calibration = new Calibration();
@@ -33,6 +34,7 @@ namespace Buisnesslogic
             _threadController = new ThreadControllerBL(_consumer);
             _converter = new Converter();
             _filterContainer = filterContainer;
+            _analysisContainer = analysisContainer;
 
         }
 
@@ -110,6 +112,17 @@ namespace Buisnesslogic
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
             _showData.HandleData();
+        }
+
+        public void ContinueMeasuringBL()
+        {
+            _threadController.StartThread();
+            _DAL.ContinueMeasuringDL();
+        }
+        public void StopMeasuringBL()
+        {
+            _threadController.StopThread();
+            _DAL.StopMeasuringDAL();
         }
     }
 

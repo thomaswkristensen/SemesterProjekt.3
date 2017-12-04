@@ -20,5 +20,7 @@ namespace Interfaces
         bool SaveCalibrationLogic(Calibration_DTO calibrationData);
         bool SetAlarmLimitsBusiness(Alarm_DTO alarmDTO);
         void StartMeasuringBL();
+        void StopMeasuringBL();
+        void ContinueMeasuringBL();
     }
 }

@@ -22,18 +22,19 @@ namespace Buisnesslogic
         private ThreadControllerBL _threadController;
         private Converter _converter;
         private FilterContainer _filterContainer;
-        public BusinessController(IDataAccesLogic DAL, Consumer consumer, FilterContainer filterContainer)
+        private AnalysisContainer _analysisContainer;
+        public BusinessController(IDataAccesLogic DAL, Consumer consumer, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
             _DAL = DAL;
             _calibration = new Calibration();
             _ZPA = new Zero_pointAdjusment();
             _hpDTO = new HP_DTO();
             _login = new Login();
-            _showData = new ShowData(_DAL);
             _consumer = consumer;
             _threadController = new ThreadControllerBL(_consumer);
             _converter = new Converter();
             _filterContainer = filterContainer;
+            _analysisContainer = analysisContainer;
 
         }
 
@@ -107,11 +108,21 @@ namespace Buisnesslogic
 
         public void StartMeasuringBL()
         {
-            _consumer.SetConverter(_converter);
             _converter.SetSlopeAndZPA(_filterContainer/*, _DAL.PullSlope(), _DAL.ZPAVolt*/);
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
             _showData.HandleData();
+        }
+
+        public void ContinueMeasuringBL()
+        {
+            _threadController.StartThread();
+            _DAL.ContinueMeasuringDL();
+        }
+        public void StopMeasuringBL()
+        {
+            _threadController.StopThread();
+            _DAL.StopMeasuringDAL();
         }
     }
 

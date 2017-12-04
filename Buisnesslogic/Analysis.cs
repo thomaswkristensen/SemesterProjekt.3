@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using ObserverPattern;
 
 namespace Buisnesslogic
 {
-    class SysAnalysis
+    class Analysis
     {
         
         private List<double> _systoliclist;
@@ -21,10 +22,12 @@ namespace Buisnesslogic
         private double _heartRate;
         private double _avg;
         private HealthValues_DTO _hvDTO;
+        private AnalysisContainer _analysisContainer;
 
-        public SysAnalysis()
+        public Analysis(AnalysisContainer analysisContainer)
         {
             _heartRate = 0;
+            _analysisContainer = analysisContainer;
         }
 
         public void Analyse(Measurement_DTO data)
@@ -35,6 +38,8 @@ namespace Buisnesslogic
             _hvDTO.DiaBP = diastolicPressure(data.ConvertedData);
             _hvDTO.AverageBP = MAP(data.ConvertedData);
             _hvDTO.HeartRate = HeartRate(data.ConvertedData);
+
+            _analysisContainer.SetHealthValues(_hvDTO);
         }
         private double SystolicPressure(List<double> data)
         {

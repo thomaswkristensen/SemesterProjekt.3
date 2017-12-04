@@ -13,7 +13,7 @@ using ObserverPattern;
 
 namespace PresentationLogic
 {
-    public partial class HomeForm : Form, IFilterObserver
+    public partial class HomeForm : Form, IFilterObserver, IAnalysisObserver
     {
         private LogInForm Login;
         private CalibrationForm Calibration;
@@ -22,14 +22,20 @@ namespace PresentationLogic
         private Measurement_DTO _data;
         private bool _digitalFilter;
         private FilterContainer _filterContainer;
+        private AnalysisContainer _analysisContainer;
+        private bool HasMeasureBeenStarted { get; set; }
 
-        public HomeForm(IBusinessLogic BL, FilterContainer filterContainer)
+        public HomeForm(IBusinessLogic BL, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
             _BL = BL;
             _digitalFilter = false;
             _filterContainer = filterContainer;
             _filterContainer.Attach(this);
+            _analysisContainer = analysisContainer;
+            _analysisContainer.Attach(this);
+            HasMeasureBeenStarted = false;
             InitializeComponent();
+
         }
 
         private void Save_button_HomeForm_Click(object sender, EventArgs e)
@@ -88,10 +94,19 @@ namespace PresentationLogic
 
         private void Start_button_HomeForm_Click(object sender, EventArgs e)
         {
-            _BL.StartMeasuringBL();
+            if (!HasMeasureBeenStarted)
+            {
+                _BL.StartMeasuringBL();
+                HasMeasureBeenStarted = true;
+            }
+            else if (HasMeasureBeenStarted)
+            {
+                _BL.ContinueMeasuringBL();
+                HasMeasureBeenStarted = false;
+            }
         }
 
-        public void Update()
+        public void FilterUpdate()
         {
             if (InvokeRequired)
             {
@@ -109,6 +124,28 @@ namespace PresentationLogic
                 }
             }
 
+        }
+
+        public void AnalysisUpdate()
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => Update()));
+            }
+            else
+            {
+                HealthValues_DTO hvDTO = _analysisContainer.GetHealthValues();
+                Systolic_textBox_HomeForm.Text = hvDTO.SysBP.ToString();
+                Diastolic_textBox_HomeForm.Text = hvDTO.DiaBP.ToString();
+                Average_textBox_HomeForm.Text = hvDTO.AverageBP.ToString();
+                Puls_textBox_HomeForm.Text = hvDTO.HeartRate.ToString();
+            }
+            
+        }
+
+        private void stop_button_Click(object sender, EventArgs e)
+        {
+            _BL.StopMeasuringBL();
         }
     }
 }
