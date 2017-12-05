@@ -15,10 +15,10 @@ namespace DataAccessLogic
         {
             _data = new List<double>();
             _datacollector = new NI_DAQ();
-            _datacollector.deviceName = "Dev1/ai0";
+            _datacollector.deviceName = "Dev3/ai0";
 
             _datacollector.rangeMaximumVolt = 5;
-            _datacollector.samplesPerChannel = 5000;
+            _datacollector.samplesPerChannel = 500;
             _datacollector.sampleRateInHz = 1000;
 
         }

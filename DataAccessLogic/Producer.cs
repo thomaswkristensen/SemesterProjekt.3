@@ -19,7 +19,7 @@ namespace DataAccessLogic
         public Producer(ConcurrentQueue<BufferBlock> dataQueue)
         {
             _dataQueue = dataQueue;
-            _data = new TestData();
+            _data = new Data();
             State = false;
         }
 
@@ -31,7 +31,7 @@ namespace DataAccessLogic
                 _buffer.Data = _data.getData();
                 _dataQueue.Enqueue(_buffer);
 
-                Thread.Sleep(100);
+                
 
             }
         }

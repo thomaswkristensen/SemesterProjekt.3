@@ -48,6 +48,7 @@ namespace PresentationLogic
         private void ZeroPointAdjusment_button_HomeForm_Click(object sender, EventArgs e)
         {
             _BL.StartZPA();
+            MessageBox.Show("Nulpunktsjustering foretaget");
         }
 
         private void Calibration_button_HomeForm_Click(object sender, EventArgs e)

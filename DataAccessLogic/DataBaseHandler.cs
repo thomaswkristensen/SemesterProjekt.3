@@ -128,15 +128,18 @@ namespace DataAccessLogic
 
         public double ExecuteSlopeInfo()
         {
+            double _slope = 0;
             cmd = new SqlCommand(_querybuilder.CalibrationInfoQuery(),_conn);
+            cmd.Parameters.AddWithValue("@dato", DateTime.Now);
             Connect();
             rdr = cmd.ExecuteReader();
 
             if (rdr.Read())
             {
-                
+                _slope = Convert.ToDouble(rdr["Slope"]);
             }
-            return 0.00;
+            Disconnect();
+            return _slope;
         }
 
         

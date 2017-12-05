@@ -58,6 +58,7 @@ namespace Buisnesslogic
                 _hvDTO.HeartRate = HeartRate(_analysisList);
 
                 _analysisContainer.SetHealthValues(_hvDTO);
+
             }
         }
         private double SystolicPressure(List<double> data)

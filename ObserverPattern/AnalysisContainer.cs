@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DTO;
 
@@ -14,6 +15,7 @@ namespace ObserverPattern
         public void SetHealthValues(HealthValues_DTO hvDto)
         {;
             _hvDTO = hvDto;
+            Thread.Sleep(0);
             Notify();
         }
 
