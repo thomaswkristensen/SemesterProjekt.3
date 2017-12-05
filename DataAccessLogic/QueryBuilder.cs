@@ -42,7 +42,7 @@ namespace DataAccessLogic
 
         public string CalibrationInfoQuery()
         {
-            string query = "SELECT top(1) Slope from Calibration WHERE CalibrationTime <= '" + DateTime.Now + "'";
+            string query = "SELECT top(1) Slope from Calibration WHERE CalibrationTime <= @dato";
             return query;
         }
 

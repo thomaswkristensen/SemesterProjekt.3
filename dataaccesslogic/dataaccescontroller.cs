@@ -24,7 +24,7 @@ namespace DataAccessLogic
             _limits = new LimitValues();
             _pullData = new PullData();
             _saveData = new SaveData();
-            _data  = new TestData();
+            _data  = new Data();
             _producer = producer;
             _threadController = new ThreadControllerDAL(_producer);
 
