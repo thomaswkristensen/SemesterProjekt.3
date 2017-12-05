@@ -31,7 +31,6 @@ namespace DataAccessLogic
                 _buffer.Data = _data.getData();
                 _dataQueue.Enqueue(_buffer);
 
-                
 
             }
         }

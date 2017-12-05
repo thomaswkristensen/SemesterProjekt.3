@@ -15,7 +15,7 @@ namespace DataAccessLogic
         {
             _data = new List<double>();
             Random test = new Random();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 250; i++)
             {
                 var test2 = test.Next(1, 5);
                 _data.Add(test2);

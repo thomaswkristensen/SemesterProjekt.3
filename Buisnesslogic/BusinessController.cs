@@ -30,6 +30,7 @@ namespace Buisnesslogic
             _ZPA = new Zero_pointAdjusment();
             _hpDTO = new HP_DTO();
             _login = new Login();
+            _filter = new Filter(filterContainer);
             _consumer = consumer;
             _threadController = new ThreadControllerBL(_consumer);
             _converter = new Converter();

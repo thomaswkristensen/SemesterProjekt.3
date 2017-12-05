@@ -18,7 +18,7 @@ namespace DataAccessLogic
             _datacollector.deviceName = "Dev3/ai0";
 
             _datacollector.rangeMaximumVolt = 5;
-            _datacollector.samplesPerChannel = 500;
+            _datacollector.samplesPerChannel = 200;
             _datacollector.sampleRateInHz = 1000;
 
         }
