@@ -10,6 +10,8 @@ namespace ObserverPattern
     public class FilterContainer : FilterSubject
     {
         private Queue<double> _queue;
+        
+
 
         public FilterContainer()
         {
@@ -23,7 +25,10 @@ namespace ObserverPattern
             {
                 queue.Enqueue(0);
             }
+
+            
         }
+
 
         public void SetSlidingWindow(List<double> list)
         {

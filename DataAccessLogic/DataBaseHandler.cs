@@ -82,16 +82,16 @@ namespace DataAccessLogic
 
         public bool ExecuteMeasurementSaving(Measurement_DTO measurementDTO, string ssn, string employeeID)
         {
-            try
-            {
+            //try
+            
                 Measurement_DTO _measurementDTO = measurementDTO;
                 cmd = new SqlCommand(_querybuilder.SaveDataQuery(), _conn);
                 Connect();
 
                 cmd.Parameters.AddWithValue("@EmployeeID", employeeID);
                 cmd.Parameters.AddWithValue("@SSN", ssn);
-                cmd.Parameters.AddWithValue("@Rawvalue",
-                    _measurementDTO.RawData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
+                //cmd.Parameters.AddWithValue("@Rawvalue",
+                //    _measurementDTO.RawData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
                 cmd.Parameters.AddWithValue("@ConvertedValue",
                     _measurementDTO.ConvertedData.ToArray().SelectMany(value => BitConverter.GetBytes(value).ToArray()));
                 cmd.Parameters.AddWithValue("@Date", _measurementDTO.TimeOfMeasurement);
@@ -102,13 +102,14 @@ namespace DataAccessLogic
                 Disconnect();
 
                 return true;
-            }
-            catch (Exception ex)
-            {
-                Disconnect();
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-                return false;
-            }
+            
+         
+            //catch (Exception ex)
+            //{
+            //    Disconnect();
+            //    System.Windows.Forms.MessageBox.Show(ex.Message);
+            //    return false;
+            //}
 
         }
 

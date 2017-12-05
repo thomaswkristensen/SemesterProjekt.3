@@ -34,6 +34,7 @@ namespace PresentationLogic
             _filterContainer.Attach(this);
             _analysisContainer = analysisContainer;
             _analysisContainer.Attach(this);
+            _data = new Measurement_DTO();
             InitializeComponent();
 
         }
@@ -41,6 +42,9 @@ namespace PresentationLogic
         private void Save_button_HomeForm_Click(object sender, EventArgs e)
         {
             this.Hide();
+            _data.ConvertedData = _filterContainer.GetSlidingWindow();
+            _data.Fsample = 1000;
+            _data.TimeOfMeasurement = DateTime.Now;
             Login = new LogInForm(_BL, _data,_filterContainer,_analysisContainer);
             Login.Show();
         }
@@ -60,16 +64,17 @@ namespace PresentationLogic
 
         private void Digital_Button_HomeForm_Click(object sender, EventArgs e)
         {
+            _BL.UseDigitalFilter();
+
             if (!_digitalFilter)
             {
                 label_FilterType.Text = "Digitalt filter: Til";
-                _BL.UseDigitalFilter();
                 _digitalFilter = true;
             }
             else
             {
                 label_FilterType.Text = "Digitalt filter: Fra";
-                //RawFilterMethod
+             
                 _digitalFilter = false;
             }
             
@@ -127,8 +132,8 @@ namespace PresentationLogic
             else
             {
                 HealthValues_DTO hvDTO = _analysisContainer.GetHealthValues();
-                Systolic_textBox_HomeForm.Text = hvDTO.SysBP.ToString();
-                Diastolic_textBox_HomeForm.Text = hvDTO.DiaBP.ToString();
+                Systolic_textBox_HomeForm.Text = Math.Round(hvDTO.SysBP,2) + "/" +Math.Round(hvDTO.DiaBP,2);
+                
                 Average_textBox_HomeForm.Text = hvDTO.AverageBP.ToString();
                 Puls_textBox_HomeForm.Text = hvDTO.HeartRate.ToString();
             }

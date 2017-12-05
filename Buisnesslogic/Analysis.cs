@@ -105,8 +105,8 @@ namespace Buisnesslogic
         {
             if (data.Count > 99)
             {
-                double difference = _systoliclist[_systoliclist.Count - 1] - _systoliclist[0];
-                _heartRate = (data.Count - 1) / difference * 60;
+                //double difference = _systoliclist[_systoliclist.Count - 1] - _systoliclist[0];
+                //_heartRate = (data.Count - 1) / difference * 60;
 
             }
 
