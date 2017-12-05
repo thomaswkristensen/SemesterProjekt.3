@@ -35,14 +35,17 @@ namespace PresentationLogic
             if (P1_radioButton.Checked)
             {
                 _BL.StartCalibration(10);
+                MessageBox.Show("Kalibrering foretaget");
             }
             else if (P2_radioButton.Checked)
             {
                 _BL.StartCalibration(50);
+                MessageBox.Show("Kalibrering foretaget");
             }
             else if (P3_radioButton.Checked)
             {
                 _BL.StartCalibration(100);
+                MessageBox.Show("Kalibrering foretaget");
             }
         }
 
@@ -55,10 +58,10 @@ namespace PresentationLogic
             x.Add(_calibration.P2);
             x.Add(_calibration.P3);
 
-            for (int i = 0; i < x.Count; i++)
-            {
-                chart1.Series["Series1"].Points.AddY(x[i]);
-            }
+            chart1.Series["Series1"].Points.AddXY(0, x[0]);
+            chart1.Series["Series1"].Points.AddXY(10, x[1]);
+            chart1.Series["Series1"].Points.AddXY(50, x[2]);
+            chart1.Series["Series1"].Points.AddXY(100, x[3]);
 
             SlopeTextbox.Text = Convert.ToString(_calibration.Slope);
         }

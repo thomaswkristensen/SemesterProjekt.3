@@ -42,10 +42,10 @@ namespace Buisnesslogic
         {
             _calibrationDTO.Slope = _slope.CalculateSlope(zpa);
 
-            _calibrationDTO.ZPA = zpa * _calibrationDTO.Slope;
-            _calibrationDTO.P1 = _P1 * _calibrationDTO.Slope;
-            _calibrationDTO.P2 = _P2 * _calibrationDTO.Slope;
-            _calibrationDTO.P3 = _P3 * _calibrationDTO.Slope;
+            _calibrationDTO.ZPA = zpa / _calibrationDTO.Slope;
+            _calibrationDTO.P1 = _P1 / _calibrationDTO.Slope;
+            _calibrationDTO.P2 = _P2 / _calibrationDTO.Slope;
+            _calibrationDTO.P3 = _P3 / _calibrationDTO.Slope;
 
             return _calibrationDTO;
         }

@@ -30,6 +30,7 @@ namespace Buisnesslogic
             _ZPA = new Zero_pointAdjusment();
             _hpDTO = new HP_DTO();
             _login = new Login();
+            _filter = new Filter(filterContainer);
             _consumer = consumer;
             _threadController = new ThreadControllerBL(_consumer);
             _converter = new Converter();
@@ -109,10 +110,9 @@ namespace Buisnesslogic
         public void StartMeasuringBL()
         {
             _consumer.SetConverter(_converter);
-            _converter.SetSlopeAndZPA(_analysisContainer,_filterContainer/*, _DAL.PullSlope(), _DAL.ZPAVolt*/);
+            _converter.SetSlopeAndZPA(_analysisContainer,_filterContainer, _DAL.ZPAVolt);
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
-            
             
         }
 

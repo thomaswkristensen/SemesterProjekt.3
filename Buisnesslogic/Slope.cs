@@ -20,7 +20,7 @@ namespace Buisnesslogic
         {
             foreach (var sample in dataList)
             {
-                _sum =+ sample;
+                _sum += sample;
             }
 
             return _P1 = _sum / dataList.Count;
@@ -30,7 +30,7 @@ namespace Buisnesslogic
         {
             foreach (var sample in dataList)
             {
-                _sum =+ sample;
+                _sum += sample;
             }
 
             return _P2 = _sum / dataList.Count;
@@ -40,7 +40,7 @@ namespace Buisnesslogic
         {
             foreach (var sample in dataList)
             {
-                _sum =+ sample;
+                _sum += sample;
             }
 
             return _P3 = _sum / dataList.Count;
