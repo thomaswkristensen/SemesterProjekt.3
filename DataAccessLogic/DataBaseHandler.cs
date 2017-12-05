@@ -52,6 +52,7 @@ namespace DataAccessLogic
                 }
                 else patientDTO = null;
             }
+            else patientDTO = null;
 
             Disconnect();
 
@@ -105,7 +106,7 @@ namespace DataAccessLogic
             catch (Exception ex)
             {
                 Disconnect();
-                
+                System.Windows.Forms.MessageBox.Show(ex.Message);
                 return false;
             }
 
