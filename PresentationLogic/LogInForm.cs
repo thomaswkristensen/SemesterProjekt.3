@@ -31,7 +31,7 @@ namespace PresentationLogic
 
         private void Login_button_LogInForm_Click(object sender, EventArgs e)
         {
-            _SSNForm = new SSNForm(_BL, EmployeeID_textBox_LogInForm.Text, _measurementDTO);
+            _SSNForm = new SSNForm(_homeForm, _BL, EmployeeID_textBox_LogInForm.Text, _measurementDTO);
             if (_BL.GetLogin(EmployeeID_textBox_LogInForm.Text,
                 Password_textBox_LogInForm.Text))
             {
