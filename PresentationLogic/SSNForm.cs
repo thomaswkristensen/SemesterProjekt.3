@@ -65,7 +65,7 @@ namespace PresentationLogic
         private void information_button_Click(object sender, EventArgs e)
         {
             Patient_DTO patientDTO = _BL.GetPatientInformation(SSN_textBox.Text);
-            if (patientDTO != null && patientDTO.Age != 0)
+            if (patientDTO != null)
             {
                 name_textBox.Text = patientDTO.FirstName + " " + patientDTO.LastName;
                 age_textBox.Text = Convert.ToString(patientDTO.Age);
