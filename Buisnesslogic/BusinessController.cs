@@ -109,10 +109,9 @@ namespace Buisnesslogic
         public void StartMeasuringBL()
         {
             _consumer.SetConverter(_converter);
-            _converter.SetSlopeAndZPA(_analysisContainer,_filterContainer/*, _DAL.PullSlope(), _DAL.ZPAVolt*/);
+            _converter.SetSlopeAndZPA(_analysisContainer,_filterContainer, _DAL.ZPAVolt);
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
-            
             
         }
 
