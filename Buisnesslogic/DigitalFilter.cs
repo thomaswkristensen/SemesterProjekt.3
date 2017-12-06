@@ -31,7 +31,7 @@ namespace Buisnesslogic
             {
                 sum = 0;
 
-                sum = RawList[i] + RawList[i + 1] + RawList[2];
+                sum = RawList[i] + RawList[i + 1] + RawList[i+2];
 
                 FilteredList.Add(sum/3);
             }
