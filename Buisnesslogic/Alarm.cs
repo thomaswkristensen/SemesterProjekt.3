@@ -10,12 +10,29 @@ namespace Buisnesslogic
     class Alarm
     {
         private Alarm_DTO _alarmDTO;
+        public bool Tone { get; set; }
 
 
         public void Limits(Alarm_DTO alarmDTO)
         {
             _alarmDTO = alarmDTO;
         }
+
+
+        public bool Check(HealthValues_DTO values)
+        {
+            if (CheckHeartRate(values) || CheckDia(values) || CheckSys(values))
+            {
+                AlarmTone();
+                return true;
+            }
+            else
+            {
+                AlarmToneStop();
+                return false;
+            }
+        }
+
 
         public bool CheckHeartRate(HealthValues_DTO values)
         {
@@ -43,6 +60,20 @@ namespace Buisnesslogic
             }
             return false;
         }
+
+        public void AlarmTone()
+        {
+            if (Tone)
+            {
+                
+            }
+        }
+
+        private void AlarmToneStop()
+        {
+            
+        }
+
 
     }
 }

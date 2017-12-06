@@ -27,9 +27,11 @@ namespace Buisnesslogic
         private AnalysisContainer _analysisContainer;
         private AContainer _data;
         private AutoResetEvent _waitEvent;
+        private Alarm _alarm;
 
         public Analysis(AnalysisContainer analysisContainer, AContainer container, AutoResetEvent waitEvent)
         {
+            _alarm = new Alarm();
             _data = container;
             _waitEvent = waitEvent;
             _systoliclist = new List<double>();
@@ -58,7 +60,7 @@ namespace Buisnesslogic
                 _hvDTO.DiaBP = diastolicPressure(_analysisList,diffenrence);
                 _hvDTO.AverageBP = MAP(_analysisList);
                 _hvDTO.HeartRate = HeartRate(_analysisList);
-
+                _hvDTO.Alarm = _alarm.Check(_hvDTO); // Måske virker det her ikke
                 _analysisContainer.SetHealthValues(_hvDTO);
 
             }
