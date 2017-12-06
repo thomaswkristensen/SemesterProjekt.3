@@ -50,13 +50,13 @@ namespace Buisnesslogic
             _data.ConvertedData.Clear();
         }
 
-        public void SetSlopeAndZPA(AnalysisContainer analysisContainer, FilterContainer filterContainer
+        public void SetSlopeAndZPA(AnalysisContainer analysisContainer, Filter filter
 , double zpa)
         {
             _analysis = new Analysis(analysisContainer,_container,_waitEvent);
             _analysisThread = new Thread(_analysis.Analyse);
             _analysisThread.Start();
-            _filter = new Filter(filterContainer);
+            _filter = filter;
             
             _zpa = zpa;
 

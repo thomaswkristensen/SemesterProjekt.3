@@ -8,7 +8,7 @@ using ObserverPattern;
 
 namespace Buisnesslogic
 {
-    class Filter
+    public class Filter
     {
         private IFilter _filter;
         private FilterContainer _filterContainer;

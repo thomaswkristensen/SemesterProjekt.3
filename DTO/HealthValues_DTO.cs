@@ -12,5 +12,7 @@ namespace DTO
         public double DiaBP { get; set; }
         public double AverageBP { get; set; }
         public double HeartRate { get; set; }
+
+        public bool Alarm { get; set; }
     }
 }

@@ -27,9 +27,11 @@ namespace Buisnesslogic
         private AnalysisContainer _analysisContainer;
         private AContainer _data;
         private AutoResetEvent _waitEvent;
+        private Alarm _alarm;
 
         public Analysis(AnalysisContainer analysisContainer, AContainer container, AutoResetEvent waitEvent)
         {
+            _alarm = new Alarm();
             _data = container;
             _waitEvent = waitEvent;
             _systoliclist = new List<double>();
@@ -50,67 +52,96 @@ namespace Buisnesslogic
                 _waitEvent.WaitOne();
                 _analysisList = _data.data;
 
-                _hvDTO = new HealthValues_DTO();
+                //Have styr på hvor stor listen skal være de analysere.
 
-                _hvDTO.SysBP = SystolicPressure(_analysisList);
-                _hvDTO.DiaBP = diastolicPressure(_analysisList);
+                _hvDTO = new HealthValues_DTO();
+                var diffenrence= TimeDifferences(_analysisList);
+                _hvDTO.SysBP = SystolicPressure(_analysisList, diffenrence);
+                _hvDTO.DiaBP = diastolicPressure(_analysisList,diffenrence);
                 _hvDTO.AverageBP = MAP(_analysisList);
                 _hvDTO.HeartRate = HeartRate(_analysisList);
-
+                _hvDTO.Alarm = _alarm.Check(_hvDTO); // Måske virker det her ikke
                 _analysisContainer.SetHealthValues(_hvDTO);
 
             }
         }
-        private double SystolicPressure(List<double> data)
+
+        
+
+        public int TimeDifferences(List<double> data)
         {
-              _limitSys = data.Max() * 0.8;
+            List<int> _times = Times(data);
+
+            List<double> differences = new List<double>();
+
             
-
-            if (data.Count > 99)
+            for (int i = 1; i < _times.Count; i++)
             {
-                for (int i = 1; i < data.Count - 1; i++)
-                {
-                    if (data[i] > _limitSys && data[i] > data[i + 1] && data[i] > data[i - 1])
-                    {
-                        _systoliclist.Add(i*0.001);
-                        _allsysValues += data[i];
-                    }
-                }
-                _sysValue = _allsysValues / _systoliclist.Count;
-                return _sysValue;
+                int diff = _times[i] - _times[i - 1];
+                differences.Add(diff);
             }
+            double averageDifference = differences.Average();
 
-            return _sysValue;
+            return Convert.ToInt32(averageDifference);
         }
 
-        private double diastolicPressure(List<double> data)
+
+
+        public List<int> Times(List<double> values)
         {
-            _limitDia = data.Min() * 1.2;
-            if (data.Count > 99)
+            List<int> peaks = new List<int>();
+            int count = 0;
+            double threshold = values.Max() * 0.8;
+
+            for (int i = 20; i < values.Count - 20; i += 20)
             {
-                for (int i = 1; i < data.Count - 1; i++)
+                if (values[i] > threshold && i >= 20)
                 {
-                    if (data[i] < _limitDia && data[i] < data[i - 1] && data[i] < data[i + 1])
+                    if (values[i] > values[i - 20] && values[i] > values[i + 20])
                     {
-                        _diastoliclist.Add(i * 0.001);
-                        _alldiaValues += data[i];
+                        peaks.Add(i);
                     }
                 }
-                _diaValue = _alldiaValues / _diastoliclist.Count;
             }
-            return _diaValue;
+
+            return peaks;
+        }
+       
+
+
+
+        private double SystolicPressure(List<double> data,int timediff)
+        {
+            int startIndex = data.Count - timediff;
+            var currentSamples = data.Skip(startIndex);
+
+            int systolic = Convert.ToInt32(currentSamples.Max());
+
+            return systolic;
+        }
+
+        private double diastolicPressure(List<double> data,int timediff)
+        {
+            int startIndex = data.Count - timediff;
+            var currentSamples = data.Skip(startIndex);
+
+            int diastolic = Convert.ToInt32(currentSamples.Min());
+
+            return diastolic;
         }
 
         private double HeartRate(List<double> data)
         {
-            if (data.Count > 99)
-            {
-                double difference = _systoliclist[_systoliclist.Count - 1] - _systoliclist[0];
-                _heartRate = (data.Count - 1) / difference * 60;
+            double pulse = 0;
+            int diff = TimeDifferences(data);
 
+            if (diff != 0)
+            {
+                pulse = 60000 / diff; // 60000 sample divideret med den gennemsnitlige tidsforskel mellem toppunkterne og derefter dividere vi med en faktor 1000, da der er 1000 sample pr. sekund. 
             }
 
-            return _heartRate/1000;
+            return pulse;
+
         }
 
         private double MAP(List<double> data)

@@ -27,8 +27,8 @@ namespace DataAccessLogic
         public string SaveDataQuery()
         {
             string query =
-                "INSERT INTO measurement(Raw_Value, Converted_Value, EmployeeID, Date, SSN, Samplerate_Hz)"
-                + "VALUES(@RawValue, @ConvertedValue, @EmployeeID, @Date, @SSN, @Samplerate)";
+                "INSERT INTO measurement(Converted_Value, EmployeeID, Date, SSN, Samplerate_Hz)"
+                + "VALUES(@ConvertedValue, @EmployeeID, @Date, @SSN, @Samplerate)";
 
             return query;
         }
