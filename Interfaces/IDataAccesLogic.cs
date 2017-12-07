@@ -23,6 +23,8 @@ namespace Interfaces
         void StartMeasuringDAL();
         void StopMeasuringDAL();
         List<double> PullData();
+        Alarm_DTO GetAlarmLimitsDataAcces();
+
 
     }
 }

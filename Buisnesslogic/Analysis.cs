@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -9,7 +10,7 @@ using ObserverPattern;
 
 namespace Buisnesslogic
 {
-    class Analysis
+    public class Analysis
     {
         
         private List<double> _systoliclist;
@@ -28,18 +29,24 @@ namespace Buisnesslogic
         private AContainer _data;
         private AutoResetEvent _waitEvent;
         private Alarm _alarm;
+        private int _counter;
+        private double _olddifference;
+        private double averageDifference;
 
-        public Analysis(AnalysisContainer analysisContainer, AContainer container, AutoResetEvent waitEvent)
+        public Analysis(AnalysisContainer analysisContainer, AContainer container, AutoResetEvent waitEvent,Alarm alarm)
         {
-            _alarm = new Alarm();
+            _alarm = alarm;
             _data = container;
             _waitEvent = waitEvent;
             _systoliclist = new List<double>();
             _diastoliclist = new List<double>();
+            _analysisList = new List<double>();
             _heartRate = 0;
             _sysValue = 0;
             _diaValue = 0;
+            _counter = 5;
             _avg = 0;
+            _olddifference = 10000;
             _analysisContainer = analysisContainer;
         }
 
@@ -50,18 +57,39 @@ namespace Buisnesslogic
             while (true)
             {
                 _waitEvent.WaitOne();
-                _analysisList = _data.data;
+                
+
+                foreach (var item in _data.data)
+                {
+                    _analysisList.Add(item);
+                }
+
+                _data.data.Clear();
 
                 //Have styr på hvor stor listen skal være de analysere.
+                if (_analysisList.Count >= 2000)
+                {
 
-                _hvDTO = new HealthValues_DTO();
-                var diffenrence= TimeDifferences(_analysisList);
-                _hvDTO.SysBP = SystolicPressure(_analysisList, diffenrence);
-                _hvDTO.DiaBP = diastolicPressure(_analysisList,diffenrence);
-                _hvDTO.AverageBP = MAP(_analysisList);
-                _hvDTO.HeartRate = HeartRate(_analysisList);
-                _hvDTO.Alarm = _alarm.Check(_hvDTO); // Måske virker det her ikke
-                _analysisContainer.SetHealthValues(_hvDTO);
+
+                    _hvDTO = new HealthValues_DTO();
+                    var diffenrence = TimeDifferences(_analysisList);
+                    _hvDTO.SysBP = SystolicPressure(_analysisList, diffenrence);
+                    _hvDTO.DiaBP = diastolicPressure(_analysisList, diffenrence);
+                    _hvDTO.AverageBP = MAP(_analysisList);
+                    _hvDTO.HeartRate = HeartRate(_analysisList);
+                    _hvDTO.Alarm = _alarm.Check(_hvDTO);
+
+                    if (_counter == 5)
+                    {
+                        _analysisContainer.SetHealthValues(_hvDTO);
+                        _counter = 0;
+                    }
+
+                    _counter++;
+                    _analysisList.RemoveRange(0,200);
+                    
+                }
+
 
             }
         }
@@ -80,7 +108,15 @@ namespace Buisnesslogic
                 int diff = _times[i] - _times[i - 1];
                 differences.Add(diff);
             }
-            double averageDifference = differences.Average();
+            if (differences.Count == 0)
+            {
+                averageDifference = _olddifference;
+            }
+            else
+            {
+                averageDifference = differences.Average();
+                _olddifference = averageDifference;
+            }
 
             return Convert.ToInt32(averageDifference);
         }
@@ -137,9 +173,9 @@ namespace Buisnesslogic
 
             if (diff != 0)
             {
-                pulse = 60000 / diff; // 60000 sample divideret med den gennemsnitlige tidsforskel mellem toppunkterne og derefter dividere vi med en faktor 1000, da der er 1000 sample pr. sekund. 
+                pulse = 60000 / diff;   
             }
-
+            
             return pulse;
 
         }

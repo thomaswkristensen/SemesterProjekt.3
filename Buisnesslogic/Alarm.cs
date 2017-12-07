@@ -1,38 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using DTO;
 
 namespace Buisnesslogic
 {
-    class Alarm
+    public class Alarm
     {
         private Alarm_DTO _alarmDTO;
         public bool Tone { get; set; }
+        private SoundPlayer SP;
+        private Thread alarmThread;
 
+        public Alarm()
+        {
+            Tone = false;
+            SP = new SoundPlayer(@"C:\Users\Thomas\Documents\Skole\3. Semester\Semesterprojekt\Alarm.wav");
+            alarmThread = new Thread(this.AlarmTone);
+
+
+        }
 
         public void Limits(Alarm_DTO alarmDTO)
         {
             _alarmDTO = alarmDTO;
+
         }
 
 
         public bool Check(HealthValues_DTO values)
         {
-            if (CheckHeartRate(values) || CheckDia(values) || CheckSys(values))
+            if (!CheckHeartRate(values) && !CheckDia(values) && !CheckSys(values))
             {
-                AlarmTone();
-                return true;
-            }
-            else
-            {
-                AlarmToneStop();
+                Tone = false;
                 return false;
             }
-        }
 
+            else
+            {
+                Tone = true;
+                alarmThread = new Thread(this.AlarmTone);
+                alarmThread.Start();
+                return true;
+            }   
+
+            
+
+
+
+        }
 
         public bool CheckHeartRate(HealthValues_DTO values)
         {
@@ -63,16 +83,14 @@ namespace Buisnesslogic
 
         public void AlarmTone()
         {
-            if (Tone)
+            while (Tone)
             {
-                
+                SP.PlaySync();
             }
+          
         }
 
-        private void AlarmToneStop()
-        {
-            
-        }
+       
 
 
     }

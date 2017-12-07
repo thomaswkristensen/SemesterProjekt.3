@@ -30,7 +30,7 @@ namespace Buisnesslogic
             _container = new AContainer();
             _container.data = new List<double>();
            _waitEvent = new AutoResetEvent(false);
-            _slope = 1; //0,0181
+            _slope = 0.0181;
             _zpa = 0;
         }
         public void Convert(Measurement_DTO data)
@@ -50,10 +50,10 @@ namespace Buisnesslogic
             _data.ConvertedData.Clear();
         }
 
-        public void SetSlopeAndZPA(AnalysisContainer analysisContainer, Filter filter
+        public void SetSlopeAndZPA(AnalysisContainer analysisContainer, Filter filter,Alarm alarm
 , double zpa)
         {
-            _analysis = new Analysis(analysisContainer,_container,_waitEvent);
+            _analysis = new Analysis(analysisContainer,_container,_waitEvent,alarm);
             _analysisThread = new Thread(_analysis.Analyse);
             _analysisThread.Start();
             _filter = filter;
