@@ -42,7 +42,7 @@ namespace DataAccessLogic
 
         public string CalibrationInfoQuery()
         {
-            string query = "SELECT top(1) Slope from Calibration WHERE CalibrationTime <= @dato";
+            string query = "SELECT top(1) Slope FROM Calibration ORDER BY CalibrationID DESC";
             return query;
         }
 

@@ -22,20 +22,36 @@ namespace Buisnesslogic
         }
 
 
-        public void Calibrate(List<double>data, int value)
+        public bool Calibrate(List<double>data, int value)
         {
             if (value == 10)
             {
                 _P1 = _slope.CalculateP1(data);
+                if (_P1 == 0)
+                {
+                    return false;
+                }
+                return true;
             }
             else if (value == 50)
             {
                 _P2 = _slope.CalculateP2(data);
+                if (_P2 == 0)
+                {
+                    return false;
+                }
+                return true;
             }
             else if (value == 100)
             {
                 _P3 = _slope.CalculateP3(data);
+                if (_P3 == 0)
+                {
+                    return false;
+                }
+                return true;
             }
+            return false;
         }
 
         public Calibration_DTO ShowCalibration(double zpa)

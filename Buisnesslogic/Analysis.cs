@@ -13,17 +13,8 @@ namespace Buisnesslogic
     public class Analysis
     {
         
-        private List<double> _systoliclist;
-        private List<double> _diastoliclist;
         private List<double> _analysisList;
-        private double _limitSys;
-        private double _limitDia;
-        private double _sysValue;
-        private double _diaValue;
-        private double _allsysValues;
-        private double _alldiaValues;
-        private double _heartRate;
-        private double _avg;
+        private int _avg;
         private HealthValues_DTO _hvDTO;
         private AnalysisContainer _analysisContainer;
         private AContainer _data;
@@ -38,15 +29,10 @@ namespace Buisnesslogic
             _alarm = alarm;
             _data = container;
             _waitEvent = waitEvent;
-            _systoliclist = new List<double>();
-            _diastoliclist = new List<double>();
             _analysisList = new List<double>();
-            _heartRate = 0;
-            _sysValue = 0;
-            _diaValue = 0;
             _counter = 5;
             _avg = 0;
-            _olddifference = 10000;
+            _olddifference = 1000;
             _analysisContainer = analysisContainer;
         }
 
@@ -146,7 +132,7 @@ namespace Buisnesslogic
 
 
 
-        private double SystolicPressure(List<double> data,int timediff)
+        private int SystolicPressure(List<double> data,int timediff)
         {
             int startIndex = data.Count - timediff;
             var currentSamples = data.Skip(startIndex);
@@ -156,7 +142,7 @@ namespace Buisnesslogic
             return systolic;
         }
 
-        private double diastolicPressure(List<double> data,int timediff)
+        private int diastolicPressure(List<double> data,int timediff)
         {
             int startIndex = data.Count - timediff;
             var currentSamples = data.Skip(startIndex);
@@ -166,9 +152,9 @@ namespace Buisnesslogic
             return diastolic;
         }
 
-        private double HeartRate(List<double> data)
+        private int HeartRate(List<double> data)
         {
-            double pulse = 0;
+            int pulse = 0;
             int diff = TimeDifferences(data);
 
             if (diff != 0)
@@ -180,11 +166,11 @@ namespace Buisnesslogic
 
         }
 
-        private double MAP(List<double> data)
+        private int MAP(List<double> data)
         {
             if (data.Count > 99)
             {
-                _avg = data.Average();
+                _avg = Convert.ToInt32(data.Average());
             }
 
             return _avg; //Hvis 0? Også for ovenstående

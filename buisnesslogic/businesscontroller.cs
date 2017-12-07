@@ -46,9 +46,9 @@ namespace Buisnesslogic
             _DAL.ZPAVolt = _ZPA.CalculateZPA(_DAL.PullData());
         }
 
-        public void StartCalibration(int value)
+        public bool StartCalibration(int value)
         {
-            _calibration.Calibrate(_DAL.PullData(), value);
+            return _calibration.Calibrate(_DAL.PullData(), value);
         }
 
         public Calibration_DTO ViewCalibration()
@@ -113,7 +113,7 @@ namespace Buisnesslogic
         {
             
             _consumer.SetConverter(_converter);
-            _converter.SetSlopeAndZPA(_analysisContainer,_filter,_alarm, _DAL.ZPAVolt);
+            _converter.SetSlopeAndZPA(_analysisContainer,_filter,_alarm, _DAL.ZPAVolt,_DAL.PullSlope());
             _alarm.Limits(_DAL.GetAlarmLimitsDataAcces());
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
@@ -125,6 +125,11 @@ namespace Buisnesslogic
         {
             _threadController.StopThread();
             _DAL.StopMeasuringDAL();
+        }
+
+        public void StopAlarm()
+        {
+            _alarm.AlarmStop = true;
         }
     }
 

@@ -22,8 +22,13 @@ namespace Buisnesslogic
             {
                 _sum += sample;
             }
+            _P1 = _sum / dataList.Count;
+            if (_P1 < 0.157 || _P1 > 0.235)
+            {
+                return 0;
+            }
 
-            return _P1 = _sum / dataList.Count;
+            return _P1;
         }
 
         public double CalculateP2(List<double> dataList)
@@ -32,8 +37,13 @@ namespace Buisnesslogic
             {
                 _sum += sample;
             }
+            _P2 = _sum / dataList.Count;
+            if (_P2 < 0.728 || _P2 > 0.1092)
+            {
+                return 0;
+            }
 
-            return _P2 = _sum / dataList.Count;
+            return _P2;
         }
 
         public double CalculateP3(List<double> dataList)
@@ -42,8 +52,14 @@ namespace Buisnesslogic
             {
                 _sum += sample;
             }
+            _P3 = _sum / dataList.Count;
 
-            return _P3 = _sum / dataList.Count;
+            if (_P3 < 1.405 || _P3 > 2.176)
+            {
+                return 0;
+            }
+
+            return _P3;
         }
 
         public double CalculateSlope(double ZPA)

@@ -34,18 +34,27 @@ namespace PresentationLogic
 
             if (P1_radioButton.Checked)
             {
-                _BL.StartCalibration(10);
-                MessageBox.Show("Kalibrering foretaget");
+                if (_BL.StartCalibration(10))
+                {
+                    MessageBox.Show("Kalibrering foretaget");
+                }
+                MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
             else if (P2_radioButton.Checked)
             {
-                _BL.StartCalibration(50);
-                MessageBox.Show("Kalibrering foretaget");
+                if (_BL.StartCalibration(50))
+                {
+                    MessageBox.Show("Kalibrering foretaget");
+                }
+                MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
             else if (P3_radioButton.Checked)
             {
-                _BL.StartCalibration(100);
-                MessageBox.Show("Kalibrering foretaget");
+                if (_BL.StartCalibration(100))
+                {
+                    MessageBox.Show("Kalibrering foretaget");
+                }
+                MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
         }
 

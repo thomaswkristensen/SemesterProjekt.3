@@ -15,10 +15,12 @@ namespace Buisnesslogic
         public bool Tone { get; set; }
         private SoundPlayer SP;
         private Thread alarmThread;
+        public bool AlarmStop { get; set; }
 
         public Alarm()
         {
             Tone = false;
+            AlarmStop = false;
             SP = new SoundPlayer(@"C:\Users\Thomas\Documents\Skole\3. Semester\Semesterprojekt\Alarm.wav");
             alarmThread = new Thread(this.AlarmTone);
 
@@ -34,17 +36,20 @@ namespace Buisnesslogic
 
         public bool Check(HealthValues_DTO values)
         {
+            //alarmThread = new Thread(AlarmTone);
             if (!CheckHeartRate(values) && !CheckDia(values) && !CheckSys(values))
             {
-                Tone = false;
+                //Tone = false;
                 return false;
             }
-
             else
             {
-                Tone = true;
-                alarmThread = new Thread(this.AlarmTone);
-                alarmThread.Start();
+                //Tone = true;
+                //alarmThread.Start();
+                if (AlarmStop)
+                {
+                    return false;
+                }
                 return true;
             }   
 
@@ -83,11 +88,11 @@ namespace Buisnesslogic
 
         public void AlarmTone()
         {
-            while (Tone)
+            while (true)
             {
                 SP.PlaySync();
             }
-          
+            
         }
 
        
