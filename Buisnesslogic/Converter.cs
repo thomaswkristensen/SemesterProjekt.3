@@ -30,7 +30,7 @@ namespace Buisnesslogic
             _container = new AContainer();
             _container.data = new List<double>();
            _waitEvent = new AutoResetEvent(false);
-            _slope = 1; //0,0181
+            _slope = 1; //0.0181;
             _zpa = 0;
         }
         public void Convert(Measurement_DTO data)
