@@ -37,6 +37,8 @@ namespace PresentationLogic
             _data = new Measurement_DTO();
             InitializeComponent();
 
+            Bloodpressure_chart_Homeform.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            Bloodpressure_chart_Homeform.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
         }
 
         private void Save_button_HomeForm_Click(object sender, EventArgs e)
@@ -87,7 +89,7 @@ namespace PresentationLogic
 
         private void button_alarm_Click(object sender, EventArgs e)
         {
-
+            _BL.StopAlarm();
         }
 
         private void button_setLimitValues_Click(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace PresentationLogic
 
         private void Start_button_HomeForm_Click(object sender, EventArgs e)
         {
-            
+            Save_button_HomeForm.Enabled = false;
            _BL.StartMeasuringBL();
         }
 
@@ -133,9 +135,13 @@ namespace PresentationLogic
             {
                 HealthValues_DTO hvDTO = _analysisContainer.GetHealthValues();
                 Systolic_textBox_HomeForm.Text = Math.Round(hvDTO.SysBP,2) + "/" +Math.Round(hvDTO.DiaBP,2);
-                
                 Average_textBox_HomeForm.Text = hvDTO.AverageBP.ToString();
                 Puls_textBox_HomeForm.Text = hvDTO.HeartRate.ToString();
+                if (hvDTO.Alarm)
+                {
+                    Alarm_button.BackColor = Color.Red;
+                }
+                else Alarm_button.BackColor = Color.LimeGreen;
             }
 
         }
@@ -143,6 +149,7 @@ namespace PresentationLogic
         private void stop_button_Click(object sender, EventArgs e)
         {
             _BL.StopMeasuringBL();
+            Save_button_HomeForm.Enabled = true;
         }
     }
 }

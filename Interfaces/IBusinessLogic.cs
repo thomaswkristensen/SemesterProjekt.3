@@ -11,7 +11,7 @@ namespace Interfaces
     {
         Patient_DTO GetPatientInformation(string SSN);
         void StartZPA();
-        void StartCalibration(int value);
+        bool StartCalibration(int value);
         Calibration_DTO ViewCalibration();
         Calibration_DTO ChangeSlope(double slope);
         bool GetLogin(string MedarbejderID, string Password);
@@ -21,6 +21,7 @@ namespace Interfaces
         bool SetAlarmLimitsBusiness(Alarm_DTO alarmDTO);
         void StartMeasuringBL();
         void StopMeasuringBL();
-        
+        void StopAlarm();
+
     }
 }

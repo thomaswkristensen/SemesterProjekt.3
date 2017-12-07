@@ -134,7 +134,6 @@ namespace DataAccessLogic
         {
             double _slope = 0;
             cmd = new SqlCommand(_querybuilder.CalibrationInfoQuery(),_conn);
-            cmd.Parameters.AddWithValue("@dato", DateTime.Now);
             Connect();
             rdr = cmd.ExecuteReader();
 
