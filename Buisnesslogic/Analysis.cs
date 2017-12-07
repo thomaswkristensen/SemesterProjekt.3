@@ -10,7 +10,7 @@ using ObserverPattern;
 
 namespace Buisnesslogic
 {
-    class Analysis
+    public class Analysis
     {
         
         private List<double> _systoliclist;
@@ -30,10 +30,12 @@ namespace Buisnesslogic
         private AutoResetEvent _waitEvent;
         private Alarm _alarm;
         private int _counter;
+        private double _olddifference;
+        private double averageDifference;
 
-        public Analysis(AnalysisContainer analysisContainer, AContainer container, AutoResetEvent waitEvent)
+        public Analysis(AnalysisContainer analysisContainer, AContainer container, AutoResetEvent waitEvent,Alarm alarm)
         {
-            _alarm = new Alarm();
+            _alarm = alarm;
             _data = container;
             _waitEvent = waitEvent;
             _systoliclist = new List<double>();
@@ -42,8 +44,9 @@ namespace Buisnesslogic
             _heartRate = 0;
             _sysValue = 0;
             _diaValue = 0;
-            _counter = 4;
+            _counter = 5;
             _avg = 0;
+            _olddifference = 10000;
             _analysisContainer = analysisContainer;
         }
 
@@ -74,16 +77,16 @@ namespace Buisnesslogic
                     _hvDTO.DiaBP = diastolicPressure(_analysisList, diffenrence);
                     _hvDTO.AverageBP = MAP(_analysisList);
                     _hvDTO.HeartRate = HeartRate(_analysisList);
-                    //_hvDTO.Alarm = _alarm.Check(_hvDTO); // Måske virker det her ikke
+                    _hvDTO.Alarm = _alarm.Check(_hvDTO);
 
-                    if (_counter == 4)
+                    if (_counter == 5)
                     {
                         _analysisContainer.SetHealthValues(_hvDTO);
                         _counter = 0;
                     }
 
                     _counter++;
-                    _analysisList.RemoveRange(0,250);
+                    _analysisList.RemoveRange(0,200);
                     
                 }
 
@@ -105,7 +108,15 @@ namespace Buisnesslogic
                 int diff = _times[i] - _times[i - 1];
                 differences.Add(diff);
             }
-            double averageDifference = differences.Average();
+            if (differences.Count == 0)
+            {
+                averageDifference = _olddifference;
+            }
+            else
+            {
+                averageDifference = differences.Average();
+                _olddifference = averageDifference;
+            }
 
             return Convert.ToInt32(averageDifference);
         }
@@ -162,9 +173,9 @@ namespace Buisnesslogic
 
             if (diff != 0)
             {
-                pulse = 6000 / diff;   
+                pulse = 60000 / diff;   
             }
-
+            
             return pulse;
 
         }

@@ -8,7 +8,7 @@ using DTO;
 
 namespace Buisnesslogic
 {
-    class AContainer
+    public class AContainer
     {
         public List<double> data { get; set; }
 

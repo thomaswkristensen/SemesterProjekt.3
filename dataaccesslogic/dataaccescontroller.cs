@@ -19,10 +19,12 @@ namespace DataAccessLogic
         private Producer _producer;
         private ThreadControllerDAL _threadController;
         private IData _data;
+        private Alarm_DTO _alarmDTO;
         public DataAccesController(Producer producer)
         {
             _limits = new LimitValues();
             _pullData = new PullData();
+            _alarmDTO = new Alarm_DTO();
             _saveData = new SaveData();
             _data  = new Data();
             _producer = producer;
@@ -52,12 +54,25 @@ namespace DataAccessLogic
 
         public void SetAlarmLimitsDataAccess(Alarm_DTO alarmDTO)
         {
-            _limits.SysUpper = alarmDTO.SysUpper;
-            _limits.SysLower = alarmDTO.SysLower;
-            _limits.DiaUpper = alarmDTO.DiaUpper;
-            _limits.DiaLower = alarmDTO.DiaLower;
-            _limits.PulsUpper = alarmDTO.PulsUpper;
-            _limits.PulsLower = alarmDTO.PulsLower;
+            _alarmDTO = alarmDTO;
+            _limits.SysUpper = _alarmDTO.SysUpper;
+            _limits.SysLower = _alarmDTO.SysLower;
+            _limits.DiaUpper = _alarmDTO.DiaUpper;
+            _limits.DiaLower = _alarmDTO.DiaLower;
+            _limits.PulsUpper = _alarmDTO.PulsUpper;
+            _limits.PulsLower = _alarmDTO.PulsLower;
+        }
+
+        public Alarm_DTO GetAlarmLimitsDataAcces()
+        {
+            _alarmDTO.SysUpper = _limits.SysUpper;
+            _alarmDTO.SysLower = _limits.SysLower;
+            _alarmDTO.PulsUpper = _limits.PulsUpper;
+            _alarmDTO.PulsLower = _limits.PulsLower;
+            _alarmDTO.DiaUpper = _limits.DiaUpper;
+            _alarmDTO.DiaLower = _limits.DiaLower;
+
+            return _alarmDTO;
         }
 
         public void RunProducer()
