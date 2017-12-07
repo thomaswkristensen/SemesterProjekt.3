@@ -23,11 +23,13 @@ namespace Buisnesslogic
         private Converter _converter;
         private FilterContainer _filterContainer;
         private AnalysisContainer _analysisContainer;
+        private Alarm _alarm;
         public BusinessController(IDataAccesLogic DAL, Consumer consumer, FilterContainer filterContainer, AnalysisContainer analysisContainer)
         {
             _DAL = DAL;
             _calibration = new Calibration();
             _ZPA = new Zero_pointAdjusment();
+            _alarm = new Alarm();
             _hpDTO = new HP_DTO();
             _login = new Login();
             _filter = new Filter(filterContainer);
@@ -44,9 +46,9 @@ namespace Buisnesslogic
             _DAL.ZPAVolt = _ZPA.CalculateZPA(_DAL.PullData());
         }
 
-        public void StartCalibration(int value)
+        public bool StartCalibration(int value)
         {
-            _calibration.Calibrate(_DAL.PullData(), value);
+            return _calibration.Calibrate(_DAL.PullData(), value);
         }
 
         public Calibration_DTO ViewCalibration()
@@ -109,8 +111,10 @@ namespace Buisnesslogic
 
         public void StartMeasuringBL()
         {
+            
             _consumer.SetConverter(_converter);
-            _converter.SetSlopeAndZPA(_analysisContainer,_filter, _DAL.ZPAVolt);
+            _converter.SetSlopeAndZPA(_analysisContainer,_filter,_alarm, _DAL.ZPAVolt,_DAL.PullSlope());
+            _alarm.Limits(_DAL.GetAlarmLimitsDataAcces());
             _threadController.CreateThread();
             _DAL.StartMeasuringDAL();
             
@@ -121,6 +125,11 @@ namespace Buisnesslogic
         {
             _threadController.StopThread();
             _DAL.StopMeasuringDAL();
+        }
+
+        public void StopAlarm()
+        {
+            _alarm.AlarmStop = true;
         }
     }
 
