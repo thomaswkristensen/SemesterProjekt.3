@@ -22,6 +22,8 @@ namespace Interfaces
         void StartMeasuringBL();
         void StopMeasuringBL();
         void StopAlarm();
+        void StartAlarm();
+        void StopAlarmTone();
 
     }
 }

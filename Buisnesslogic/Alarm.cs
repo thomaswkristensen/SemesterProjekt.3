@@ -36,21 +36,33 @@ namespace Buisnesslogic
 
         public bool Check(HealthValues_DTO values)
         {
-            //alarmThread = new Thread(AlarmTone);
+            
             if (!CheckHeartRate(values) && !CheckDia(values) && !CheckSys(values))
             {
-                //Tone = false;
+                Tone = false;
+                StopTone();
                 return false;
+                
             }
             else
             {
-                //Tone = true;
-                //alarmThread.Start();
+                
                 if (AlarmStop)
                 {
+                    StopTone();
                     return false;
                 }
-                return true;
+                else
+                {
+                    if (!Tone)
+                    {
+                        alarmThread = new Thread(AlarmTone);
+                        alarmThread.Start();
+                    }
+
+                    return true;
+                }
+                
             }   
 
             
@@ -88,14 +100,15 @@ namespace Buisnesslogic
 
         public void AlarmTone()
         {
-            while (true)
-            {
-                SP.PlaySync();
-            }
-            
+            SP.PlayLooping();
         }
 
-       
+        public void StopTone()
+        {
+            SP.Stop();
+        }
+
+
 
 
     }

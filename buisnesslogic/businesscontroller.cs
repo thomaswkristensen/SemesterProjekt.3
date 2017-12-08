@@ -130,7 +130,19 @@ namespace Buisnesslogic
         public void StopAlarm()
         {
             _alarm.AlarmStop = true;
+            _alarm.Tone = false;
         }
+
+        public void StartAlarm()
+        {
+            _alarm.AlarmStop = false;
+        }
+
+        public void StopAlarmTone()
+        {
+            _alarm.StopTone(); // virker ikke skal ændres, men resten virker
+        }
+
     }
 
     

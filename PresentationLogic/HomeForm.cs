@@ -21,6 +21,8 @@ namespace PresentationLogic
         private IBusinessLogic _BL;
         private Measurement_DTO _data;
         private bool _digitalFilter;
+        private bool _alarm;
+        private bool _alarmTone;
         private FilterContainer _filterContainer;
         private AnalysisContainer _analysisContainer;
        
@@ -30,6 +32,8 @@ namespace PresentationLogic
             _BL = BL;
             
             _digitalFilter = false;
+            _alarm = false;
+            _alarmTone = false;
             _filterContainer = filterContainer;
             _filterContainer.Attach(this);
             _analysisContainer = analysisContainer;
@@ -84,12 +88,27 @@ namespace PresentationLogic
 
         private void button_alarmtone_Click(object sender, EventArgs e)
         {
-
+            _BL.StopAlarmTone();
         }
 
         private void button_alarm_Click(object sender, EventArgs e)
         {
-            _BL.StopAlarm();
+            if (!_alarm)
+            {
+                _BL.StopAlarm();
+                Alarm_label.Text = "Alarm: Fra";
+                _alarm = true;
+            }
+            else
+            {
+                _BL.StartAlarm();
+                Alarm_label.Text = "Alarm: Til";
+                _alarm = false;
+            }
+            
+
+
+
         }
 
         private void button_setLimitValues_Click(object sender, EventArgs e)
