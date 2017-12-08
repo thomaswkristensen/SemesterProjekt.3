@@ -63,10 +63,11 @@ namespace Buisnesslogic
                     _hvDTO.DiaBP = diastolicPressure(_analysisList, diffenrence);
                     _hvDTO.AverageBP = MAP(_analysisList);
                     _hvDTO.HeartRate = HeartRate(_analysisList);
-                    _hvDTO.Alarm = _alarm.Check(_hvDTO);
+                    
 
                     if (_counter == 5)
                     {
+                        _hvDTO.Alarm = _alarm.Check(_hvDTO);
                         _analysisContainer.SetHealthValues(_hvDTO);
                         _counter = 0;
                     }
