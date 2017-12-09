@@ -27,7 +27,7 @@ namespace Buisnesslogic
             {
                 return 0;
             }
-            _P1 = 0.196;
+            
 
             return _P1;
         }
