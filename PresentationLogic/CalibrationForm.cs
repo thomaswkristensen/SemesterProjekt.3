@@ -38,7 +38,7 @@ namespace PresentationLogic
                 {
                     MessageBox.Show("Kalibrering foretaget");
                 }
-                MessageBox.Show("For stor afvigelse, tjek vandsøjle");
+                else MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
             else if (P2_radioButton.Checked)
             {
@@ -46,7 +46,7 @@ namespace PresentationLogic
                 {
                     MessageBox.Show("Kalibrering foretaget");
                 }
-                MessageBox.Show("For stor afvigelse, tjek vandsøjle");
+                else MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
             else if (P3_radioButton.Checked)
             {
@@ -54,12 +54,13 @@ namespace PresentationLogic
                 {
                     MessageBox.Show("Kalibrering foretaget");
                 }
-                MessageBox.Show("For stor afvigelse, tjek vandsøjle");
+                else MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
         }
 
         private void ViewCalibration_Button_Click(object sender, EventArgs e)
         {
+            
             _calibration =_BL.ViewCalibration();
 
             x.Add(_calibration.ZPA);
@@ -77,17 +78,19 @@ namespace PresentationLogic
 
         private void ChangeSlope_Button_Click(object sender, EventArgs e)
         {
-            _calibration = _BL.ChangeSlope(Convert.ToDouble(SlopeTextbox));
-
+            _calibration = _BL.ChangeSlope(Convert.ToDouble(SlopeTextbox.Text));
+            x.Clear();
             x.Add(_calibration.ZPA);
             x.Add(_calibration.P1);
             x.Add(_calibration.P2);
             x.Add(_calibration.P3);
 
-            for (int i = 0; i < x.Count; i++)
-            {
-                chart1.Series["Series1"].Points.AddY(x[i]);
-            }
+            chart1.Series["Series1"].Points.Clear();
+            chart1.Series["Series1"].Points.AddXY(0, x[0]);
+            chart1.Series["Series1"].Points.AddXY(10, x[1]);
+            chart1.Series["Series1"].Points.AddXY(50, x[2]);
+            chart1.Series["Series1"].Points.AddXY(100, x[3]);
+
         }
 
         private void done_button_Click(object sender, EventArgs e)
