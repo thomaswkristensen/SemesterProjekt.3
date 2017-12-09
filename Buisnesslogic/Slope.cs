@@ -27,6 +27,7 @@ namespace Buisnesslogic
             {
                 return 0;
             }
+            _P1 = 0.196;
 
             return _P1;
         }
@@ -42,6 +43,7 @@ namespace Buisnesslogic
             {
                 return 0;
             }
+
 
             return _P2;
         }
@@ -59,6 +61,7 @@ namespace Buisnesslogic
                 return 0;
             }
 
+
             return _P3;
         }
 
@@ -70,7 +73,7 @@ namespace Buisnesslogic
 
             OrdinaryLeastSquares ols = new OrdinaryLeastSquares();
 
-            SimpleLinearRegression regression = ols.Learn(_expectet, _measured);
+            SimpleLinearRegression regression = ols.Learn(_measured, _expectet);
 
             return regression.Slope;
         }

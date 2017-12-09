@@ -38,7 +38,7 @@ namespace Buisnesslogic
             
             foreach (var item in data.RawData)
             {
-                _data.ConvertedData.Add((item - _zpa)/_slope);
+                _data.ConvertedData.Add((item - _zpa)*_slope);
             }
             ;
             foreach (var item in _data.ConvertedData)
