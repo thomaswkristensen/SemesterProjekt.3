@@ -39,15 +39,10 @@ namespace PresentationLogic
             _alarmDTO.PulsLower = Convert.ToInt32(textBox_lowerPuls.Text);
 
             
-            if (_BL.SetAlarmLimitsBusiness(_alarmDTO))
-            {
-                MessageBox.Show("Grænser er nu sat");
-                this.Hide();
-                _homeForm.Show();
-            }
-            else MessageBox.Show("Fejl, prøv igen");
-
-
+            _BL.SetAlarmLimitsBusiness(_alarmDTO);
+            MessageBox.Show("Grænser er nu sat");
+            this.Hide();
+            _homeForm.Show();
 
         }
 

@@ -104,10 +104,9 @@ namespace Buisnesslogic
 
         }
 
-        public bool SetAlarmLimitsBusiness(Alarm_DTO alarmDTO)
+        public void SetAlarmLimitsBusiness(Alarm_DTO alarmDTO)
         {
             _DAL.SetAlarmLimitsDataAccess(alarmDTO);
-            return true; //Try catch?
         }
 
         public void StartMeasuringBL()
