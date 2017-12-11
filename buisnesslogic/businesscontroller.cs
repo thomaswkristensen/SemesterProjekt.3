@@ -79,7 +79,7 @@ namespace Buisnesslogic
             return false;
         }
 
-        public void UseDigitalFilter()
+        public void UseDigitalFilterBL()
         {
             _filter.UseDigitalFilter();
         }

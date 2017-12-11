@@ -75,7 +75,7 @@ namespace PresentationLogic
 
         private void Digital_Button_HomeForm_Click(object sender, EventArgs e)
         {
-            _BL.UseDigitalFilter();
+            _BL.UseDigitalFilterBL();
 
             if (!_digitalFilter)
             {
