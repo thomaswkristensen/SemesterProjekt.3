@@ -25,6 +25,7 @@ namespace PresentationLogic
         private bool _alarmTone;
         private FilterContainer _filterContainer;
         private AnalysisContainer _analysisContainer;
+        private Timer _alarmTimer;
        
 
         public HomeForm(IBusinessLogic BL, FilterContainer filterContainer, AnalysisContainer analysisContainer)
@@ -34,6 +35,9 @@ namespace PresentationLogic
             _digitalFilter = false;
             _alarm = false;
             _alarmTone = false;
+            _alarmTimer = new Timer();
+            _alarmTimer.Interval = (10 * 1000);
+            _alarmTimer.Tick += new EventHandler(timer1_Tick);
             _filterContainer = filterContainer;
             _filterContainer.Attach(this);
             _analysisContainer = analysisContainer;
@@ -44,6 +48,7 @@ namespace PresentationLogic
             Bloodpressure_chart_Homeform.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             Bloodpressure_chart_Homeform.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
         }
+
 
         private void Save_button_HomeForm_Click(object sender, EventArgs e)
         {
@@ -96,6 +101,7 @@ namespace PresentationLogic
             if (!_alarm)
             {
                 _BL.StopAlarm();
+                _alarmTimer.Start();
                 Alarm_label.Text = "Alarm: Fra";
                 _alarm = true;
             }
@@ -159,6 +165,7 @@ namespace PresentationLogic
                 if (hvDTO.Alarm)
                 {
                     Alarm_button.BackColor = Color.Red;
+                    
                 }
                 else Alarm_button.BackColor = Color.LimeGreen;
             }
@@ -169,6 +176,14 @@ namespace PresentationLogic
         {
             _BL.StopMeasuringBL();
             Save_button_HomeForm.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            _alarmTimer.Stop();
+            _BL.StartAlarm();
+            Alarm_label.Text = "Alarm: Til";
+            _alarm = false;
         }
     }
 }
