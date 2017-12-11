@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -54,6 +55,7 @@
             this.Alarm_button = new System.Windows.Forms.Button();
             this.Alarmtone_label = new System.Windows.Forms.Label();
             this.Alarm_label = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Bloodpressure_chart_Homeform)).BeginInit();
             this.SuspendLayout();
             // 
@@ -392,6 +394,10 @@
             this.Alarm_label.TabIndex = 38;
             this.Alarm_label.Text = "Alarm: Til ";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,5 +461,6 @@
         private System.Windows.Forms.Button Alarm_button;
         private System.Windows.Forms.Label Alarmtone_label;
         private System.Windows.Forms.Label Alarm_label;
+        private System.Windows.Forms.Timer timer1;
     }
 }
