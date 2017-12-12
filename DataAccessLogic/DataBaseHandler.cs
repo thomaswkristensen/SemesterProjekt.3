@@ -120,7 +120,7 @@ namespace DataAccessLogic
             cmd = new SqlCommand(_querybuilder.SaveCalibrationQuery(), _conn);
             Connect();
             cmd.Parameters.AddWithValue("@Slope", calibrationData.Slope);
-            cmd.Parameters.AddWithValue("@CalibrationTime", DateTime.Now);
+            cmd.Parameters.AddWithValue("@DateOf", DateTime.Now);
 
 
             cmd.ExecuteNonQuery();
