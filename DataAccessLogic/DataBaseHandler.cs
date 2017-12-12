@@ -122,6 +122,7 @@ namespace DataAccessLogic
             cmd.Parameters.AddWithValue("@Slope", calibrationData.Slope);
             cmd.Parameters.AddWithValue("@CalibrationTime", DateTime.Now);
 
+
             cmd.ExecuteNonQuery();
 
             Disconnect();

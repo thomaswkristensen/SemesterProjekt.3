@@ -18,6 +18,7 @@ namespace Buisnesslogic
 
         public double CalculateP1(List<double> dataList)
         {
+            _sum = 0;
             foreach (var sample in dataList)
             {
                 _sum += sample;
@@ -34,12 +35,13 @@ namespace Buisnesslogic
 
         public double CalculateP2(List<double> dataList)
         {
+            _sum = 0;
             foreach (var sample in dataList)
             {
                 _sum += sample;
             }
             _P2 = _sum / dataList.Count;
-            if (_P2 < 0.728 || _P2 > 0.1092)
+            if (_P2 < 0.728 || _P2 > 1.092)
             {
                 return 0;
             }
@@ -50,6 +52,7 @@ namespace Buisnesslogic
 
         public double CalculateP3(List<double> dataList)
         {
+            _sum = 0;
             foreach (var sample in dataList)
             {
                 _sum += sample;
