@@ -17,7 +17,6 @@ namespace Buisnesslogic
         private HP_DTO _hpDTO;
         private Login _login;
         private Filter _filter;
-        private ShowData _showData;
         private Consumer _consumer;
         private ThreadControllerBL _threadController;
         private Converter _converter;
