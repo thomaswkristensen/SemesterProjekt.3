@@ -36,7 +36,7 @@ namespace DataAccessLogic
         public string SaveCalibrationQuery()
         {
             string query =
-                "INSERT INTO Calibration(Slope,CalibrationTime)" + "VALUES(@Slope,@DateOf)";
+                "INSERT INTO Calibration(Slope,DateOf)" + "VALUES(@Slope,@DateOf)";
             return query;
         }
 
