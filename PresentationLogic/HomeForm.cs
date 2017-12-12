@@ -107,6 +107,7 @@ namespace PresentationLogic
             else
             {
                 _BL.StartAlarm();
+                _alarmTimer.Stop();
                 Alarm_label.Text = "Alarm: Til";
                 _alarm = false;
                 Alarmtone_label.Text = "Alarmtone:";
