@@ -168,7 +168,7 @@ namespace PresentationLogic
                     Alarm_button.BackColor = Color.Red;
                     
                 }
-                else Alarm_button.BackColor = Color.LimeGreen;
+                else Alarm_button.BackColor = Color.Black;
             }
 
         }
