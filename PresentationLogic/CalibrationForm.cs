@@ -16,7 +16,6 @@ namespace PresentationLogic
     public partial class CalibrationForm : Form
     {
         private IBusinessLogic _BL;
-        private Measurement_DTO _data;
         private Calibration_DTO _calibration;
         private List<double> x;
         private HomeForm _homeForm;
@@ -30,7 +29,6 @@ namespace PresentationLogic
 
         private void calibration_button_Click(object sender, EventArgs e)
         {
-            _data = new Measurement_DTO();
 
             if (P1_radioButton.Checked)
             {

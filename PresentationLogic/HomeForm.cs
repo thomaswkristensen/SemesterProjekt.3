@@ -22,7 +22,6 @@ namespace PresentationLogic
         private Measurement_DTO _data;
         private bool _digitalFilter;
         private bool _alarm;
-        private bool _alarmTone;
         private FilterContainer _filterContainer;
         private AnalysisContainer _analysisContainer;
         private Timer _alarmTimer;
@@ -34,7 +33,6 @@ namespace PresentationLogic
             
             _digitalFilter = false;
             _alarm = false;
-            _alarmTone = false;
             _alarmTimer = new Timer();
             _alarmTimer.Interval = (10 * 1000);
             _alarmTimer.Tick += new EventHandler(timer1_Tick);
@@ -94,6 +92,7 @@ namespace PresentationLogic
         private void button_alarmtone_Click(object sender, EventArgs e)
         {
             _BL.StopAlarmTone();
+            Alarmtone_label.Text = "Alarmtone: Fra";
         }
 
         private void button_alarm_Click(object sender, EventArgs e)
@@ -110,6 +109,7 @@ namespace PresentationLogic
                 _BL.StartAlarm();
                 Alarm_label.Text = "Alarm: Til";
                 _alarm = false;
+                Alarmtone_label.Text = "Alarmtone:";
             }
             
 
