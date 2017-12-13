@@ -122,8 +122,9 @@ namespace Buisnesslogic
        
         public void StopMeasuringBL()
         {
-            _threadController.StopThread();
             _DAL.StopMeasuringDAL();
+            _threadController.StopThread();
+            
         }
 
         public void StopAlarm()
