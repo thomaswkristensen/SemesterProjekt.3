@@ -35,19 +35,19 @@ namespace Buisnesslogic
         }
         public void Convert(Measurement_DTO data)
         {
+                foreach (var item in data.RawData)
+                {
+                    _data.ConvertedData.Add((item - _zpa) * _slope);
+                }
+                ;
+                foreach (var item in _data.ConvertedData)
+                {
+                    _container.data.Add(item);
+                }
+                _waitEvent.Set();
+                _filter.FilterMethod(_data);
+                _data.ConvertedData.Clear();
             
-            foreach (var item in data.RawData)
-            {
-                _data.ConvertedData.Add((item - _zpa)*_slope);
-            }
-            ;
-            foreach (var item in _data.ConvertedData)
-            {
-                _container.data.Add(item);
-            }
-            _waitEvent.Set();
-            _filter.FilterMethod(_data);
-            _data.ConvertedData.Clear();
         }
 
         public void SetSlopeAndZPA(AnalysisContainer analysisContainer, Filter filter,Alarm alarm

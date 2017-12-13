@@ -114,9 +114,18 @@ namespace Buisnesslogic
             _consumer.SetConverter(_converter);
             _converter.SetSlopeAndZPA(_analysisContainer,_filter,_alarm, _DAL.ZPAVolt,_DAL.PullSlope());
             _alarm.Limits(_DAL.GetAlarmLimitsDataAcces());
-            _threadController.CreateThread();
-            _DAL.StartMeasuringDAL();
-            
+            if(_DAL.PullData()==null)
+            {
+                System.Windows.Forms.MessageBox.Show("Data ikke til rådighed, tjek om udstyret er sat til");
+            }
+            else
+            {
+                _threadController.CreateThread();
+                _DAL.StartMeasuringDAL();
+            }
+
+
+
         }
 
        

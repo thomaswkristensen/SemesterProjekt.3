@@ -52,7 +52,7 @@ namespace Buisnesslogic
 
                 _data.data.Clear();
 
-                //Have styr på hvor stor listen skal være de analysere.
+                
                 if (_analysisList.Count >= 2000)
                 {
 

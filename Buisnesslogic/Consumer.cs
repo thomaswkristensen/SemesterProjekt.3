@@ -45,6 +45,7 @@ namespace Buisnesslogic
                 _data.RawData = _buffer.Data;
                 _converter.Convert(_data);
                 
+
             }
         }
     }
