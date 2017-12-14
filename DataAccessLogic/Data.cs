@@ -8,7 +8,7 @@ namespace DataAccessLogic
 {
     public class Data :IData
     {
-        List<double> _data;
+        private List<double> _data;
         private NI_DAQ _datacollector;
 
         public Data()
