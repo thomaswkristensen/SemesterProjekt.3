@@ -42,8 +42,8 @@ namespace Buisnesslogic
 
         public void StartZPA()
         {
-            _DAL.ZPAVolt = _ZPA.CalculateZPA(_DAL.PullData());
-            //_DAL.ZPAVolt = 0.01613;
+            //_DAL.ZPAVolt = _ZPA.CalculateZPA(_DAL.PullData());
+            _DAL.ZPAVolt = 0.01613;
         }
 
         public bool StartCalibration(int value)
