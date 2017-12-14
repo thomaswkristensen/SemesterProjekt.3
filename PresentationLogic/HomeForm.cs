@@ -128,6 +128,10 @@ namespace PresentationLogic
         private void Start_button_HomeForm_Click(object sender, EventArgs e)
         {
             Save_button_HomeForm.Enabled = false;
+            stop_button.Enabled = true;
+            Digital_Button_HomeForm.Enabled = true;
+            button_alarm.Enabled = true;
+            button_alarmtone.Enabled = true;
            _BL.StartMeasuringBL();
         }
 

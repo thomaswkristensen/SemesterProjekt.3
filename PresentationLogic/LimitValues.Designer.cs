@@ -47,18 +47,20 @@
             // label_UpperSystolic
             // 
             this.label_UpperSystolic.AutoSize = true;
-            this.label_UpperSystolic.Location = new System.Drawing.Point(41, 34);
+            this.label_UpperSystolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_UpperSystolic.Location = new System.Drawing.Point(27, 32);
             this.label_UpperSystolic.Name = "label_UpperSystolic";
-            this.label_UpperSystolic.Size = new System.Drawing.Size(72, 13);
+            this.label_UpperSystolic.Size = new System.Drawing.Size(92, 16);
             this.label_UpperSystolic.TabIndex = 0;
             this.label_UpperSystolic.Text = "Øvre systolisk";
             // 
             // label_upperDiastolic
             // 
             this.label_upperDiastolic.AutoSize = true;
-            this.label_upperDiastolic.Location = new System.Drawing.Point(41, 126);
+            this.label_upperDiastolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_upperDiastolic.Location = new System.Drawing.Point(27, 124);
             this.label_upperDiastolic.Name = "label_upperDiastolic";
-            this.label_upperDiastolic.Size = new System.Drawing.Size(76, 13);
+            this.label_upperDiastolic.Size = new System.Drawing.Size(97, 16);
             this.label_upperDiastolic.TabIndex = 1;
             this.label_upperDiastolic.Text = "Øvre diastolisk";
             // 
@@ -86,18 +88,20 @@
             // label_lowerSystolic
             // 
             this.label_lowerSystolic.AutoSize = true;
-            this.label_lowerSystolic.Location = new System.Drawing.Point(41, 71);
+            this.label_lowerSystolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lowerSystolic.Location = new System.Drawing.Point(27, 69);
             this.label_lowerSystolic.Name = "label_lowerSystolic";
-            this.label_lowerSystolic.Size = new System.Drawing.Size(78, 13);
+            this.label_lowerSystolic.Size = new System.Drawing.Size(101, 16);
             this.label_lowerSystolic.TabIndex = 5;
             this.label_lowerSystolic.Text = "Nedre systolisk";
             // 
             // label_lowerDiastolic
             // 
             this.label_lowerDiastolic.AutoSize = true;
-            this.label_lowerDiastolic.Location = new System.Drawing.Point(41, 164);
+            this.label_lowerDiastolic.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lowerDiastolic.Location = new System.Drawing.Point(27, 162);
             this.label_lowerDiastolic.Name = "label_lowerDiastolic";
-            this.label_lowerDiastolic.Size = new System.Drawing.Size(82, 13);
+            this.label_lowerDiastolic.Size = new System.Drawing.Size(106, 16);
             this.label_lowerDiastolic.TabIndex = 6;
             this.label_lowerDiastolic.Text = "Nedre diastolisk";
             // 
@@ -111,18 +115,20 @@
             // label_upperPuls
             // 
             this.label_upperPuls.AutoSize = true;
-            this.label_upperPuls.Location = new System.Drawing.Point(41, 215);
+            this.label_upperPuls.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_upperPuls.Location = new System.Drawing.Point(27, 213);
             this.label_upperPuls.Name = "label_upperPuls";
-            this.label_upperPuls.Size = new System.Drawing.Size(52, 13);
+            this.label_upperPuls.Size = new System.Drawing.Size(65, 16);
             this.label_upperPuls.TabIndex = 8;
             this.label_upperPuls.Text = "Øvre puls";
             // 
             // label_lowerPuls
             // 
             this.label_lowerPuls.AutoSize = true;
-            this.label_lowerPuls.Location = new System.Drawing.Point(41, 251);
+            this.label_lowerPuls.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lowerPuls.Location = new System.Drawing.Point(27, 249);
             this.label_lowerPuls.Name = "label_lowerPuls";
-            this.label_lowerPuls.Size = new System.Drawing.Size(58, 13);
+            this.label_lowerPuls.Size = new System.Drawing.Size(74, 16);
             this.label_lowerPuls.TabIndex = 9;
             this.label_lowerPuls.Text = "Nedre puls";
             // 
@@ -142,28 +148,31 @@
             // 
             // button_OK_LV
             // 
+            this.button_OK_LV.BackColor = System.Drawing.Color.Transparent;
             this.button_OK_LV.Location = new System.Drawing.Point(159, 304);
             this.button_OK_LV.Name = "button_OK_LV";
             this.button_OK_LV.Size = new System.Drawing.Size(75, 23);
             this.button_OK_LV.TabIndex = 12;
             this.button_OK_LV.Text = "OK";
-            this.button_OK_LV.UseVisualStyleBackColor = true;
+            this.button_OK_LV.UseVisualStyleBackColor = false;
             this.button_OK_LV.Click += new System.EventHandler(this.button_OK_LV_Click);
             // 
             // Cancel_button
             // 
+            this.Cancel_button.BackColor = System.Drawing.Color.Transparent;
             this.Cancel_button.Location = new System.Drawing.Point(44, 304);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(75, 23);
             this.Cancel_button.TabIndex = 13;
             this.Cancel_button.Text = "Cancel";
-            this.Cancel_button.UseVisualStyleBackColor = true;
+            this.Cancel_button.UseVisualStyleBackColor = false;
             this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
             // LimitValuesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(284, 345);
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.button_OK_LV);

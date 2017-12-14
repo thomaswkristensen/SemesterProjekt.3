@@ -35,6 +35,7 @@ namespace PresentationLogic
                 if (_BL.StartCalibration(10))
                 {
                     MessageBox.Show("Kalibrering foretaget");
+                    P2_radioButton.Enabled = true;
                 }
                 else MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
@@ -43,6 +44,7 @@ namespace PresentationLogic
                 if (_BL.StartCalibration(50))
                 {
                     MessageBox.Show("Kalibrering foretaget");
+                    P3_radioButton.Enabled = true;
                 }
                 else MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
@@ -51,6 +53,8 @@ namespace PresentationLogic
                 if (_BL.StartCalibration(100))
                 {
                     MessageBox.Show("Kalibrering foretaget");
+                    ViewCalibration_Button.Enabled = true;
+
                 }
                 else MessageBox.Show("For stor afvigelse, tjek vandsøjle");
             }
@@ -72,6 +76,9 @@ namespace PresentationLogic
             chart1.Series["Series1"].Points.AddXY(100, x[3]);
 
             SlopeTextbox.Text = Convert.ToString(_calibration.Slope);
+
+            ChangeSlope_Button.Enabled = true;
+            done_button.Enabled = true;
         }
 
         private void ChangeSlope_Button_Click(object sender, EventArgs e)
