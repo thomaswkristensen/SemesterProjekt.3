@@ -228,9 +228,9 @@
             this.label_FilterType.ForeColor = System.Drawing.Color.White;
             this.label_FilterType.Location = new System.Drawing.Point(507, 78);
             this.label_FilterType.Name = "label_FilterType";
-            this.label_FilterType.Size = new System.Drawing.Size(110, 18);
+            this.label_FilterType.Size = new System.Drawing.Size(117, 18);
             this.label_FilterType.TabIndex = 28;
-            this.label_FilterType.Text = "Digitalt filter:  Til";
+            this.label_FilterType.Text = "Digitalt filter:  Fra";
             // 
             // button_alarmtone
             // 
