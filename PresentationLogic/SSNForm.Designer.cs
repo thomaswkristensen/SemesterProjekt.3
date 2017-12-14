@@ -45,90 +45,104 @@
             // 
             this.Patientdata_Label.AutoSize = true;
             this.Patientdata_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Patientdata_Label.Location = new System.Drawing.Point(34, 52);
+            this.Patientdata_Label.Location = new System.Drawing.Point(23, 34);
+            this.Patientdata_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Patientdata_Label.Name = "Patientdata_Label";
-            this.Patientdata_Label.Size = new System.Drawing.Size(161, 32);
+            this.Patientdata_Label.Size = new System.Drawing.Size(101, 24);
             this.Patientdata_Label.TabIndex = 0;
             this.Patientdata_Label.Text = "Patientdata";
             // 
             // SSN_Label
             // 
             this.SSN_Label.AutoSize = true;
-            this.SSN_Label.Location = new System.Drawing.Point(38, 109);
+            this.SSN_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SSN_Label.Location = new System.Drawing.Point(24, 68);
+            this.SSN_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SSN_Label.Name = "SSN_Label";
-            this.SSN_Label.Size = new System.Drawing.Size(42, 20);
+            this.SSN_Label.Size = new System.Drawing.Size(36, 16);
             this.SSN_Label.TabIndex = 1;
             this.SSN_Label.Text = "CPR";
             // 
             // name_Label
             // 
             this.name_Label.AutoSize = true;
-            this.name_Label.Location = new System.Drawing.Point(38, 177);
+            this.name_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_Label.Location = new System.Drawing.Point(24, 112);
+            this.name_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.name_Label.Name = "name_Label";
-            this.name_Label.Size = new System.Drawing.Size(45, 20);
+            this.name_Label.Size = new System.Drawing.Size(40, 16);
             this.name_Label.TabIndex = 2;
             this.name_Label.Text = "Navn";
             // 
             // age_Label
             // 
             this.age_Label.AutoSize = true;
-            this.age_Label.Location = new System.Drawing.Point(36, 249);
+            this.age_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.age_Label.Location = new System.Drawing.Point(23, 159);
+            this.age_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.age_Label.Name = "age_Label";
-            this.age_Label.Size = new System.Drawing.Size(46, 20);
+            this.age_Label.Size = new System.Drawing.Size(40, 16);
             this.age_Label.TabIndex = 3;
             this.age_Label.Text = "Alder";
             // 
             // EmployeeID_Label
             // 
             this.EmployeeID_Label.AutoSize = true;
-            this.EmployeeID_Label.Location = new System.Drawing.Point(38, 325);
+            this.EmployeeID_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeID_Label.Location = new System.Drawing.Point(24, 208);
+            this.EmployeeID_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EmployeeID_Label.Name = "EmployeeID_Label";
-            this.EmployeeID_Label.Size = new System.Drawing.Size(73, 20);
+            this.EmployeeID_Label.Size = new System.Drawing.Size(64, 16);
             this.EmployeeID_Label.TabIndex = 4;
             this.EmployeeID_Label.Text = "Ansvarlig";
             // 
             // SSN_textBox
             // 
             this.SSN_textBox.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.SSN_textBox.Location = new System.Drawing.Point(40, 132);
+            this.SSN_textBox.Location = new System.Drawing.Point(27, 86);
+            this.SSN_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SSN_textBox.Name = "SSN_textBox";
-            this.SSN_textBox.Size = new System.Drawing.Size(302, 26);
+            this.SSN_textBox.Size = new System.Drawing.Size(203, 20);
             this.SSN_textBox.TabIndex = 5;
             // 
             // name_textBox
             // 
             this.name_textBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.name_textBox.Enabled = false;
-            this.name_textBox.Location = new System.Drawing.Point(40, 200);
+            this.name_textBox.Location = new System.Drawing.Point(27, 130);
+            this.name_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(302, 26);
+            this.name_textBox.Size = new System.Drawing.Size(203, 20);
             this.name_textBox.TabIndex = 6;
             // 
             // age_textBox
             // 
             this.age_textBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.age_textBox.Enabled = false;
-            this.age_textBox.Location = new System.Drawing.Point(40, 272);
+            this.age_textBox.Location = new System.Drawing.Point(27, 177);
+            this.age_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.age_textBox.Name = "age_textBox";
-            this.age_textBox.Size = new System.Drawing.Size(302, 26);
+            this.age_textBox.Size = new System.Drawing.Size(203, 20);
             this.age_textBox.TabIndex = 7;
             // 
             // employeeID_textBox
             // 
             this.employeeID_textBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.employeeID_textBox.Enabled = false;
-            this.employeeID_textBox.Location = new System.Drawing.Point(40, 348);
+            this.employeeID_textBox.Location = new System.Drawing.Point(27, 226);
+            this.employeeID_textBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.employeeID_textBox.Name = "employeeID_textBox";
-            this.employeeID_textBox.Size = new System.Drawing.Size(302, 26);
+            this.employeeID_textBox.Size = new System.Drawing.Size(203, 20);
             this.employeeID_textBox.TabIndex = 8;
             // 
             // save_button
             // 
             this.save_button.BackColor = System.Drawing.Color.Transparent;
             this.save_button.Enabled = false;
-            this.save_button.Location = new System.Drawing.Point(201, 412);
+            this.save_button.Location = new System.Drawing.Point(134, 268);
+            this.save_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.save_button.Name = "save_button";
-            this.save_button.Size = new System.Drawing.Size(141, 35);
+            this.save_button.Size = new System.Drawing.Size(94, 23);
             this.save_button.TabIndex = 9;
             this.save_button.Text = "Gem";
             this.save_button.UseVisualStyleBackColor = false;
@@ -137,10 +151,9 @@
             // information_button
             // 
             this.information_button.BackColor = System.Drawing.Color.Transparent;
-            this.information_button.Location = new System.Drawing.Point(40, 412);
-            this.information_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.information_button.Location = new System.Drawing.Point(27, 268);
             this.information_button.Name = "information_button";
-            this.information_button.Size = new System.Drawing.Size(141, 35);
+            this.information_button.Size = new System.Drawing.Size(94, 23);
             this.information_button.TabIndex = 10;
             this.information_button.Text = "Hent information";
             this.information_button.UseVisualStyleBackColor = false;
@@ -148,10 +161,10 @@
             // 
             // SSNForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(418, 508);
+            this.ClientSize = new System.Drawing.Size(279, 330);
             this.Controls.Add(this.information_button);
             this.Controls.Add(this.save_button);
             this.Controls.Add(this.employeeID_textBox);
@@ -163,6 +176,7 @@
             this.Controls.Add(this.name_Label);
             this.Controls.Add(this.SSN_Label);
             this.Controls.Add(this.Patientdata_Label);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SSNForm";
             this.Text = "SSNForm";
             this.ResumeLayout(false);

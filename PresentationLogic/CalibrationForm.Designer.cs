@@ -48,10 +48,11 @@
             // P1_radioButton
             // 
             this.P1_radioButton.AutoSize = true;
+            this.P1_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.P1_radioButton.Location = new System.Drawing.Point(47, 79);
             this.P1_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.P1_radioButton.Name = "P1_radioButton";
-            this.P1_radioButton.Size = new System.Drawing.Size(70, 17);
+            this.P1_radioButton.Size = new System.Drawing.Size(83, 20);
             this.P1_radioButton.TabIndex = 0;
             this.P1_radioButton.TabStop = true;
             this.P1_radioButton.Text = "10 mmHg";
@@ -60,10 +61,12 @@
             // P2_radioButton
             // 
             this.P2_radioButton.AutoSize = true;
+            this.P2_radioButton.Enabled = false;
+            this.P2_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.P2_radioButton.Location = new System.Drawing.Point(47, 114);
             this.P2_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.P2_radioButton.Name = "P2_radioButton";
-            this.P2_radioButton.Size = new System.Drawing.Size(70, 17);
+            this.P2_radioButton.Size = new System.Drawing.Size(83, 20);
             this.P2_radioButton.TabIndex = 1;
             this.P2_radioButton.TabStop = true;
             this.P2_radioButton.Text = "50 mmHg";
@@ -72,10 +75,12 @@
             // P3_radioButton
             // 
             this.P3_radioButton.AutoSize = true;
+            this.P3_radioButton.Enabled = false;
+            this.P3_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.P3_radioButton.Location = new System.Drawing.Point(47, 151);
             this.P3_radioButton.Margin = new System.Windows.Forms.Padding(2);
             this.P3_radioButton.Name = "P3_radioButton";
-            this.P3_radioButton.Size = new System.Drawing.Size(76, 17);
+            this.P3_radioButton.Size = new System.Drawing.Size(90, 20);
             this.P3_radioButton.TabIndex = 2;
             this.P3_radioButton.TabStop = true;
             this.P3_radioButton.Text = "100 mmHg";
@@ -83,24 +88,27 @@
             // 
             // calibration_button
             // 
+            this.calibration_button.BackColor = System.Drawing.Color.Transparent;
             this.calibration_button.Location = new System.Drawing.Point(47, 192);
             this.calibration_button.Margin = new System.Windows.Forms.Padding(2);
             this.calibration_button.Name = "calibration_button";
             this.calibration_button.Size = new System.Drawing.Size(72, 23);
             this.calibration_button.TabIndex = 3;
             this.calibration_button.Text = "Kalibrer";
-            this.calibration_button.UseVisualStyleBackColor = true;
+            this.calibration_button.UseVisualStyleBackColor = false;
             this.calibration_button.Click += new System.EventHandler(this.calibration_button_Click);
             // 
             // done_button
             // 
+            this.done_button.BackColor = System.Drawing.Color.Transparent;
+            this.done_button.Enabled = false;
             this.done_button.Location = new System.Drawing.Point(199, 192);
             this.done_button.Margin = new System.Windows.Forms.Padding(2);
             this.done_button.Name = "done_button";
             this.done_button.Size = new System.Drawing.Size(73, 23);
             this.done_button.TabIndex = 4;
             this.done_button.Text = "Færdig";
-            this.done_button.UseVisualStyleBackColor = true;
+            this.done_button.UseVisualStyleBackColor = false;
             this.done_button.Click += new System.EventHandler(this.done_button_Click);
             // 
             // calibration_label
@@ -116,14 +124,19 @@
             // 
             // chart1
             // 
+            this.chart1.BackColor = System.Drawing.Color.DarkGray;
+            chartArea1.BackColor = System.Drawing.Color.DarkGray;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.DarkGray;
+            legend1.BorderColor = System.Drawing.Color.DarkGray;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(281, 25);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
@@ -140,40 +153,45 @@
             // 
             // ChangeSlope_Button
             // 
+            this.ChangeSlope_Button.BackColor = System.Drawing.Color.Transparent;
+            this.ChangeSlope_Button.Enabled = false;
             this.ChangeSlope_Button.Location = new System.Drawing.Point(502, 137);
             this.ChangeSlope_Button.Name = "ChangeSlope_Button";
             this.ChangeSlope_Button.Size = new System.Drawing.Size(100, 23);
             this.ChangeSlope_Button.TabIndex = 8;
             this.ChangeSlope_Button.Text = "Ændre hældning";
-            this.ChangeSlope_Button.UseVisualStyleBackColor = true;
+            this.ChangeSlope_Button.UseVisualStyleBackColor = false;
             this.ChangeSlope_Button.Click += new System.EventHandler(this.ChangeSlope_Button_Click);
             // 
             // ViewCalibration_Button
             // 
+            this.ViewCalibration_Button.BackColor = System.Drawing.Color.Transparent;
+            this.ViewCalibration_Button.Enabled = false;
             this.ViewCalibration_Button.Location = new System.Drawing.Point(123, 192);
             this.ViewCalibration_Button.Margin = new System.Windows.Forms.Padding(2);
             this.ViewCalibration_Button.Name = "ViewCalibration_Button";
             this.ViewCalibration_Button.Size = new System.Drawing.Size(72, 23);
             this.ViewCalibration_Button.TabIndex = 9;
             this.ViewCalibration_Button.Text = "Se graf";
-            this.ViewCalibration_Button.UseVisualStyleBackColor = true;
+            this.ViewCalibration_Button.UseVisualStyleBackColor = false;
             this.ViewCalibration_Button.Click += new System.EventHandler(this.ViewCalibration_Button_Click);
             // 
             // Cancel_button
             // 
+            this.Cancel_button.BackColor = System.Drawing.Color.Transparent;
             this.Cancel_button.Location = new System.Drawing.Point(199, 221);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(75, 23);
             this.Cancel_button.TabIndex = 10;
             this.Cancel_button.Text = "Cancel";
-            this.Cancel_button.UseVisualStyleBackColor = true;
+            this.Cancel_button.UseVisualStyleBackColor = false;
             this.Cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
             // CalibrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(615, 257);
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.ViewCalibration_Button);
