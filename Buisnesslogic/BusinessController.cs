@@ -112,7 +112,7 @@ namespace Buisnesslogic
         {
             
             _consumer.SetConverter(_converter);
-            _converter.SetSlopeAndZPA(_analysisContainer,_filter,_alarm, _DAL.ZPAVolt,_DAL.PullSlope());
+            _converter.SetDependencies(_analysisContainer,_filter,_alarm, _DAL.ZPAVolt,_DAL.PullSlope());
             _alarm.Limits(_DAL.GetAlarmLimitsDataAcces());
             if(_DAL.PullData()==null)
             {

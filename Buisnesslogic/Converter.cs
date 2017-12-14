@@ -50,7 +50,7 @@ namespace Buisnesslogic
             
         }
 
-        public void SetSlopeAndZPA(AnalysisContainer analysisContainer, Filter filter,Alarm alarm
+        public void SetDependencies(AnalysisContainer analysisContainer, Filter filter,Alarm alarm
 , double zpa,double slope)
         {
             _analysis = new Analysis(analysisContainer,_container,_waitEvent,alarm);
