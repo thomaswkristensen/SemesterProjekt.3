@@ -58,7 +58,7 @@ namespace Buisnesslogic
 
 
                     _hvDTO = new HealthValues_DTO();
-                    var diffenrence = TimeDifferences(_analysisList);
+                    var diffenrence = Differences(_analysisList);
                     _hvDTO.SysBP = SystolicPressure(_analysisList, diffenrence);
                     _hvDTO.DiaBP = diastolicPressure(_analysisList, diffenrence);
                     _hvDTO.AverageBP = MAP(_analysisList);
@@ -83,9 +83,9 @@ namespace Buisnesslogic
 
         
 
-        public int TimeDifferences(List<double> data)
+        public int Differences(List<double> data)
         {
-            List<int> _times = Times(data);
+            List<int> _times = NumberOfTimes(data);
 
             List<double> differences = new List<double>();
 
@@ -110,7 +110,7 @@ namespace Buisnesslogic
 
 
 
-        public List<int> Times(List<double> values)
+        public List<int> NumberOfTimes(List<double> values)
         {
             List<int> peaks = new List<int>();
             int count = 0;
@@ -156,7 +156,7 @@ namespace Buisnesslogic
         private int HeartRate(List<double> data)
         {
             int pulse = 0;
-            int diff = TimeDifferences(data);
+            int diff = Differences(data);
 
             if (diff != 0)
             {
@@ -174,7 +174,7 @@ namespace Buisnesslogic
                 _avg = Convert.ToInt32(data.Average());
             }
 
-            return _avg; //Hvis 0? Også for ovenstående
+            return _avg; 
         }
         
     }
